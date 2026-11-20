@@ -1,0 +1,15 @@
+**/__pycache__/
+.DS_Store
+
+build/
+build-release/
+cmake-build-*/
+compile_commands.json
+.cache/
+.vscode/
+.idea/
+imgui.ini
+
+assets/scenes/
+assets/meshes/
+assets/textures/
