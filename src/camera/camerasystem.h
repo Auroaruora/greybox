@@ -1,0 +1,42 @@
+#pragma once
+
+#include "camera/camera.h"
+#include "camera/cameracontroller.h"
+
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
+
+class Scene;
+
+enum class EnterMode {
+    Cut,
+};
+
+struct ControllerEntry {
+    EnterMode mode = EnterMode::Cut;
+    float duration = 0.0f;
+};
+
+class CameraSystem {
+public:
+    void add(std::unique_ptr<CameraController> controller);
+    void load(const Scene &scene);
+    void reset();
+    void update(float deltaTime);
+    void setController(const std::string &name, const ControllerEntry &entry = ControllerEntry());
+    void setCamera(const CameraPose &pose);
+    void setAspectRatio(float aspectRatio);
+
+    const Camera &getCamera() const;
+    const std::string &getControllerName() const;
+    std::vector<std::string> getControllerNames() const;
+    bool isBlending() const;
+
+private:
+    Camera m_camera;
+    CameraPose m_startPose;
+    std::map<std::string, std::unique_ptr<CameraController>> m_controllers;
+    CameraController *m_controller = nullptr;
+};

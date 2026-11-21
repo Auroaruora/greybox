@@ -1,0 +1,44 @@
+#pragma once
+
+#include "utils/lightingreader.h"
+#include "utils/sceneparser.h"
+#include "utils/viewpointreader.h"
+
+#include <string>
+#include <vector>
+
+class MeshCache;
+class TextureCache;
+
+class Scene {
+public:
+    bool load(const std::string &filepath);
+    void loadMeshes(MeshCache &meshCache);
+    void loadTextures(TextureCache &textureCache);
+    void setLightEnabled(int index, bool enabled);
+    void setLighting(const std::string &name);
+    void setShapeTransform(int index, const glm::mat4 &ctm);
+    void setShapeVisible(int index, bool visible);
+    void setShapeEmissiveMap(int index, const Texture2D *texture);
+    int getLightIndex(const std::string &name) const;
+
+    const std::string &getFilepath() const;
+    const RenderData &getRenderData() const;
+    const SceneCameraData &getCameraData() const;
+    const std::vector<SceneLightData> &getLights() const;
+    const std::vector<RenderShapeData> &getShapes() const;
+    const std::vector<LightingGroup> &getLightingGroups() const;
+    const std::string &getLightingName() const;
+    const std::vector<Viewpoint> &getViewpoints() const;
+    std::string getSummary() const;
+
+private:
+    void loadLighting();
+    void loadViewpoints();
+
+    RenderData m_data;
+    std::string m_filepath;
+    std::vector<LightingGroup> m_lightingGroups;
+    std::string m_lightingName;
+    std::vector<Viewpoint> m_viewpoints;
+};

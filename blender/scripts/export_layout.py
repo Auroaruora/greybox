@@ -16,7 +16,7 @@ What is written, all Y up:
 
 A light's color is its Blender colour times its energy times LIGHT_SCALE, so the renderer can use it
 as is. A spot's penumbra is the angle over which Blender's blend fades the cone, measured in from its
-edge. A model's ambient is the world colour times its diffuse. A light whose parent is a mesh is
+edge. The world colour is the scene's ambient light (globalData.ambientLight). A light whose parent is a mesh is
 paired with that mesh's model (emitter), so the renderer can switch both off together.
 
 A mesh that has no OBJ under assets/meshes is written by this script into assets/meshes/<scene>/,
@@ -122,13 +122,12 @@ def texture_file(obj):
     return os.path.relpath(target, ASSETS).replace(os.sep, "/")
 
 
-def model(obj, mesh_file, defaults, world):
+def model(obj, mesh_file, defaults):
     result = {"mesh": os.path.relpath(mesh_file, ASSETS).replace(os.sep, "/"), **defaults}
     if obj.active_material and obj.active_material.use_nodes:
         for node in obj.active_material.node_tree.nodes:
             if node.type == 'BSDF_PRINCIPLED':
                 result["diffuse"] = list(node.inputs["Base Color"].default_value)[:3]
-                result["ambient"] = [w * d for w, d in zip(world, result["diffuse"])]
     glow = emission(obj)
     if glow:
         result["emissive"] = glow
@@ -241,9 +240,9 @@ def export(path, defaults):
 
     meshes = rendered_meshes(scene)
     names = mesh_names(meshes)
-    layout = {"globalData": defaults["globalData"], "cameraData": camera(scene, scene.camera),
-              "lights": lights(scene, defaults["light"], names), "models": {}, "objects": []}
     world = world_colour(scene)
+    layout = {"globalData": {**defaults["globalData"], "ambientLight": world}, "cameraData": camera(scene, scene.camera),
+              "lights": lights(scene, defaults["light"], names), "models": {}, "objects": []}
     owners = {}
     files = {}
     written = triangles = 0
@@ -258,7 +257,7 @@ def export(path, defaults):
                 written += 1
         key = model_key(obj, mesh)
         if key not in layout["models"]:
-            layout["models"][key] = model(obj, files[mesh], defaults["material"], world)
+            layout["models"][key] = model(obj, files[mesh], defaults["material"])
             owners[key] = obj
         matrix = Y_UP @ obj.matrix_world @ Y_UP.inverted()
         layout["objects"].append({"model": key, "matrix": [list(row) for row in matrix]})
