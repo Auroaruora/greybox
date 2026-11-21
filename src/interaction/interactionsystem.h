@@ -14,8 +14,6 @@ public:
     void load(Scene &scene, MeshCache &meshCache);
     void update(Scene &scene, const Camera &camera, const std::optional<Ray> &pointer, float deltaTime);
 
-    const std::vector<std::unique_ptr<Interactable>> &getItems() const;
-    const Interactable *getHovered() const;
     const std::string &getIcon() const;
     const std::vector<GameEvent> &getEvents() const;
 

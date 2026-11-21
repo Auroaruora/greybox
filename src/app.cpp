@@ -51,7 +51,7 @@ void App::run() {
 void App::update(float deltaTime) {
     Screen &screen = *m_screens[m_current];
     if (debug::ToolsEnabled) {
-        DebugUI::update(screen);
+        DebugUI::update(m_debugContext);
     }
     m_cursor.update(m_window.getSize());
     screen.update(deltaTime, m_cursor.getNdc(), m_window.getAspectRatio());
@@ -65,7 +65,7 @@ void App::render() {
     m_screens[m_current]->render(m_sceneRenderer);
     m_window.bind();
     if (debug::ToolsEnabled) {
-        DebugUI::render(m_screens, m_current, m_cursor, m_sceneRenderer, m_desktop);
+        DebugUI::render(m_debugContext);
     }
     m_cursor.draw(m_spriteRenderer, m_window.getSize());
 }

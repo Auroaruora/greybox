@@ -2,6 +2,7 @@
 
 #include "capture.h"
 #include "debug.h"
+#include "debugcontext.h"
 #include "debuglayout.h"
 #include "input/input.h"
 
@@ -20,6 +21,7 @@ namespace DebugUI {
 void initialize(GLFWwindow *window) {
     ImGui::CreateContext();
     ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
+    ImGui::GetIO().IniFilename = nullptr;
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 410");
 }
@@ -30,17 +32,17 @@ void shutdown() {
     ImGui::DestroyContext();
 }
 
-void update(Screen &screen) {
+void update(DebugContext &context) {
     ImGuiIO &io = ImGui::GetIO();
     Input::setBlocked(io.WantCaptureMouse, io.WantCaptureKeyboard);
 
     if (Input::getButtonDown(Action::DebugToggleOverlay)) {
         s_visible = !s_visible;
     }
-    Capture::update(screen);
+    Capture::update(*context.screens[context.current]);
 }
 
-void render(const std::vector<std::unique_ptr<Screen>> &screens, int &current, Cursor &cursor, SceneRenderer &sceneRenderer, const Desktop &desktop) {
+void render(DebugContext &context) {
     Capture::save();
 
     ImGui_ImplOpenGL3_NewFrame();
@@ -48,7 +50,7 @@ void render(const std::vector<std::unique_ptr<Screen>> &screens, int &current, C
     ImGui::NewFrame();
 
     if (s_visible) {
-        DebugLayout::draw(screens, current, cursor, sceneRenderer, desktop);
+        DebugLayout::draw(context);
     }
 
     ImGui::Render();
