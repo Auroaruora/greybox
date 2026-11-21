@@ -62,12 +62,22 @@ add_executable(${PROJECT_NAME}
     src/debug/capture.h
     src/debug/debug.cpp
     src/debug/debug.h
+    src/debug/debugcontext.h
     src/debug/debuglayout.cpp
     src/debug/debuglayout.h
     src/debug/debugui.cpp
     src/debug/debugui.h
     src/debug/screenshot.cpp
     src/debug/screenshot.h
+
+    src/debug/panels/camerapanel.cpp
+    src/debug/panels/camerapanel.h
+    src/debug/panels/infopanel.cpp
+    src/debug/panels/infopanel.h
+    src/debug/panels/lightingpanel.cpp
+    src/debug/panels/lightingpanel.h
+    src/debug/panels/screenspanel.cpp
+    src/debug/panels/screenspanel.h
 
     src/desktop/desktop.cpp
     src/desktop/desktop.h

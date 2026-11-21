@@ -75,14 +75,6 @@ void InteractionSystem::pick(Scene &scene, const Camera &camera, const Ray &ray)
     }
 }
 
-const std::vector<std::unique_ptr<Interactable>> &InteractionSystem::getItems() const {
-    return m_items;
-}
-
-const Interactable *InteractionSystem::getHovered() const {
-    return m_hovered >= 0 ? m_items[m_hovered].get() : nullptr;
-}
-
 const std::string &InteractionSystem::getIcon() const {
     return m_hovered >= 0 ? m_items[m_hovered]->getIcon() : DefaultIcon;
 }

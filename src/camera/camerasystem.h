@@ -23,7 +23,6 @@ class CameraSystem {
 public:
     void add(std::unique_ptr<CameraController> controller);
     void load(const Scene &scene);
-    void reset();
     void update(float deltaTime);
     void setController(const std::string &name, const ControllerEntry &entry = ControllerEntry());
     void setCamera(const CameraPose &pose);
@@ -35,6 +34,8 @@ public:
     bool isBlending() const;
 
 private:
+    void reset();
+
     Camera m_camera;
     CameraPose m_startPose;
     std::map<std::string, std::unique_ptr<CameraController>> m_controllers;

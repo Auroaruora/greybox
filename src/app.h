@@ -1,6 +1,7 @@
 #pragma once
 
 #include "window.h"
+#include "debug/debugcontext.h"
 #include "desktop/desktop.h"
 #include "gl/meshcache.h"
 #include "gl/texturecache.h"
@@ -32,4 +33,5 @@ private:
     Cursor m_cursor;
     std::vector<std::unique_ptr<Screen>> m_screens;
     int m_current = 0;
+    DebugContext m_debugContext{m_screens, m_current, m_cursor, m_sceneRenderer};
 };

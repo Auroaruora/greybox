@@ -56,18 +56,6 @@ void Cursor::update(const glm::ivec2 &windowSize) {
     }
 }
 
-const std::string &Cursor::getIcon() const {
-    return m_icon;
-}
-
-std::vector<std::string> Cursor::getIconNames() const {
-    std::vector<std::string> names;
-    for (const auto &[name, texture] : m_icons) {
-        names.push_back(name);
-    }
-    return names;
-}
-
 glm::vec2 Cursor::getPosition() const {
     return m_position;
 }

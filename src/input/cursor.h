@@ -6,7 +6,6 @@
 
 #include <map>
 #include <string>
-#include <vector>
 
 class SpriteRenderer;
 
@@ -18,8 +17,6 @@ public:
     void setIcon(const std::string &name);
     void update(const glm::ivec2 &windowSize);
 
-    const std::string &getIcon() const;
-    std::vector<std::string> getIconNames() const;
     glm::vec2 getPosition() const;
     glm::vec2 getNdc() const;
 
