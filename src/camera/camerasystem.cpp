@@ -2,6 +2,8 @@
 
 #include "screen/scene.h"
 
+#include <utility>
+
 void CameraSystem::add(std::unique_ptr<CameraController> controller) {
     CameraController *added = controller.get();
     if (m_controller == nullptr) {
@@ -31,6 +33,13 @@ void CameraSystem::reset() {
 }
 
 void CameraSystem::update(float deltaTime) {
+    if (m_pathPlayer.isPlaying()) {
+        m_pathPlayer.update(m_camera, deltaTime);
+        if (!m_pathPlayer.isPlaying()) {
+            m_controller->enter(m_camera);
+        }
+        return;
+    }
     if (m_controller != nullptr) {
         m_controller->update(m_camera, deltaTime);
     }
@@ -47,6 +56,13 @@ void CameraSystem::setController(const std::string &name, float transitionTime) 
     }
     m_controller = controller;
 
+    if (transitionTime > 0.0f) {
+        CameraPath path;
+        path.add(0.0f, m_camera.getPose());
+        path.add(transitionTime, m_controller->getEnterPose(m_camera));
+        m_pathPlayer.play(std::move(path));
+        return;
+    }
     m_controller->enter(m_camera);
 }
 
@@ -76,5 +92,5 @@ std::vector<std::string> CameraSystem::getControllerNames() const {
 }
 
 bool CameraSystem::isTransitioning() const {
-    return false;
+    return m_pathPlayer.isPlaying();
 }

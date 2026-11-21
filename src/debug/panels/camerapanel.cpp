@@ -10,7 +10,7 @@
 #include <vector>
 
 static const std::string DebugCamera = "debug";
-static const float DebugTransitionTime = 0.0f;
+static const float DebugTransitionTime = 1.0f;
 
 static std::string s_viewpointScene;
 static int s_selectedViewpoint = -1;

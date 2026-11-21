@@ -46,6 +46,8 @@ add_executable(${PROJECT_NAME}
 
     src/camera/camera.cpp
     src/camera/camera.h
+    src/camera/camerapath.cpp
+    src/camera/camerapath.h
     src/camera/camerapose.h
     src/camera/camerasystem.cpp
     src/camera/camerasystem.h
@@ -55,6 +57,8 @@ add_executable(${PROJECT_NAME}
     src/camera/debugcontroller.h
     src/camera/focuscontroller.cpp
     src/camera/focuscontroller.h
+    src/camera/pathplayer.cpp
+    src/camera/pathplayer.h
     src/camera/seatedcontroller.cpp
     src/camera/seatedcontroller.h
 
