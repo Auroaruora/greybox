@@ -2,6 +2,7 @@
 
 #include "camera/camera.h"
 #include "camera/cameracontroller.h"
+#include "camera/pathplayer.h"
 
 #include <map>
 #include <memory>
@@ -31,4 +32,5 @@ private:
     CameraPose m_startPose;
     std::map<std::string, std::unique_ptr<CameraController>> m_controllers;
     CameraController *m_controller = nullptr;
+    PathPlayer m_pathPlayer;
 };

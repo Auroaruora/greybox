@@ -6,7 +6,7 @@
 static const std::string Monitor = "monitor";
 static const std::string Focus = "focus";
 static const std::string Seated = "seated";
-static const float FocusTransitionTime = 0.0f;
+static const float FocusTransitionTime = 0.5f;
 
 void RoomStory::update(CameraSystem &cameraSystem, const std::vector<GameEvent> &events) {
     for (const GameEvent &event : events) {
