@@ -10,7 +10,7 @@
 #include <vector>
 
 static const std::string DebugCamera = "debug";
-static const ControllerEntry DebugEntry = {};
+static const float DebugTransitionTime = 0.0f;
 
 static std::string s_viewpointScene;
 static int s_selectedViewpoint = -1;
@@ -44,7 +44,7 @@ static void drawControllers(Screen &screen) {
     for (const std::string &name : names) {
         std::string label = name + "###controller_" + name;
         if (ImGui::Selectable(label.c_str(), name == screen.getCameraSystem().getControllerName()) && name != screen.getCameraSystem().getControllerName()) {
-            screen.getCameraSystem().setController(name, DebugEntry);
+            screen.getCameraSystem().setController(name, DebugTransitionTime);
         }
     }
 }

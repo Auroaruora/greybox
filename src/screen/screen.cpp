@@ -24,7 +24,7 @@ void Screen::update(float deltaTime, const glm::vec2 &cursorNdc, float aspectRat
 
     const Camera &camera = m_cameraSystem.getCamera();
     std::optional<Ray> pointer;
-    if (!m_cameraSystem.isBlending()) {
+    if (!m_cameraSystem.isTransitioning()) {
         pointer = camera.getRayThrough(cursorNdc);
     }
     m_interactionSystem.update(m_scene, camera, pointer, deltaTime);

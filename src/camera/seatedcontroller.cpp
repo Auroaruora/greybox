@@ -20,7 +20,7 @@ void SeatedController::reset(const Camera &camera) {
 }
 
 void SeatedController::enter(Camera &camera) {
-    camera.setPose(getEnterPose(camera));
+    CameraController::enter(camera);
     m_velocity = glm::vec2(0.0f);
 }
 

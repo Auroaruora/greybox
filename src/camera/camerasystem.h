@@ -10,28 +10,19 @@
 
 class Scene;
 
-enum class EnterMode {
-    Cut,
-};
-
-struct ControllerEntry {
-    EnterMode mode = EnterMode::Cut;
-    float duration = 0.0f;
-};
-
 class CameraSystem {
 public:
     void add(std::unique_ptr<CameraController> controller);
     void load(const Scene &scene);
     void update(float deltaTime);
-    void setController(const std::string &name, const ControllerEntry &entry = ControllerEntry());
+    void setController(const std::string &name, float transitionTime = 0.0f);
     void setCamera(const CameraPose &pose);
     void setAspectRatio(float aspectRatio);
 
     const Camera &getCamera() const;
     const std::string &getControllerName() const;
     std::vector<std::string> getControllerNames() const;
-    bool isBlending() const;
+    bool isTransitioning() const;
 
 private:
     void reset();

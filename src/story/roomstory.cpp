@@ -6,16 +6,16 @@
 static const std::string Monitor = "monitor";
 static const std::string Focus = "focus";
 static const std::string Seated = "seated";
-static const ControllerEntry FocusEntry = {};
+static const float FocusTransitionTime = 0.0f;
 
 void RoomStory::update(CameraSystem &cameraSystem, const std::vector<GameEvent> &events) {
     for (const GameEvent &event : events) {
         if (event.type == EventType::Click && event.source == Monitor) {
-            cameraSystem.setController(Focus, FocusEntry);
+            cameraSystem.setController(Focus, FocusTransitionTime);
         }
     }
 
     if (Input::getButtonDown(Action::Back) && cameraSystem.getControllerName() == Focus) {
-        cameraSystem.setController(Seated, FocusEntry);
+        cameraSystem.setController(Seated, FocusTransitionTime);
     }
 }
