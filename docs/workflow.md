@@ -22,13 +22,42 @@
 
    If there are conflicts, fix them in VS Code, then commit the merge.
 
-4. When the feature is ready, open a pull request and merge it with Squash and merge; the branch is deleted automatically. Pull requests need the repository admin's approval; the admin can merge their own.
+4. When the feature is ready, push your branch and open a pull request on GitHub:
 
-5. Some files are touched by both people, such as `scenerenderer`, `default.frag`, `debuglayout`, `app.cpp`, `CMakeLists.txt`, `scenedata` and the export script. For these:
+   ```bash
+   git push
+   ```
+
+   - On the repository page, click **Compare & pull request**, or go to **Pull requests → New pull request**.
+   - Check that it reads **base: main ← compare: your branch**.
+   - The title becomes the commit message on `main`, so write it like one. Add a sentence or two on what changed.
+   - The repository admin reviews it. To change something, keep committing and pushing on the same branch; the pull request updates by itself.
+   - Pull requests need the repository admin's approval; the admin can merge their own.
+   - Merge with **Squash and merge**. All the branch's commits become one commit on `main`, and the branch is deleted on GitHub.
+
+5. After the merge, clean up your computer. Switch to `main` and download the merged commit:
+
+   ```bash
+   git switch main && git pull
+   ```
+
+   Delete your local branch. It needs a capital `-D`, because after a squash git can't tell the branch was merged:
+
+   ```bash
+   git branch -D <branch-name>
+   ```
+
+   Forget branches that were deleted on GitHub:
+
+   ```bash
+   git fetch --prune
+   ```
+
+6. Some files are touched by both people, such as `scenerenderer`, `default.frag`, `debuglayout`, `app.cpp`, `CMakeLists.txt`, `scenedata` and the export script. For these:
    - Tell the other person before you change one.
    - Add new code; don't reorder, reformat or rename code someone else wrote.
    - If you need to change an interface (a function's parameters, a struct's fields), put only that change in its own small pull request and merge it first, so the other person can build on it right away.
 
-6. Only one person edits a `.blend` file at a time; say so before you start. `assets/scenes`, `meshes` and `textures` are not in git: run the Blender export after every pull (see `docs/setup.md`).
+7. Only one person edits a `.blend` file at a time; say so before you start. `assets/scenes`, `meshes` and `textures` are not in git: run the Blender export after every pull (see `docs/setup.md`).
 
-7. Before pushing, check that the Debug and Release builds both compile and run without errors.
+8. Before pushing, check that the Debug and Release builds both compile and run without errors.
