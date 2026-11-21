@@ -19,10 +19,6 @@ void FocusController::load(const std::vector<Viewpoint> &viewpoints) {
     LOG_INFO(getName() << ": no viewpoint named " << FocusViewpoint);
 }
 
-void FocusController::enter(Camera &camera) {
-    camera.setPose(getEnterPose(camera));
-}
-
 CameraPose FocusController::getEnterPose(const Camera &camera) const {
     return m_hasFocus ? m_focus : camera.getPose();
 }

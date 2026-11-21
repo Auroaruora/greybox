@@ -7,7 +7,6 @@ public:
     FocusController();
 
     void load(const std::vector<Viewpoint> &viewpoints) override;
-    void enter(Camera &camera) override;
     CameraPose getEnterPose(const Camera &camera) const override;
     void update(Camera &camera, float deltaTime) override;
 

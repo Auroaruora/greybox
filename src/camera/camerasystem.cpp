@@ -36,13 +36,13 @@ void CameraSystem::update(float deltaTime) {
     }
 }
 
-void CameraSystem::setController(const std::string &name, const ControllerEntry &entry) {
+void CameraSystem::setController(const std::string &name, float transitionTime) {
     auto found = m_controllers.find(name);
     if (found == m_controllers.end()) {
         return;
     }
     CameraController *controller = found->second.get();
-    if (isBlending() || controller == m_controller) {
+    if (isTransitioning() || controller == m_controller) {
         return;
     }
     m_controller = controller;
@@ -75,6 +75,6 @@ std::vector<std::string> CameraSystem::getControllerNames() const {
     return names;
 }
 
-bool CameraSystem::isBlending() const {
+bool CameraSystem::isTransitioning() const {
     return false;
 }

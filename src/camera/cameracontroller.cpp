@@ -15,6 +15,7 @@ void CameraController::reset(const Camera &camera) {
 }
 
 void CameraController::enter(Camera &camera) {
+    camera.setPose(getEnterPose(camera));
 }
 
 CameraPose CameraController::getEnterPose(const Camera &camera) const {
