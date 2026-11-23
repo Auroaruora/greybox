@@ -3,6 +3,7 @@
 #include "camera/camera.h"
 #include "gl/shaderprogram.h"
 #include "gl/texture2d.h"
+#include "render/postprocess/postprocessor.h"
 #include "utils/sceneparser.h"
 
 #include <array>
@@ -10,8 +11,11 @@
 class SceneRenderer {
 public:
     void initialize();
+    void setViewportSize(const glm::ivec2 &size);
     void render(const Camera &camera, const RenderData &data);
     void cleanup();
+
+    PostProcessor &getPostProcessor();
 
 private:
     static constexpr int MaxLights = 8;
@@ -63,4 +67,6 @@ private:
     Uniforms m_uniforms;
     Texture2D m_placeholderTexture;
     std::array<const Texture2D *, 2> m_boundTextures = {};
+    PostProcessor m_postProcessor;
+    glm::ivec2 m_viewportSize = glm::ivec2(0);
 };
