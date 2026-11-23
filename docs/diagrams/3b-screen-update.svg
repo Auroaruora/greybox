@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="970" viewBox="0 0 680 970" role="img"><title>Screen::update</title><desc>Screen::update calls CameraSystem::setAspectRatio, CameraSystem::update which either plays the path with PathPlayer::update and then CameraController::enter, or runs CameraController::update; Camera::getRayThrough unless transitioning; InteractionSystem::update which updates active interactables, picks with ray versus AABB and calls Interactable::interact on click; and RoomStory::update which may call CameraSystem::setController, which adds two poses to a CameraPath and calls PathPlayer::play.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#73726C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+.ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+.box > rect { fill: #F7F6F2; stroke: #B4B2A9; }
+.c-gray > rect, rect.c-gray { fill: #F1EFE8; stroke: #888780; }
+.c-gray > .th { fill: #444441; } .c-gray > .ts { fill: #5F5E5A; }
+.c-amber > rect, rect.c-amber { fill: #FAEEDA; stroke: #BA7517; }
+.c-amber > .th { fill: #633806; } .c-amber > .ts { fill: #854F0B; }
+.c-teal > rect, rect.c-teal { fill: #E1F5EE; stroke: #0F6E56; }
+.c-teal > .th { fill: #085041; } .c-teal > .ts { fill: #0F6E56; }
+.c-purple > rect, rect.c-purple { fill: #EEEDFE; stroke: #534AB7; }
+.c-purple > .th { fill: #3C3489; } .c-purple > .ts { fill: #534AB7; }
+.arr { stroke: #73726C; stroke-width: 1.2; fill: none; }
+</style>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<g class="c-purple"><rect x="40" y="30" width="420" height="44" rx="8" stroke-width="0.5"/><text class="th" x="250" y="52" text-anchor="middle" dominant-baseline="central">Screen::update(deltaTime, cursorNdc, aspectRatio)</text></g>
+<line x1="175" y1="74" x2="175" y2="98" class="arr" marker-end="url(#arrow)"/>
+<g class="box"><rect x="40" y="100" width="270" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="175" y="122" text-anchor="middle" dominant-baseline="central">CameraSystem::setAspectRatio()</text>
+<g class="box"><rect x="40" y="164" width="270" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="175" y="186" text-anchor="middle" dominant-baseline="central">CameraSystem::update(deltaTime)</text>
+<g class="box"><rect x="40" y="400" width="270" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="175" y="418" text-anchor="middle" dominant-baseline="central">Camera::getRayThrough(cursorNdc)</text><text class="ts" x="175" y="438" text-anchor="middle" dominant-baseline="central">Skipped while transitioning</text>
+<g class="box"><rect x="40" y="476" width="270" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="175" y="498" text-anchor="middle" dominant-baseline="central">InteractionSystem::update()</text>
+<g class="box"><rect x="40" y="716" width="270" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="175" y="738" text-anchor="middle" dominant-baseline="central">RoomStory::update(events)</text>
+<line x1="175" y1="144" x2="175" y2="162" class="arr" marker-end="url(#arrow)"/>
+<line x1="175" y1="208" x2="175" y2="398" class="arr" marker-end="url(#arrow)"/>
+<line x1="175" y1="456" x2="175" y2="474" class="arr" marker-end="url(#arrow)"/>
+<line x1="175" y1="520" x2="175" y2="714" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="340" y="158" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="490" y="176" text-anchor="middle" dominant-baseline="central">PathPlayer::update()</text><text class="ts" x="490" y="196" text-anchor="middle" dominant-baseline="central">If playing: CameraPath::getPose(t)</text></g>
+<g class="c-teal"><rect x="340" y="234" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="490" y="252" text-anchor="middle" dominant-baseline="central">CameraController::enter()</text><text class="ts" x="490" y="272" text-anchor="middle" dominant-baseline="central">When the path ends</text></g>
+<g class="box"><rect x="340" y="310" width="300" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="490" y="328" text-anchor="middle" dominant-baseline="central">CameraController::update()</text><text class="ts" x="490" y="348" text-anchor="middle" dominant-baseline="central">Otherwise: Seated or Focus</text>
+<line x1="310" y1="186" x2="338" y2="186" class="arr" marker-end="url(#arrow)"/>
+<path d="M325 186 L325 338 L338 338" fill="none" class="arr" marker-end="url(#arrow)"/>
+<line x1="490" y1="214" x2="490" y2="232" class="arr" marker-end="url(#arrow)"/>
+<g class="box"><rect x="340" y="470" width="300" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="490" y="488" text-anchor="middle" dominant-baseline="central">Interactable::update()</text><text class="ts" x="490" y="508" text-anchor="middle" dominant-baseline="central">Active items, e.g. Mug</text>
+<g class="box"><rect x="340" y="546" width="300" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="490" y="564" text-anchor="middle" dominant-baseline="central">InteractionSystem::pick()</text><text class="ts" x="490" y="584" text-anchor="middle" dominant-baseline="central">Interactable::intersect, ray vs AABB</text>
+<g class="box"><rect x="340" y="622" width="300" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="490" y="640" text-anchor="middle" dominant-baseline="central">Interactable::interact()</text><text class="ts" x="490" y="660" text-anchor="middle" dominant-baseline="central">On click; adds a GameEvent</text>
+<line x1="310" y1="498" x2="338" y2="498" class="arr" marker-end="url(#arrow)"/>
+<line x1="490" y1="526" x2="490" y2="544" class="arr" marker-end="url(#arrow)"/>
+<line x1="490" y1="602" x2="490" y2="620" class="arr" marker-end="url(#arrow)"/>
+<g class="c-teal"><rect x="340" y="710" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="490" y="728" text-anchor="middle" dominant-baseline="central">CameraSystem::setController()</text><text class="ts" x="490" y="748" text-anchor="middle" dominant-baseline="central">Monitor click: focus; Back: seated</text></g>
+<g class="c-teal"><rect x="340" y="786" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="490" y="804" text-anchor="middle" dominant-baseline="central">CameraPath::add() twice</text><text class="ts" x="490" y="824" text-anchor="middle" dominant-baseline="central">Current pose, then enter pose</text></g>
+<g class="c-teal"><rect x="340" y="862" width="300" height="56" rx="8" stroke-width="0.5"/><text class="th" x="490" y="880" text-anchor="middle" dominant-baseline="central">PathPlayer::play(path)</text><text class="ts" x="490" y="900" text-anchor="middle" dominant-baseline="central">Plays from the next frame</text></g>
+<line x1="310" y1="738" x2="338" y2="738" class="arr" marker-end="url(#arrow)"/>
+<line x1="490" y1="766" x2="490" y2="784" class="arr" marker-end="url(#arrow)"/>
+<line x1="490" y1="842" x2="490" y2="860" class="arr" marker-end="url(#arrow)"/>
+<rect class="c-teal" x="290" y="942" width="14" height="14" rx="3" stroke-width="0.5"/><text class="ts" x="310" y="953">Camera path</text>
+</svg>
