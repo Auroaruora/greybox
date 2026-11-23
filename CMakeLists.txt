@@ -80,6 +80,8 @@ add_executable(${PROJECT_NAME}
     src/debug/panels/infopanel.h
     src/debug/panels/lightingpanel.cpp
     src/debug/panels/lightingpanel.h
+    src/debug/panels/postprocessingpanel.cpp
+    src/debug/panels/postprocessingpanel.h
     src/debug/panels/screenspanel.cpp
     src/debug/panels/screenspanel.h
 
@@ -100,6 +102,8 @@ add_executable(${PROJECT_NAME}
     src/gl/shaderprogram.h
     src/gl/texture2d.cpp
     src/gl/texture2d.h
+    src/gl/texture3d.cpp
+    src/gl/texture3d.h
     src/gl/texturecache.cpp
     src/gl/texturecache.h
 
@@ -125,6 +129,12 @@ add_executable(${PROJECT_NAME}
     src/interaction/mug.h
     src/interaction/ray.h
 
+    src/render/postprocess/gradepass.cpp
+    src/render/postprocess/gradepass.h
+    src/render/postprocess/pass.cpp
+    src/render/postprocess/pass.h
+    src/render/postprocess/postprocessor.cpp
+    src/render/postprocess/postprocessor.h
     src/render/scenerenderer.cpp
     src/render/scenerenderer.h
     src/render/spriterenderer.cpp
@@ -145,6 +155,8 @@ add_executable(${PROJECT_NAME}
     src/utils/imageloader.h
     src/utils/lightingreader.cpp
     src/utils/lightingreader.h
+    src/utils/lutloader.cpp
+    src/utils/lutloader.h
     src/utils/objloader.cpp
     src/utils/objloader.h
     src/utils/paths.cpp

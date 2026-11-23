@@ -64,8 +64,8 @@ void App::update(float deltaTime) {
 void App::render() {
     m_desktop.updateScreenTexture(m_spriteRenderer);
     m_window.bind();
+    m_sceneRenderer.setViewportSize(m_window.getFramebufferSize());
     m_screens[m_current]->render(m_sceneRenderer);
-    m_window.bind();
     if (debug::ToolsEnabled) {
         DebugUI::render(m_debugContext);
     }

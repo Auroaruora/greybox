@@ -2,18 +2,44 @@
 
 #include "gl/mesh.h"
 #include "gl/texture2d.h"
+#include "render/postprocess/gradepass.h"
 #include "utils/shaderloader.h"
 
 #include <string>
+#include <vector>
 
 static const int TextureMapUnit = 0;
 static const int EmissiveMapUnit = 1;
 static const unsigned char PlaceholderPixel[4] = {255, 255, 255, 255};
+static const std::vector<std::string> LutNames = {
+    "2-Strip-Process",
+    "Amber & Aqua",
+    "Aqua",
+    "BW1",
+    "Cinematic-1",
+    "Cinematic-Teal",
+    "Golden Hour",
+    "LC1",
+    "Landscape1",
+    "Moody1",
+    "NW-1",
+    "Portrait1",
+};
 
 void SceneRenderer::initialize() {
     ShaderLoader::load(m_shader, "shaders/default.vert", "shaders/default.frag");
     loadUniforms();
     m_placeholderTexture.create(1, 1, PlaceholderPixel);
+
+    m_postProcessor.initialize();
+    for (const std::string &lut : LutNames) {
+        m_postProcessor.addPass(std::make_unique<GradePass>(lut, "luts/" + lut + ".cube"));
+    }
+}
+
+void SceneRenderer::setViewportSize(const glm::ivec2 &size) {
+    m_viewportSize = size;
+    m_postProcessor.setSize(size.x, size.y);
 }
 
 void SceneRenderer::loadUniforms() {
@@ -89,7 +115,9 @@ void SceneRenderer::setLights(const std::vector<SceneLightData> &lights) {
 }
 
 void SceneRenderer::render(const Camera &camera, const RenderData &data) {
+    m_postProcessor.begin();
     drawScene(camera, data);
+    m_postProcessor.end(m_viewportSize);
 }
 
 void SceneRenderer::drawScene(const Camera &camera, const RenderData &data) {
@@ -166,6 +194,11 @@ void SceneRenderer::bindTexture(const Texture2D &texture, int unit) {
 }
 
 void SceneRenderer::cleanup() {
+    m_postProcessor.cleanup();
     m_placeholderTexture.cleanup();
     m_shader.cleanup();
+}
+
+PostProcessor &SceneRenderer::getPostProcessor() {
+    return m_postProcessor;
 }

@@ -5,6 +5,7 @@
 #include "debug/panels/camerapanel.h"
 #include "debug/panels/infopanel.h"
 #include "debug/panels/lightingpanel.h"
+#include "debug/panels/postprocessingpanel.h"
 #include "debug/panels/screenspanel.h"
 #include "screen/screen.h"
 
@@ -78,6 +79,7 @@ void draw(DebugContext &context) {
     ScreensPanel::draw(context);
     CameraPanel::draw(context);
     LightingPanel::draw(context);
+    PostProcessingPanel::draw(context);
     ImGui::End();
 }
 
