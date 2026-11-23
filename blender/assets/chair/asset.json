@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "furniture",
+  "parts": ["seat", "back", "base"],
+  "shapes": ["a", "b", "c", "d"],
+  "colors": {
+    "grey": {"back": "grey", "base": "grey6", "seat": "grey"},
+    "warmGreyLight9": {"back": "warmGreyLight9", "base": "grey2", "seat": "warmGreyLight9"},
+    "orange": {"back": "orange", "base": "coolGreyDark", "seat": "orange"},
+    "brown": {"base": "brown", "seat": "amber2"}
+  }
+}

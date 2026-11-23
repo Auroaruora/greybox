@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["cap", "tube"],
+  "shapes": ["a"],
+  "colors": {"warmGreyLight8": {"cap": "coolGreyDark", "tube": "warmGreyLight8"}}
+}

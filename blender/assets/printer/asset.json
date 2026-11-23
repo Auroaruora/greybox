@@ -1,0 +1,14 @@
+{
+  "about": "",
+  "area": "print",
+  "parts": ["frame", "bed", "gantry", "screen", "spool", "filament"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "grey6": {"bed": "greyLight14", "frame": "grey6", "gantry": "grey6"},
+    "greyDark": {"bed": "yellowLight5", "frame": "greyDark", "gantry": "grey3"},
+    "coolGreyDark": {"bed": "yellowLight4", "frame": "coolGreyDark", "gantry": "coolGrey2"},
+    "warmGreyDark": {"bed": "olive2", "frame": "warmGreyDark", "gantry": "olive3"},
+    "cSurface1": {"shapes": ["c"], "frame": "greyDark", "screen": "screen", "bed": "yellowLight5", "gantry": "grey3", "spool": "greyLight14", "filament": "cSurface1Filament"}
+  },
+  "materials": {"cSurface1Filament": {"color": "textures/cSurface1Filament.png"}}
+}

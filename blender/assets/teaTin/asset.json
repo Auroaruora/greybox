@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["body"],
+  "shapes": ["a"],
+  "colors": {"olive4": {"body": "olive4"}}
+}

@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "shell",
+  "parts": ["slat00", "slat01", "slat02", "slat03", "slat04", "slat05", "slat06", "slat07", "slat08", "slat09", "slat10", "slat11", "slat12", "slat13", "slat14", "slat15", "slat16", "slat17", "slat18", "slat19", "slat20", "slat21", "slat22", "slat23"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "greyLight5": {"*": "greyLight5"},
+    "greyLight7": {"*": "greyLight7"},
+    "warmGreyLight": {"*": "warmGreyLight"},
+    "warmGreyLight4": {"*": "warmGreyLight4"}
+  }
+}

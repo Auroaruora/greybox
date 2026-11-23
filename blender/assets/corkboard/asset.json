@@ -1,0 +1,13 @@
+{
+  "about": "",
+  "area": "wall",
+  "parts": ["board", "frame"],
+  "shapes": ["a", "b", "c", "d"],
+  "colors": {
+    "grey": {"board": "grey"},
+    "cork": {"shapes": ["b"], "board": "cork", "frame": "yellowLight3"},
+    "cork2": {"shapes": ["c"], "board": "cork2", "frame": "amber3"},
+    "cork3": {"shapes": ["d"], "board": "cork3", "frame": "brownDark2"}
+  },
+  "materials": {"cork": {"color": "textures/cork_color.png"}, "cork2": {"color": "textures/cork2_color.png"}, "cork3": {"color": "textures/cork3_color.png"}}
+}

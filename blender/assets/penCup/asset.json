@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["body"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "greyLight14": {"body": "greyLight14"},
+    "greyLight6": {"body": "greyLight6"},
+    "yellowLight": {"body": "yellowLight"},
+    "warmGreyLight5": {"body": "warmGreyLight5"}
+  }
+}

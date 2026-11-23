@@ -54,11 +54,10 @@ cmake --build build-release
 
 ## Export from Blender
 
-Needs Blender 4.5. Writes every scene in `blender/scenes/` into `assets/`.
+Needs Blender 4.5. Builds the room once for every look in `blender/presets/` and writes it into `assets/` (`scenes/room/room_<look>.json`, `meshes/`, `textures/`).
 
 ```bash
-cd blender
-/Applications/Blender.app/Contents/MacOS/Blender -b --python scripts/export_layout.py
+/Applications/Blender.app/Contents/MacOS/Blender -b --python blender/scripts/export_room.py
 ```
 
 ## Libraries

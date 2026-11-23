@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["jar", "spoons"],
+  "shapes": ["a"],
+  "colors": {"coolGreyDark": {"jar": "coolGreyDark", "spoons": "olive5"}}
+}

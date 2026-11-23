@@ -1,0 +1,31 @@
+{
+  "about": "",
+  "area": "wall",
+  "parts": ["body"],
+  "shapes": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"],
+  "colors": {
+    "greyLight5": {"body": "greyLight5"},
+    "roomSketch": {"shapes": ["h"], "body": "roomSketch"},
+    "faceSketch": {"shapes": ["o"], "body": "faceSketch"},
+    "pipeline": {"shapes": ["p"], "body": "pipeline"},
+    "checklist": {"shapes": ["j"], "body": "checklist"},
+    "thumbsSketch": {"shapes": ["i"], "body": "thumbsSketch"},
+    "teapotSketch": {"shapes": ["q"], "body": "teapotSketch"},
+    "clipInk": {"shapes": ["k"], "body": "clipInk"},
+    "lampSketch": {"shapes": ["n"], "body": "lampSketch"},
+    "clipToon": {"shapes": ["l"], "body": "clipToon"},
+    "clipCottage": {"shapes": ["m"], "body": "clipCottage"}
+  },
+  "materials": {
+    "checklist": {"color": "textures/checklist_color.png"},
+    "clipCottage": {"color": "textures/clipCottage_color.png"},
+    "clipInk": {"color": "textures/clipInk_color.png"},
+    "clipToon": {"color": "textures/clipToon_color.png"},
+    "faceSketch": {"color": "textures/faceSketch_color.png"},
+    "lampSketch": {"color": "textures/lampSketch_color.png"},
+    "pipeline": {"color": "textures/pipeline_color.png"},
+    "roomSketch": {"color": "textures/roomSketch_color.png"},
+    "teapotSketch": {"color": "textures/teapotSketch_color.png"},
+    "thumbsSketch": {"color": "textures/thumbsSketch_color.png"}
+  }
+}

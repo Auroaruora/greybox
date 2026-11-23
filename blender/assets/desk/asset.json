@@ -1,0 +1,13 @@
+{
+  "about": "",
+  "area": "furniture",
+  "parts": ["top", "legs", "knobs"],
+  "shapes": ["a", "b", "c", "d"],
+  "colors": {
+    "grey": {"*": "grey"},
+    "birch": {"shapes": ["b"], "legs": "yellowLight3", "top": "birch"},
+    "birch2": {"shapes": ["c"], "knobs": "yellowLight4", "legs": "amber3", "top": "birch2"},
+    "brown": {"shapes": ["d"], "knobs": "olive3", "legs": "brown", "top": "birch3"}
+  },
+  "materials": {"birch": {"color": "textures/birch_color.png"}, "birch2": {"color": "textures/birch2_color.png"}, "birch3": {"color": "textures/birch3_color.png"}}
+}

@@ -18,7 +18,7 @@ RoomScreen::RoomScreen(const std::string &name, const std::string &sceneFile, co
         m_cameraSystem.add(std::make_unique<DebugController>());
     }
 
-    m_interactionSystem.add(std::make_unique<LightSwitch>("desk_lamp", "Light_Lamp"));
+    m_interactionSystem.add(std::make_unique<LightSwitch>("deskLamp", "Light_Lamp"));
     m_interactionSystem.add(std::make_unique<Mug>("mug"));
     m_interactionSystem.add(std::make_unique<Monitor>("monitor", desktop.getScreenTexture()));
 

@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "shell",
+  "parts": ["base", "diffuser"],
+  "shapes": ["a"],
+  "colors": {"warmGrey": {"base": "warmGrey", "diffuser": "greyLight4"}}
+}

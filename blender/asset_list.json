@@ -1,0 +1,1032 @@
+{
+  "serves": {"play": "Used by gameplay", "rae": "Says something about Rae", "life": "Makes the room feel lived in", "room": "The room does not stand without it", "none": "Nothing yet"},
+  "levels": {
+    "L1": {"name": "hero", "modelling": "Clicked or focused on. Close-up detail, clean silhouette, bevel the edges seen from the seat, smooth curved parts."},
+    "L2": {"name": "key", "modelling": "Seen close or tells a strong story. Clear silhouette, bevel only edges that catch light."},
+    "L3": {"name": "support", "modelling": "Seen from a few metres. Simple readable shape, no bevels, flat shading except round parts."},
+    "L4": {"name": "background", "modelling": "Background and fillers. Boxes and cylinders, flat shading, faces that are never seen left out."}
+  },
+  "assets": {
+    "artBook": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "She loves every style: toon, ink wash and more.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""},
+        "i": {"review": ""},
+        "j": {"review": ""}
+      },
+      "requests": []
+    },
+    "beanBag": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "living",
+      "why": "The living-area station.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "bin": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "furniture",
+      "why": "She throws away anything not good enough yet.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "blindSlat": {
+      "status": "room",
+      "level": "L2",
+      "serves": "play",
+      "area": "shell",
+      "why": "Slat angle changes with the lighting state.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "boardPaper": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "wall",
+      "why": "References, clumsy sketches and one tidy pipeline diagram.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""},
+        "i": {"review": ""},
+        "j": {"review": ""},
+        "k": {"review": ""},
+        "l": {"review": ""},
+        "m": {"review": ""},
+        "n": {"review": ""},
+        "o": {"review": ""},
+        "p": {"review": ""},
+        "q": {"review": ""},
+        "r": {"review": ""},
+        "s": {"review": ""},
+        "t": {"review": ""}
+      },
+      "requests": []
+    },
+    "book": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "shelf",
+      "why": "Fills the shelf.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "bookshelf": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "furniture",
+      "why": "Holds the books, art books and prints.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "brushCup": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "print",
+      "why": "Clean, unused brushes: same story as the paints.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "bunnyPrint": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Stanford bunny: graphics in-joke.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "cabinet": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "furniture",
+      "why": "Holds the 3D printer.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "calendar": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "wall",
+      "why": "Days crossed off toward graduation and the job deadline.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "candle": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "shelf",
+      "why": "A candle she lights when she wants the room to feel calm.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "capsule": {
+      "status": "room",
+      "level": "L4",
+      "serves": "rae",
+      "area": "kitchen",
+      "why": "Goes with the capsule box.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "capsuleBox": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "kitchen",
+      "why": "Capsules sorted by colour: tidy.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "capsuleMachine": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "kitchen",
+      "why": "Coffee to keep going through the night.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "cardboardBox": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "shelf",
+      "why": "A box she hasn't unpacked since moving in.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "ceilingLight": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "room",
+      "area": "shell",
+      "why": "Main light, off tonight.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "chair": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "furniture",
+      "why": "Her seat; the main camera sits here.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "chickenPrint": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Another test print.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "coaster": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "desk",
+      "why": "A coaster under the mug: she cares for the desk.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "coatHooks": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "entry",
+      "why": "Coat and bag by the door.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "console": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "living",
+      "why": "She loves games.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "controller": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "living",
+      "why": "Two controllers.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "corkboard": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "wall",
+      "why": "She communicates through reference images.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "counter": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "kitchen",
+      "why": "The kitchen.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "coverSheet": {
+      "status": "idea",
+      "level": "L2",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "A printed cover letter: she is applying for jobs.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "cuttingBoard": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "The kitchen gets used, a little.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "desk": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "furniture",
+      "why": "The work desk every gameplay object rests on.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "deskLamp": {
+      "status": "room",
+      "level": "L1",
+      "serves": "play",
+      "area": "desk",
+      "why": "Click to switch on and off; the warm light of the work corner.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "deskMat": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "A tidy work surface: she keeps the desk in order.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "door": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "shell",
+      "why": "Bedroom and entry doors.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "doormat": {"status": "idea", "level": "L4", "serves": "life", "area": "entry", "why": "The way in.", "variants": {"a": {"review": ""}}, "requests": []},
+    "earbudsCase": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "desk",
+      "why": "Earbuds for walks she hasn't taken lately.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "eraser": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Worn eraser: she redoes drawings again and again.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "faucet": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "kitchen",
+      "why": "Goes with the sink.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "filamentSpool": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "print",
+      "why": "Goes with the printer.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}, "e": {"review": ""}},
+      "requests": []
+    },
+    "floorCushion": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "living",
+      "why": "Extra seating.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "fridge": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "kitchen",
+      "why": "The kitchen.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "fridgeNote": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "kitchen",
+      "why": "Notes and lists on the fridge.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "fruitBowl": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "Untouched fruit: she forgets to eat.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "gameCase": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "living",
+      "why": "Her game collection: why she loves graphics.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""}
+      },
+      "requests": []
+    },
+    "hairClip": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Took her hair up to focus; a quiet sign of a person in the room.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "handCream": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "desk",
+      "why": "Dry hands from long nights at the keyboard.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "headset": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Late-night calls or music while working alone.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "headsetHook": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Hook for the headset.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "housePrint": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Another test print.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "ideaNotebook": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Her ideas jump around, so she writes them all down.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "keyboard": {
+      "status": "room",
+      "level": "L1",
+      "serves": "play",
+      "area": "desk",
+      "why": "Where she types prompts to the AI in the focus view.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "lightStrip": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "kitchen",
+      "why": "Kitchen light in the lighting states.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "lightSwitch": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "room",
+      "area": "shell",
+      "why": "Wall detail.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "microwave": {
+      "status": "room",
+      "level": "L2",
+      "serves": "play",
+      "area": "kitchen",
+      "why": "The only clock in the room: time passing through the night.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "monitor": {
+      "status": "room",
+      "level": "L1",
+      "serves": "play",
+      "area": "desk",
+      "why": "The computer she works on; clicking it enters the desktop that transforms the room.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}, "e": {"review": "", "from": "r001"}},
+      "requests": [
+        {
+          "id": "r001",
+          "status": "done",
+          "created": "2026-11-22",
+          "images": [{"file": "refs/r001-1.png", "shape": true, "surface": false}],
+          "kind": "new",
+          "text": "",
+          "edited": "2026-11-22",
+          "variant": "e",
+          "colourFrom": "d",
+          "result": {"variant": "e"},
+          "finished": "2026-11-22",
+          "note": "Thin-bezel 24in panel (0.54 m wide) with rear housing, neck and V-shaped base. Colours from d. Brand text left out; badge is a plain plate on the chin. No surface (image is shape-only)."
+        }
+      ]
+    },
+    "monitorNote": {
+      "status": "idea",
+      "level": "L2",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Sticky notes on the monitor bezel: she lives by lists.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "mouse": {
+      "status": "room",
+      "level": "L1",
+      "serves": "play",
+      "area": "desk",
+      "why": "Her hand on the work; the click that starts every change.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "mug": {
+      "status": "room",
+      "level": "L1",
+      "serves": "play",
+      "area": "desk",
+      "why": "Click to drink; the coffee level drops as the night goes on.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""}
+      },
+      "requests": []
+    },
+    "openBook": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "living",
+      "why": "A book left open, face down, mid-chapter.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "paintBox": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "print",
+      "why": "Paints bought and never opened: weak at drawing.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "paperBall": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "furniture",
+      "why": "Crumpled attempts: she is too hard on herself.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""},
+        "i": {"review": ""},
+        "j": {"review": ""}
+      },
+      "requests": []
+    },
+    "paperRoll": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Rolled-up posters she can't choose between.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "paperTowel": {"status": "idea", "level": "L4", "serves": "life", "area": "kitchen", "why": "Kitchen basics.", "variants": {"a": {"review": ""}}, "requests": []},
+    "pcTower": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "room",
+      "area": "desk",
+      "why": "The computer the monitor needs.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "pen": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Goes with the notebook and the lists.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""},
+        "i": {"review": ""},
+        "j": {"review": ""},
+        "k": {"review": ""},
+        "l": {"review": ""},
+        "m": {"review": ""},
+        "n": {"review": ""},
+        "o": {"review": ""}
+      },
+      "requests": []
+    },
+    "penCup": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Tidy: pens are put away.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "pencil": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "She tries to sketch but is weak at drawing.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "phone": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Paused match-3 game: she gets distracted between attempts.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "photoFrame": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Same role as wallPhoto.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "posterFrame": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "living",
+      "why": "Frames waiting for a poster: she can't choose.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "pothos": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "room",
+      "area": "shelf",
+      "why": "One plant for a cozy, lived-in room.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "powerStrip": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "desk",
+      "why": "Every device plugged in; the desk runs on power.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "printTools": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "print",
+      "why": "Tools beside the printer.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "printer": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "print",
+      "why": "Tech artist at home: she makes things.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": "", "from": "r001", "surfaces": {"cSurface1": {"name": "Wound filament", "review": "", "from": "r001"}}}
+      },
+      "requests": [
+        {
+          "id": "r001",
+          "status": "done",
+          "created": "2026-11-22",
+          "images": [{"file": "refs/r001-1.png", "shape": true, "surface": true}],
+          "kind": "new",
+          "text": "",
+          "edited": "2026-11-22",
+          "variant": "c",
+          "colourFrom": "b",
+          "newParts": ["screen", "spool", "filament"],
+          "surface": "cSurface1",
+          "textures": [{"part": "filament", "slot": 0, "material": "cSurface1Filament"}],
+          "result": {"variant": "c", "surface": "cSurface1"},
+          "finished": "2026-11-22",
+          "note": "New parts: screen (screen glow), spool (greyLight14, from filamentSpool's first colour set), filament (coolGrey, first filamentSpool set that names filament). Texture: cSurface1Filament, winding lines tinted over coolGrey. Front door glass and the spool lid are left out (open); no brand marks; feeders in the box front simplified to a recess."
+        }
+      ]
+    },
+    "radiator": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "shell",
+      "why": "Heating under the window: a cold night outside.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "remote": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "living",
+      "why": "TV remote, forgotten on the floor cushion.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "roomCeiling": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "shell",
+      "why": "The room.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "roomFloor": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "shell",
+      "why": "The room.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "roomWalls": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "shell",
+      "why": "The room.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "rug": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "living",
+      "why": "Defines the living area.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "shoes": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "entry",
+      "why": "Only one pair by the door: she lives alone.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "skyCard": {
+      "status": "room",
+      "level": "L2",
+      "serves": "room",
+      "area": "shell",
+      "why": "The sky outside the windows.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "slippers": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "desk",
+      "why": "Kicked off under the desk.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "smokeDetector": {"status": "idea", "level": "L4", "serves": "life", "area": "shell", "why": "A real flat has one.", "variants": {"a": {"review": ""}}, "requests": []},
+    "snakePlant": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "room",
+      "area": "living",
+      "why": "Same role as pothos.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "soap": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "Kitchen basics by the sink.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "sponge": {"status": "idea", "level": "L4", "serves": "life", "area": "kitchen", "why": "She does wash up.", "variants": {"a": {"review": ""}}, "requests": []},
+    "stickyNote": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "wall",
+      "why": "A neat row of tasks: list-driven.",
+      "variants": {
+        "a": {"review": ""},
+        "b": {"review": ""},
+        "c": {"review": ""},
+        "d": {"review": ""},
+        "e": {"review": ""},
+        "f": {"review": ""},
+        "g": {"review": ""},
+        "h": {"review": ""},
+        "i": {"review": ""},
+        "j": {"review": ""},
+        "k": {"review": ""}
+      },
+      "requests": []
+    },
+    "storageBin": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Labelled storage: tidy.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "switch": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "desk",
+      "why": "She loves graphics because of games.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
+      "requests": []
+    },
+    "teaTin": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "Tea for the nights she has had enough coffee.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "teaTowel": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "A towel over the oven handle.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "teapotPrint": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Utah teapot: graphics in-joke, printed in three sizes.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "teapotPrintHalf": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "print",
+      "why": "A failed print she kept: not good enough yet.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "toteBag": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "entry",
+      "why": "Her bag, dropped by the door.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "tv": {
+      "status": "room",
+      "level": "L2",
+      "serves": "rae",
+      "area": "living",
+      "why": "Off tonight, standby light on: she is working, not playing.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "tvStand": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "living",
+      "why": "Holds the TV, console and game cases.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "umbrella": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "entry",
+      "why": "It rained on the way home.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "upperCabinet": {
+      "status": "room",
+      "level": "L4",
+      "serves": "room",
+      "area": "kitchen",
+      "why": "Holds the light strip.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "utensilJar": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "life",
+      "area": "kitchen",
+      "why": "Kitchen tools in a jar.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "vegetablePrint": {
+      "status": "room",
+      "level": "L3",
+      "serves": "rae",
+      "area": "shelf",
+      "why": "Another test print.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "wallPhoto": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "wall",
+      "why": "A life outside the work.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "wallSocket": {
+      "status": "idea",
+      "level": "L4",
+      "serves": "room",
+      "area": "shell",
+      "why": "Wall detail.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}, "d": {"review": ""}},
+      "requests": []
+    },
+    "washiTape": {
+      "status": "idea",
+      "level": "L3",
+      "serves": "rae",
+      "area": "desk",
+      "why": "Used to tape references to the board.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "windowFrame": {
+      "status": "room",
+      "level": "L3",
+      "serves": "room",
+      "area": "shell",
+      "why": "Dawn light comes in here.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "windowFrameNarrow": {
+      "status": "room",
+      "level": "L3",
+      "serves": "room",
+      "area": "shell",
+      "why": "Second window.",
+      "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    }
+  }
+}

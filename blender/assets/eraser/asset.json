@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["block", "sleeve"],
+  "shapes": ["a"],
+  "colors": {"warmGrey": {"block": "warmGrey", "sleeve": "grey6"}}
+}

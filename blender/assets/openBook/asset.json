@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "living",
+  "parts": ["cover", "pages"],
+  "shapes": ["a"],
+  "colors": {"warmGrey": {"cover": "coolGrey3", "pages": "warmGrey"}}
+}
