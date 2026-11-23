@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["body", "eraser"],
+  "shapes": ["a"],
+  "colors": {"olive4": {"body": "olive4", "eraser": "warmGreyDark"}}
+}

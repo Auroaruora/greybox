@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["body", "magnet"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "menu": {"shapes": ["a"], "body": "menu", "magnet": "coolGrey3"},
+    "list": {"shapes": ["b"], "body": "list", "magnet": "brown"},
+    "photoSea": {"shapes": ["c"], "body": "photoSea", "magnet": "olive3"}
+  },
+  "materials": {"list": {"color": "textures/list_color.png"}, "menu": {"color": "textures/menu_color.png"}, "photoSea": {"color": "textures/photoSea_color.png"}}
+}

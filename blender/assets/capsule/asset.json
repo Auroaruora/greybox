@@ -1,0 +1,24 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["body"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey6": {"body": "grey6"},
+    "greyLight14": {"body": "greyLight14"},
+    "greyLight5": {"body": "greyLight5"},
+    "grey": {"body": "grey"},
+    "greyDark": {"body": "greyDark"},
+    "yellowLight5": {"body": "yellowLight5"},
+    "coolGrey": {"body": "coolGrey"},
+    "warmGreyLight9": {"body": "warmGreyLight9"},
+    "coolGreyDark": {"body": "coolGreyDark"},
+    "yellowLight4": {"body": "yellowLight4"},
+    "blue": {"body": "blue"},
+    "orange": {"body": "orange"},
+    "warmGreyDark": {"body": "warmGreyDark"},
+    "olive2": {"body": "olive2"},
+    "green": {"body": "green"},
+    "amber2": {"body": "amber2"}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["body", "head", "tank", "tray"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey6": {"body": "grey6", "head": "grey6", "tank": "greyLight5", "tray": "greyLight14"},
+    "greyLight6": {"body": "greyLight6", "head": "grey3", "tank": "greyLight10", "tray": "greyDark"},
+    "yellowLight": {"body": "yellowLight", "head": "coolGrey2", "tank": "coolGreyLight", "tray": "coolGreyDark"},
+    "warmGreyLight5": {"body": "warmGreyLight5", "head": "olive3", "tank": "coolGreyLight2", "tray": "warmGreyDark"}
+  }
+}

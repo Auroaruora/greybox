@@ -1,0 +1,13 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["body", "screen"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "grey6": {"body": "grey6"},
+    "greyDark2": {"shapes": ["b"], "body": "greyDark2", "screen": "screen2"},
+    "coolGreyDark2": {"shapes": ["c"], "body": "coolGreyDark2", "screen": "screen2"},
+    "greyDark3": {"shapes": ["b"], "body": "greyDark3", "screen": "screen2"}
+  },
+  "materials": {"screen2": {"color": "textures/screen2_color.png"}}
+}

@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["body", "cables", "sockets", "switch"],
+  "shapes": ["a"],
+  "colors": {"grey4": {"body": "grey4", "cables": "grey4", "sockets": "grey4", "switch": "olive4"}}
+}

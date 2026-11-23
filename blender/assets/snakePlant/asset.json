@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "living",
+  "parts": ["leaves", "pot", "soil"],
+  "shapes": ["a"],
+  "colors": {"greenDark": {"leaves": "greenDark", "pot": "brown", "soil": "greyDark3"}}
+}

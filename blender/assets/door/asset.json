@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "shell",
+  "parts": ["leaf", "handle", "trim"],
+  "shapes": ["a", "b", "c", "d"],
+  "colors": {
+    "grey": {"handle": "grey6", "leaf": "grey"},
+    "greyLight7": {"handle": "grey3", "leaf": "greyLight7", "trim": "yellowLight3"},
+    "warmGreyLight": {"handle": "coolGrey2", "leaf": "warmGreyLight", "trim": "amber"},
+    "warmGreyLight4": {"handle": "olive3", "leaf": "warmGreyLight4", "trim": "brown"}
+  }
+}

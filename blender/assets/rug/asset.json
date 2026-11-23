@@ -1,0 +1,8 @@
+{
+  "about": "",
+  "area": "living",
+  "parts": ["body"],
+  "shapes": ["a", "b"],
+  "colors": {"greyLight14": {"body": "greyLight14"}, "weave": {"shapes": ["b"], "body": "weave"}},
+  "materials": {"weave": {"color": "textures/weave_color.png"}}
+}

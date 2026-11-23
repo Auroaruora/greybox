@@ -1,0 +1,53 @@
+{
+  "lights": {
+    "Light_Bounce": {"type": "point", "position": [1.8, 0.9, 1.0], "rotation": [0.0, 0.0, 0.0], "softSize": 0.5, "shadow": false},
+    "Light_Bounce_Desk": {"type": "point", "position": [1.7, 2.6, 1.0], "rotation": [0.0, 0.0, 0.0], "softSize": 0.5, "shadow": false},
+    "Light_Kitchen": {"type": "point", "attach": "lightStrip", "glowPart": "strip", "position": [0.0, 0.0005, -0.022], "rotation": [0.0, 0.0, 0.0], "softSize": 0.03, "shadow": true},
+    "Light_Lamp": {"type": "spot", "attach": "deskLamp", "glowPart": "bulb", "position": [0.04179, -0.1062, 0.35], "rotation": [0.565322, 0.0, -2.196282], "spotSize": 2.181662, "spotBlend": 0.6, "softSize": 0.03, "shadow": true},
+    "Light_Monitor": {"type": "spot", "attach": "monitor", "glowPart": "screen", "position": [0.0, -0.045, 0.4], "rotation": [-1.559592, 3.141592, 0.0], "spotSize": 2.879793, "spotBlend": 0.7, "softSize": 0.12, "shadow": true},
+    "Light_Printer": {"type": "point", "attach": "printer", "position": [-0.15, -0.09, 0.38], "rotation": [0.0, 0.0, 0.0], "softSize": 0.02, "shadow": true},
+    "Light_Window": {"type": "sun", "position": [-1.5, 2.4, 2.2], "rotation": [1.217601, 0.0, -1.325818], "softSize": 0.0, "shadow": true},
+    "Sky": {"type": "glow", "attach": "skyCard", "glowPart": "body"}
+  },
+  "states": {
+    "night": {
+      "world": [0.03, 0.033, 0.046],
+      "lights": {
+        "Light_Monitor": {"energy": 70.0, "color": [0.8, 0.88, 1.0], "glow": {"strength": 1.0, "color": [0.62, 0.68, 0.8], "base": [0.0, 0.0, 0.0]}},
+        "Light_Lamp": {"energy": 10.0, "color": [1.0, 0.76, 0.5], "glow": {"strength": 4.0, "color": [1.0, 0.8, 0.55]}},
+        "Light_Window": {"energy": 0.0, "color": [0.5, 0.6, 1.0]},
+        "Light_Kitchen": {"energy": 0.0, "color": [1.0, 0.82, 0.62], "glow": {"strength": 0.0, "color": [1.0, 0.82, 0.62]}},
+        "Light_Printer": {"energy": 5.0, "color": [0.85, 0.92, 1.0]},
+        "Light_Bounce": {"energy": 0.0, "color": [1.0, 0.72, 0.48]},
+        "Light_Bounce_Desk": {"energy": 0.0, "color": [1.0, 0.72, 0.48]},
+        "Sky": {"glow": {"strength": 1.0, "color": [0.02, 0.03, 0.08]}}
+      }
+    },
+    "cold": {
+      "world": [0.004, 0.006, 0.014],
+      "lights": {
+        "Light_Monitor": {"energy": 90.0, "color": [0.55, 0.72, 1.0], "glow": {"strength": 1.0, "color": [0.45, 0.6, 0.85], "base": [0.0, 0.0, 0.0]}},
+        "Light_Lamp": {"energy": 0.0, "color": [1.0, 0.76, 0.5], "glow": {"strength": 0.0, "color": [1.0, 0.8, 0.55]}},
+        "Light_Window": {"energy": 0.0, "color": [0.5, 0.6, 1.0]},
+        "Light_Kitchen": {"energy": 0.0, "color": [1.0, 0.82, 0.62], "glow": {"strength": 0.0, "color": [1.0, 0.82, 0.62]}},
+        "Light_Printer": {"energy": 5.0, "color": [0.85, 0.92, 1.0]},
+        "Light_Bounce": {"energy": 0.0, "color": [1.0, 0.72, 0.48]},
+        "Light_Bounce_Desk": {"energy": 0.0, "color": [1.0, 0.72, 0.48]},
+        "Sky": {"glow": {"strength": 1.0, "color": [0.008, 0.012, 0.04]}}
+      }
+    },
+    "dawn": {
+      "world": [0.1, 0.072, 0.055],
+      "lights": {
+        "Light_Monitor": {"energy": 15.0, "color": [0.85, 0.9, 1.0], "glow": {"strength": 1.0, "color": [0.66, 0.7, 0.78], "base": [0.0, 0.0, 0.0]}},
+        "Light_Lamp": {"energy": 0.0, "color": [1.0, 0.76, 0.5], "glow": {"strength": 0.0, "color": [1.0, 0.8, 0.55]}},
+        "Light_Window": {"energy": 13.0, "color": [1.0, 0.6, 0.34]},
+        "Light_Kitchen": {"energy": 0.0, "color": [1.0, 0.82, 0.62], "glow": {"strength": 0.0, "color": [1.0, 0.82, 0.62]}},
+        "Light_Printer": {"energy": 2.0, "color": [0.85, 0.92, 1.0]},
+        "Light_Bounce": {"energy": 38.0, "color": [1.0, 0.72, 0.48]},
+        "Light_Bounce_Desk": {"energy": 22.8, "color": [1.0, 0.72, 0.48]},
+        "Sky": {"glow": {"strength": 3.0, "color": [1.0, 0.7, 0.46]}}
+      }
+    }
+  }
+}

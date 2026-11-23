@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["sole", "strap"],
+  "shapes": ["a", "b"],
+  "colors": {"grey4": {"sole": "grey4", "strap": "olive"}}
+}

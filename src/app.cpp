@@ -25,9 +25,11 @@ bool App::initialize() {
         DebugUI::initialize(m_window.getHandle());
     }
 
-    addScreen(std::make_unique<RoomScreen>("room_greybox", "scenes/room_greybox.json", m_desktop));
+    addScreen(std::make_unique<RoomScreen>("room_greybox", "scenes/room/room_greybox.json", m_desktop));
     if (debug::ToolsEnabled) {
-        // Testing screen can be put here
+        addScreen(std::make_unique<RoomScreen>("room_draft", "scenes/room/room_draft.json", m_desktop));
+        addScreen(std::make_unique<RoomScreen>("room_toon", "scenes/room/room_toon.json", m_desktop));
+        addScreen(std::make_unique<RoomScreen>("room_retro", "scenes/room/room_retro.json", m_desktop));
     }
 
     return true;

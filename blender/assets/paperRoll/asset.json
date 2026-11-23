@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "shelf",
+  "parts": ["body"],
+  "shapes": ["a", "b", "c"],
+  "colors": {"grey4": {"body": "grey4"}, "olive7": {"body": "olive7"}}
+}

@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "kitchen",
+  "parts": ["roll", "stand"],
+  "shapes": ["a"],
+  "colors": {"grey4": {"roll": "grey4", "stand": "olive7"}}
+}

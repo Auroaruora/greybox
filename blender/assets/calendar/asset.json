@@ -1,0 +1,8 @@
+{
+  "about": "",
+  "area": "wall",
+  "parts": ["body"],
+  "shapes": ["a", "b"],
+  "colors": {"november": {"shapes": ["a"], "body": "november"}, "calendar": {"shapes": ["b"], "body": "calendar"}},
+  "materials": {"november": {"color": "textures/november_color.png"}, "calendar": {"color": "textures/calendar_color.png"}}
+}

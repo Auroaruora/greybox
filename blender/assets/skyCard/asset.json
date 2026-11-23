@@ -1,0 +1,7 @@
+{
+  "about": "",
+  "area": "shell",
+  "parts": ["body"],
+  "shapes": ["a"],
+  "colors": {"sky": {"body": "sky"}}
+}

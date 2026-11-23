@@ -1,0 +1,12 @@
+{
+  "about": "",
+  "area": "living",
+  "parts": ["body", "band", "slot"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey6": {"body": "grey6", "slot": "greyLight5"},
+    "greyLight7": {"band": "greyDark2", "body": "greyLight7"},
+    "warmGreyLight": {"band": "coolGreyDark2", "body": "warmGreyLight"},
+    "warmGreyLight4": {"band": "greyDark3", "body": "warmGreyLight4"}
+  }
+}

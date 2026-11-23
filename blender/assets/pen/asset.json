@@ -1,0 +1,24 @@
+{
+  "about": "",
+  "area": "desk",
+  "parts": ["body"],
+  "shapes": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o"],
+  "colors": {
+    "grey6": {"body": "grey6"},
+    "greyDark2": {"body": "greyDark2"},
+    "blue2": {"body": "blue2"},
+    "yellowLight5": {"body": "yellowLight5"},
+    "grey2": {"body": "grey2"},
+    "greyLight7": {"body": "greyLight7"},
+    "coolGreyDark2": {"body": "coolGreyDark2"},
+    "blue3": {"body": "blue3"},
+    "yellowLight4": {"body": "yellowLight4"},
+    "greyLight11": {"body": "greyLight11"},
+    "warmGreyLight": {"body": "warmGreyLight"},
+    "greyDark3": {"body": "greyDark3"},
+    "green2": {"body": "green2"},
+    "olive2": {"body": "olive2"},
+    "warmGreyLight7": {"body": "warmGreyLight7"},
+    "warmGreyLight4": {"body": "warmGreyLight4"}
+  }
+}

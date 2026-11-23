@@ -1,0 +1,12 @@
+VERSION 1
+
+46804e5f-4b03-5e85-b573-02bc3c70f941:room/desk:room-desk
+94532edf-e2e8-5c4d-8ff6-28dbb6bfb137:room/entry:room-entry
+88df3932-485d-5362-b738-eef0f4efb0b0:room/extras:room-extras
+3d2ffae8-1cf0-50c1-90b9-e0d13694acda:room/furniture:room-furniture
+c6910233-fb37-5780-9826-e077fd5a228b:room/kitchen:room-kitchen
+47b3f3a2-6cd7-5223-b4f8-b5b4a3129004:room/living:room-living
+1e49d6ac-d8f8-5e63-b03f-15e02500ccdc:room/print:room-print
+44cd9bcd-10b8-5cae-b96b-91b430798267:room/shelf:room-shelf
+009d83e8-2304-5639-ad18-d95dc7be6337:room/shell:room-shell
+70a4c616-5ec0-5031-b8c2-c2be4dca08ba:room/wall:room-wall
