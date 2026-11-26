@@ -135,8 +135,12 @@ add_executable(${PROJECT_NAME}
     src/render/postprocess/pass.h
     src/render/postprocess/postprocessor.cpp
     src/render/postprocess/postprocessor.h
+    src/render/phongprogram.cpp
+    src/render/phongprogram.h
     src/render/scenerenderer.cpp
     src/render/scenerenderer.h
+    src/render/shadingprogram.cpp
+    src/render/shadingprogram.h
     src/render/spriterenderer.cpp
     src/render/spriterenderer.h
 
