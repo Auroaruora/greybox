@@ -12,6 +12,10 @@ enum class LightType {
     LIGHT_SPOT,
 };
 
+enum class ShadingModel {
+    Phong,
+};
+
 // Enum of the types of primitives that might be in the scene
 enum class PrimitiveType {
     PRIMITIVE_CUBE,
@@ -40,6 +44,7 @@ struct SceneGlobalData {
     float ks; // Specular term
     float kt; // Transparency; used for extra credit (refraction)
     glm::vec3 ambientLight;
+    ShadingModel shading = ShadingModel::Phong;
 };
 
 // Struct which contains raw parsed data fro a single light

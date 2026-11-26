@@ -21,6 +21,13 @@ static SceneColor readColor(const json &object, const char *key) {
     return SceneColor(readVec3(object.at(key)), 1.0f);
 }
 
+static ShadingModel readShading(const std::string &name) {
+    if (name == "phong") {
+        return ShadingModel::Phong;
+    }
+    throw std::runtime_error("unknown shading: " + name);
+}
+
 static glm::mat4 readMatrix(const json &rows) {
     glm::mat4 matrix(1.0f);
     for (int row = 0; row < 4; row++) {
@@ -141,6 +148,7 @@ bool ScenefileReader::readJSON() {
         m_globalData.ks = global.at("specularCoeff").get<float>();
         m_globalData.kt = 0.0f;
         m_globalData.ambientLight = global.contains("ambientLight") ? readVec3(global.at("ambientLight")) : glm::vec3(0.0f);
+        m_globalData.shading = readShading(global.value("shading", std::string("phong")));
 
         const json &camera = scene.at("cameraData");
         glm::vec3 position = readVec3(camera.at("position"));
