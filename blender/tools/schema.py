@@ -46,7 +46,7 @@ LIGHT = {
     "shadow?": bool,
 }
 
-LIGHT_SETTING = {"intensity?": float, "color?": VEC3, "direction?": VEC3, "reach?": float, "glow?": GLOW}
+LIGHT_SETTING = {"intensity?": float, "color?": VEC3, "direction?": VEC3, "glow?": GLOW}
 
 STATE = {
     "ambient": VEC3, "sky?": {"zenith": VEC3, "horizon": VEC3}, "toon?": {"shade": VEC3},
@@ -54,15 +54,15 @@ STATE = {
     "glow?": Map(Map(GLOW)),
 }
 
-CLIP_KEY = {"time": float, "state": str, "effects?": Map(float)}
-
-LIGHTING = {"lights": Map(LIGHT), "states": Map(STATE), "clips?": Map([CLIP_KEY])}
+LIGHTING = {"lights": Map(LIGHT), "states": Map(STATE)}
 
 VIEW = {"position": VEC3, "look": VEC3, "up": VEC3, "heightAngle": float}
 
 VIEWPOINTS = Map(VIEW)
 
-CAMERA_PATHS = Map([{"time": float, "position": VEC3, "look": VEC3, "up": VEC3, "heightAngle": float}])
+PATH = [{"time": float, "position": VEC3, "look": VEC3, "up": VEC3, "heightAngle": float}]
+
+MOTIONS = Map({"pivot": str, "spin?": VEC3, "sway?": VEC3, "period?": float})
 
 
 def problems(value, spec, where="root"):

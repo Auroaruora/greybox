@@ -1,5 +1,6 @@
 #include "screen.h"
 
+#include <filesystem>
 #include <optional>
 
 Screen::Screen(const std::string &name, const std::string &sceneFile) {
@@ -14,11 +15,20 @@ bool Screen::load(MeshCache &meshCache, TextureCache &textureCache) {
     m_scene.loadMeshes(meshCache);
     m_scene.loadTextures(textureCache);
     m_cameraSystem.load(m_scene);
-    m_interactionSystem.load(m_scene, meshCache);
+    m_interactionSystem.load(m_scene, meshCache, textureCache);
+    std::filesystem::path folder = std::filesystem::path(m_sceneFile).parent_path().parent_path();
+    m_motions.load(m_scene, meshCache, (folder / "motions.json").string());
     return true;
 }
 
-void Screen::update(float deltaTime, const glm::vec2 &cursorNdc, float aspectRatio) {
+void Screen::enter() {
+}
+
+void Screen::handleEvents(App &app) {
+}
+
+void Screen::update(App &app, float deltaTime, const glm::vec2 &cursorNdc, float aspectRatio) {
+    m_motions.update(m_scene, deltaTime);
     m_cameraSystem.setAspectRatio(aspectRatio);
     m_cameraSystem.update(deltaTime);
 
@@ -29,9 +39,7 @@ void Screen::update(float deltaTime, const glm::vec2 &cursorNdc, float aspectRat
     }
     m_interactionSystem.update(m_scene, camera, pointer, deltaTime);
 
-    if (m_story != nullptr) {
-        m_story->update(m_cameraSystem, m_interactionSystem.getEvents());
-    }
+    handleEvents(app);
 }
 
 void Screen::render(SceneRenderer &sceneRenderer) const {

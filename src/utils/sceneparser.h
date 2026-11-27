@@ -54,7 +54,7 @@ public:
     using MaterialLookup = std::function<std::string(const std::string &meshfile)>;
 
     // Parse a scene from its look file and the files next to it, and store the results.
-    // @param lookFile        The look to load, e.g. scenes/room/looks/greybox.json.
+    // @param lookFile        The look to load, e.g. scenes/room/looks/retro.json.
     // @param getMeshMaterial Returns the default material name of a mesh file.
     // @param renderData      On return, this will contain the metadata of the loaded scene.
     // @param lightingStates  On return, one entry per lighting state, the start state first.

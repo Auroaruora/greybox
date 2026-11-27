@@ -8,7 +8,7 @@ Interactable::Interactable(const std::string &name, const std::string &icon) {
     m_icon = icon;
 }
 
-void Interactable::load(Scene &scene, MeshCache &meshCache) {
+void Interactable::load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache) {
     m_shapes.clear();
     m_aabbs.clear();
     m_bases.clear();

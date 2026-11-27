@@ -8,6 +8,7 @@
 
 class Camera;
 class MeshCache;
+class TextureCache;
 class Scene;
 class Texture2D;
 
@@ -21,7 +22,7 @@ public:
     Interactable(const std::string &name, const std::string &icon);
     virtual ~Interactable() = default;
 
-    virtual void load(Scene &scene, MeshCache &meshCache);
+    virtual void load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache);
     bool intersect(const Scene &scene, const Ray &ray, float &distance) const;
 
     virtual void interact(InteractionContext &context);

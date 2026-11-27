@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="680" height="810" viewBox="0 0 680 810" role="img"><title>App::addScreen</title><desc>App::addScreen constructs a RoomScreen, which adds the Seated and Focus controllers, the LightSwitch, Mug and Monitor interactables and a RoomStory; then Screen::load calls Scene::load, Scene::loadMeshes, Scene::loadTextures, CameraSystem::load and InteractionSystem::load; finally the screen is pushed into the screen list.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="886" viewBox="0 0 680 886" role="img"><title>App::addScreen</title><desc>App::addScreen constructs a RoomScreen, which adds the Seated and Focus controllers and the LightSwitch, Mug and Monitor interactables; then Screen::load calls Scene::load, Scene::loadMeshes, Scene::loadTextures, CameraSystem::load, InteractionSystem::load and Motions::load; finally the screen is pushed into the screen list.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#73726C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <style>
 text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -18,26 +18,26 @@ text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Ar
 <rect width="100%" height="100%" fill="#FFFFFF"/>
 <g class="c-purple"><rect x="40" y="30" width="200" height="44" rx="8" stroke-width="0.5"/><text class="th" x="140" y="52" text-anchor="middle" dominant-baseline="central">App::addScreen</text></g>
 <line x1="140" y1="74" x2="140" y2="92" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="40" y="94" width="200" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="140" y="112" text-anchor="middle" dominant-baseline="central">RoomScreen::RoomScreen</text><text class="ts" x="140" y="132" text-anchor="middle" dominant-baseline="central">(name, sceneFile, desktop)</text>
+<g class="box"><rect x="40" y="94" width="200" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="140" y="112" text-anchor="middle" dominant-baseline="central">RoomScreen::RoomScreen</text><text class="ts" x="140" y="132" text-anchor="middle" dominant-baseline="central">(name, sceneFile)</text>
 <g class="box"><rect x="40" y="322" width="200" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="140" y="340" text-anchor="middle" dominant-baseline="central">Screen::load</text><text class="ts" x="140" y="360" text-anchor="middle" dominant-baseline="central">(meshCache, textureCache)</text>
-<g class="box"><rect x="40" y="702" width="200" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="140" y="720" text-anchor="middle" dominant-baseline="central">m_screens.push_back</text><text class="ts" x="140" y="740" text-anchor="middle" dominant-baseline="central">(screen)</text>
+<g class="box"><rect x="40" y="778" width="200" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="140" y="796" text-anchor="middle" dominant-baseline="central">m_screens.push_back</text><text class="ts" x="140" y="816" text-anchor="middle" dominant-baseline="central">(screen)</text>
 <line x1="140" y1="150" x2="140" y2="320" class="arr" marker-end="url(#arrow)"/>
-<line x1="140" y1="378" x2="140" y2="700" class="arr" marker-end="url(#arrow)"/>
+<line x1="140" y1="378" x2="140" y2="776" class="arr" marker-end="url(#arrow)"/>
 <g class="box"><rect x="270" y="94" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="112" text-anchor="middle" dominant-baseline="central">CameraSystem::add</text><text class="ts" x="455" y="132" text-anchor="middle" dominant-baseline="central">SeatedController, FocusController</text>
 <g class="box"><rect x="270" y="170" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="188" text-anchor="middle" dominant-baseline="central">InteractionSystem::add</text><text class="ts" x="455" y="208" text-anchor="middle" dominant-baseline="central">LightSwitch, Mug, Monitor</text>
-<g class="box"><rect x="270" y="246" width="370" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="268" text-anchor="middle" dominant-baseline="central">make_unique&lt;RoomStory&gt;</text>
 <line x1="240" y1="122" x2="268" y2="122" class="arr" marker-end="url(#arrow)"/>
 <line x1="455" y1="150" x2="455" y2="168" class="arr" marker-end="url(#arrow)"/>
-<line x1="455" y1="226" x2="455" y2="244" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="270" y="322" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="340" text-anchor="middle" dominant-baseline="central">Scene::load(sceneFile)</text><text class="ts" x="455" y="360" text-anchor="middle" dominant-baseline="central">SceneParser::parse, loadLighting, loadViewpoints</text>
+<g class="box"><rect x="270" y="322" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="340" text-anchor="middle" dominant-baseline="central">Scene::load(sceneFile)</text><text class="ts" x="455" y="360" text-anchor="middle" dominant-baseline="central">SceneParser::parse: SceneReader, AssetReader</text>
 <g class="box"><rect x="270" y="398" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="416" text-anchor="middle" dominant-baseline="central">Scene::loadMeshes(meshCache)</text><text class="ts" x="455" y="436" text-anchor="middle" dominant-baseline="central">MeshCache::getMesh → ObjLoader, Mesh::create</text>
 <g class="box"><rect x="270" y="474" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="492" text-anchor="middle" dominant-baseline="central">Scene::loadTextures(textureCache)</text><text class="ts" x="455" y="512" text-anchor="middle" dominant-baseline="central">TextureCache::getTexture → ImageLoader, Texture2D</text>
 <g class="box"><rect x="270" y="550" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="568" text-anchor="middle" dominant-baseline="central">CameraSystem::load(scene)</text><text class="ts" x="455" y="588" text-anchor="middle" dominant-baseline="central">CameraController::load(viewpoints), reset()</text>
-<g class="box"><rect x="270" y="626" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="644" text-anchor="middle" dominant-baseline="central">InteractionSystem::load(scene, meshCache)</text><text class="ts" x="455" y="664" text-anchor="middle" dominant-baseline="central">Interactable::load, MeshCache::getAABB</text>
+<g class="box"><rect x="270" y="626" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="644" text-anchor="middle" dominant-baseline="central">InteractionSystem::load(scene, meshCache, textureCache)</text><text class="ts" x="455" y="664" text-anchor="middle" dominant-baseline="central">Interactable::load, MeshCache::getAABB</text>
 <line x1="240" y1="350" x2="268" y2="350" class="arr" marker-end="url(#arrow)"/>
 <line x1="455" y1="378" x2="455" y2="396" class="arr" marker-end="url(#arrow)"/>
 <line x1="455" y1="454" x2="455" y2="472" class="arr" marker-end="url(#arrow)"/>
 <line x1="455" y1="530" x2="455" y2="548" class="arr" marker-end="url(#arrow)"/>
 <line x1="455" y1="606" x2="455" y2="624" class="arr" marker-end="url(#arrow)"/>
-<text class="ts" x="455" y="786" text-anchor="middle">Monitor::load also sets the desktop texture on its screen</text>
+<line x1="455" y1="682" x2="455" y2="700" class="arr" marker-end="url(#arrow)"/>
+<g class="box"><rect x="270" y="702" width="370" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="455" y="720" text-anchor="middle" dominant-baseline="central">Motions::load(scene, meshCache)</text><text class="ts" x="455" y="740" text-anchor="middle" dominant-baseline="central">Reads motions.json next to the scene, if any</text>
+<text class="ts" x="455" y="862" text-anchor="middle">Monitor::load sets the wallpaper from TextureCache on its screen</text>
 </svg>

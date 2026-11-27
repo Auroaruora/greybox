@@ -11,7 +11,7 @@
 class InteractionSystem {
 public:
     void add(std::unique_ptr<Interactable> item);
-    void load(Scene &scene, MeshCache &meshCache);
+    void load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache);
     void update(Scene &scene, const Camera &camera, const std::optional<Ray> &pointer, float deltaTime);
 
     const std::string &getIcon() const;

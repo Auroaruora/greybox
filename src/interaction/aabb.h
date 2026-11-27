@@ -12,6 +12,8 @@ public:
     void expand(const AABB &other, const glm::mat4 &matrix);
     bool isValid() const;
     glm::vec3 getCenter() const;
+    const glm::vec3 &getMin() const;
+    const glm::vec3 &getMax() const;
     bool intersect(const Ray &ray, float &distance) const;
 
 private:

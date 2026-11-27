@@ -67,6 +67,10 @@ void CameraSystem::setController(const std::string &name, float transitionTime) 
     m_controller->enter(m_camera);
 }
 
+void CameraSystem::playPath(const CameraPath &path) {
+    m_pathPlayer.play(path);
+}
+
 void CameraSystem::setCamera(const CameraPose &pose) {
     m_camera.setPose(pose);
 }

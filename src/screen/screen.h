@@ -3,12 +3,13 @@
 #include "camera/camerasystem.h"
 #include "interaction/interactionsystem.h"
 #include "render/scenerenderer.h"
+#include "screen/motions.h"
 #include "screen/scene.h"
-#include "story/story.h"
 
 #include <memory>
 #include <string>
 
+class App;
 class TextureCache;
 
 class Screen {
@@ -17,7 +18,8 @@ public:
     virtual ~Screen() = default;
 
     bool load(MeshCache &meshCache, TextureCache &textureCache);
-    void update(float deltaTime, const glm::vec2 &cursorNdc, float aspectRatio);
+    virtual void enter();
+    void update(App &app, float deltaTime, const glm::vec2 &cursorNdc, float aspectRatio);
     void render(SceneRenderer &sceneRenderer) const;
 
     const std::string &getName() const;
@@ -29,10 +31,12 @@ public:
     const InteractionSystem &getInteractionSystem() const;
 
 protected:
+    virtual void handleEvents(App &app);
+
     Scene m_scene;
+    Motions m_motions;
     CameraSystem m_cameraSystem;
     InteractionSystem m_interactionSystem;
-    std::unique_ptr<Story> m_story;
 
 private:
     std::string m_name;

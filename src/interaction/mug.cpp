@@ -41,8 +41,8 @@ static float ease(float t) {
 Mug::Mug(const std::string &name) : Interactable(name, CoffeeIcon) {
 }
 
-void Mug::load(Scene &scene, MeshCache &meshCache) {
-    Interactable::load(scene, meshCache);
+void Mug::load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache) {
+    Interactable::load(scene, meshCache, textureCache);
 
     m_mugRest = getCenter();
 
