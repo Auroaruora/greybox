@@ -11,7 +11,6 @@
 #include <cctype>
 #include <filesystem>
 #include <memory>
-#include <set>
 #include <stdexcept>
 
 namespace {
@@ -51,10 +50,7 @@ struct Light {
     std::string emitter;
 };
 
-struct Glow {
-    std::map<std::string, GlowSetting> current;
-    std::set<std::string> fromStates;
-};
+using Glow = std::map<std::string, GlowSetting>;
 
 struct SceneTree {
     std::vector<std::unique_ptr<SceneNode>> nodes;
@@ -236,30 +232,24 @@ std::vector<Part> collectParts(Input &input, const SceneParser::MaterialLookup &
     return parts;
 }
 
-void applyGlow(const Input &input, const StateSource &state, Glow &glow) {
+Glow getGlow(const Input &input, const StateSource &state) {
+    Glow glow;
     for (const LightSource &light : input.source.lights) {
         auto setting = state.lights.find(light.name);
         if (light.attach.empty() || light.glowPart.empty() || setting == state.lights.end() || !setting->second.glow) {
             continue;
         }
-        glow.current[light.attach + "_" + light.glowPart] = *setting->second.glow;
+        glow[light.attach + "_" + light.glowPart] = *setting->second.glow;
     }
-    std::set<std::string> fromState;
-    for (const auto &[key, value] : state.glow) {
-        glow.current[key] = value;
-        fromState.insert(key);
+    for (const auto &[part, setting] : state.glow) {
+        glow[part] = setting;
     }
-    for (const std::string &key : glow.fromStates) {
-        if (!fromState.contains(key)) {
-            glow.current[key] = GlowSetting();
-        }
-    }
-    glow.fromStates = fromState;
+    return glow;
 }
 
 bool getEmission(const Glow &glow, const Part &part, SceneColor &colour) {
-    auto found = glow.current.find(part.key);
-    if (found == glow.current.end()) {
+    auto found = glow.find(part.key);
+    if (found == glow.end()) {
         if (!part.emission) {
             return false;
         }
@@ -312,7 +302,7 @@ std::vector<Light> makeLights(const Input &input, const StateSource &state) {
 
     std::vector<Light> result;
     for (const LightSource *source : sources) {
-        if (source->type == "glow" || isHidden(input, *source)) {
+        if (isHidden(input, *source)) {
             continue;
         }
         auto setting = state.lights.find(source->name);
@@ -374,8 +364,8 @@ void addPart(SceneTree &tree, SceneNode *root, const Part &part, const Glow &glo
     tree.addMatrix(node, toFloat(part.matrix));
     tree.primitives.push_back(std::make_unique<ScenePrimitive>(part.primitive));
     ScenePrimitive *primitive = tree.primitives.back().get();
-    auto found = glow.current.find(part.key);
-    if (found != glow.current.end() && found->second.base) {
+    auto found = glow.find(part.key);
+    if (found != glow.end() && found->second.base) {
         primitive->material.cDiffuse = SceneColor(toFloat(*found->second.base), 1.0f);
     }
     SceneColor emission(0.0f, 0.0f, 0.0f, 1.0f);
@@ -411,8 +401,7 @@ void traverse(SceneNode *node, glm::mat4 ctm, RenderData &renderData);
 void buildScene(const Input &input, const std::vector<Part> &parts, RenderData &renderData) {
     const SceneSettings &settings = input.source.settings;
     const StateSource &state = getState(input, settings.startState);
-    Glow glow;
-    applyGlow(input, state, glow);
+    Glow glow = getGlow(input, state);
 
     SceneTree tree;
     SceneNode *root = tree.addNode(nullptr);
@@ -449,11 +438,9 @@ void buildScene(const Input &input, const std::vector<Part> &parts, RenderData &
 
 std::vector<LightingState> buildLighting(const Input &input, const std::vector<Part> &parts) {
     const std::string &startState = input.source.settings.startState;
-    Glow glow;
-    applyGlow(input, getState(input, startState), glow);
     std::vector<LightingState> result(1);
     for (const StateSource &state : input.source.states) {
-        applyGlow(input, state, glow);
+        Glow glow = getGlow(input, state);
         LightingState lighting;
         lighting.name = state.name;
         lighting.ambient = state.ambient;

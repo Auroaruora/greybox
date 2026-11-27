@@ -58,3 +58,11 @@ bool AABB::intersect(const Ray &ray, float &distance) const {
     distance = enter;
     return true;
 }
+
+const glm::vec3 &AABB::getMin() const {
+    return m_min;
+}
+
+const glm::vec3 &AABB::getMax() const {
+    return m_max;
+}

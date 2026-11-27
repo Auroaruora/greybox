@@ -18,6 +18,7 @@ public:
     void update(float deltaTime);
     void setController(const std::string &name, float transitionTime = 0.0f);
     void setCamera(const CameraPose &pose);
+    void playPath(const CameraPath &path);
     void setAspectRatio(float aspectRatio);
 
     const Camera &getCamera() const;

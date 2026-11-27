@@ -17,7 +17,7 @@ class Mug : public Interactable {
 public:
     explicit Mug(const std::string &name);
 
-    void load(Scene &scene, MeshCache &meshCache) override;
+    void load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache) override;
     void interact(InteractionContext &context) override;
     bool update(InteractionContext &context, float deltaTime) override;
     const std::string &getIcon() const override;

@@ -33,7 +33,7 @@ vec3 diffuseColor() {
 }
 
 vec3 emissiveTerm() {
-    return cEmissive * pow(texture(emissiveMap, uvCoord).rgb, vec3(2.2));
+    return cEmissive * texture(emissiveMap, uvCoord).rgb;
 }
 
 vec3 ambientTerm(vec3 diffuse) {

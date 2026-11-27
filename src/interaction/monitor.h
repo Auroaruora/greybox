@@ -4,10 +4,10 @@
 
 class Monitor : public Interactable {
 public:
-    Monitor(const std::string &name, const Texture2D &screenTexture);
+    Monitor(const std::string &name, const std::string &imageFile);
 
-    void load(Scene &scene, MeshCache &meshCache) override;
+    void load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache) override;
 
 private:
-    const Texture2D &m_screenTexture;
+    std::string m_imageFile;
 };

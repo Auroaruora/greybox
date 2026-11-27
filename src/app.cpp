@@ -17,7 +17,6 @@ bool App::initialize() {
 
     m_sceneRenderer.initialize();
     m_spriteRenderer.initialize();
-    m_desktop.initialize();
     m_cursor.initialize();
 
     Input::initialize(m_window.getHandle());
@@ -26,13 +25,8 @@ bool App::initialize() {
         DebugUI::initialize(m_window.getHandle());
     }
 
-    addScreen(std::make_unique<RoomScreen>("room_greybox", "scenes/room/looks/greybox.json", m_desktop));
+    addScreen(std::make_unique<RoomScreen>("room", "scenes/room/looks/retro.json"));
     addScreen(std::make_unique<HillScreen>("hill", "scenes/hill/looks/main.json"));
-    if (debug::ToolsEnabled) {
-        addScreen(std::make_unique<RoomScreen>("room_draft", "scenes/room/looks/draft.json", m_desktop));
-        addScreen(std::make_unique<RoomScreen>("room_toon", "scenes/room/looks/toon.json", m_desktop));
-        addScreen(std::make_unique<RoomScreen>("room_retro", "scenes/room/looks/retro.json", m_desktop));
-    }
 
     return true;
 }
@@ -58,13 +52,12 @@ void App::update(float deltaTime) {
         DebugUI::update(m_debugContext);
     }
     m_cursor.update(m_window.getSize());
-    screen.update(deltaTime, m_cursor.getNdc(), m_window.getAspectRatio());
+    screen.update(*this, deltaTime, m_cursor.getNdc(), m_window.getAspectRatio());
     m_cursor.setIcon(screen.getInteractionSystem().getIcon());
     Input::endFrame();
 }
 
 void App::render() {
-    m_desktop.updateScreenTexture(m_spriteRenderer);
     m_window.bind();
     m_sceneRenderer.setViewportSize(m_window.getFramebufferSize());
     m_screens[m_current]->render(m_sceneRenderer);
@@ -79,12 +72,22 @@ void App::shutdown() {
         DebugUI::shutdown();
     }
     m_cursor.cleanup();
-    m_desktop.cleanup();
     m_spriteRenderer.cleanup();
     m_sceneRenderer.cleanup();
     m_meshCache.clear();
     m_textureCache.clear();
     m_window.destroy();
+}
+
+void App::setScreen(const std::string &name) {
+    for (int i = 0; i < static_cast<int>(m_screens.size()); i++) {
+        if (m_screens[i]->getName() == name) {
+            m_current = i;
+            m_screens[i]->enter();
+            return;
+        }
+    }
+    LOG_ERROR("no screen named " << name);
 }
 
 void App::addScreen(std::unique_ptr<Screen> screen) {

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="680" height="710" viewBox="0 0 680 710" role="img"><title>App::initialize calls</title><desc>App::initialize calls, in order: Window::create, SceneRenderer::initialize, SpriteRenderer::initialize, Desktop::initialize, Cursor::initialize, Input::initialize, Bindings::setDefaults, App::addScreen.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="648" viewBox="0 0 680 648" role="img"><title>App::initialize calls</title><desc>App::initialize calls, in order: Window::create, SceneRenderer::initialize, SpriteRenderer::initialize, Cursor::initialize, Input::initialize, Bindings::setDefaults, App::addScreen for the room and the hill.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#73726C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <style>
 text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -24,14 +24,12 @@ text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Ar
 <line x1="340" y1="212" x2="340" y2="228" class="arr" marker-end="url(#arrow)"/>
 <g class="box"><rect x="160" y="230" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="248" text-anchor="middle" dominant-baseline="central">SpriteRenderer::initialize()</text><text class="ts" x="340" y="268" text-anchor="middle" dominant-baseline="central">ShaderLoader::load(sprite.vert, sprite.frag)</text>
 <line x1="340" y1="286" x2="340" y2="302" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="160" y="304" width="360" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="326" text-anchor="middle" dominant-baseline="central">Desktop::initialize()</text>
-<line x1="340" y1="348" x2="340" y2="364" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="160" y="366" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="384" text-anchor="middle" dominant-baseline="central">Cursor::initialize()</text><text class="ts" x="340" y="404" text-anchor="middle" dominant-baseline="central">Loads the icon textures</text>
-<line x1="340" y1="422" x2="340" y2="438" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="160" y="440" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="458" text-anchor="middle" dominant-baseline="central">Input::initialize(window)</text><text class="ts" x="340" y="478" text-anchor="middle" dominant-baseline="central">glfwSetKeyCallback and mouse callbacks</text>
-<line x1="340" y1="496" x2="340" y2="512" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="160" y="514" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="532" text-anchor="middle" dominant-baseline="central">Bindings::setDefaults()</text><text class="ts" x="340" y="552" text-anchor="middle" dominant-baseline="central">Input::bind(action, key or button)</text>
-<line x1="340" y1="570" x2="340" y2="586" class="arr" marker-end="url(#arrow)"/>
-<g class="c-purple"><rect x="160" y="588" width="360" height="56" rx="8" stroke-width="0.5"/><text class="th" x="340" y="606" text-anchor="middle" dominant-baseline="central">App::addScreen(RoomScreen)</text><text class="ts" x="340" y="626" text-anchor="middle" dominant-baseline="central">See 2c</text></g>
-<rect class="c-purple" x="236" y="674" width="14" height="14" rx="3" stroke-width="0.5"/><text class="ts" x="256" y="685">Expanded in its own diagram</text>
+<g class="box"><rect x="160" y="304" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="322" text-anchor="middle" dominant-baseline="central">Cursor::initialize()</text><text class="ts" x="340" y="342" text-anchor="middle" dominant-baseline="central">Loads the icon textures</text>
+<line x1="340" y1="360" x2="340" y2="376" class="arr" marker-end="url(#arrow)"/>
+<g class="box"><rect x="160" y="378" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="396" text-anchor="middle" dominant-baseline="central">Input::initialize(window)</text><text class="ts" x="340" y="416" text-anchor="middle" dominant-baseline="central">glfwSetKeyCallback and mouse callbacks</text>
+<line x1="340" y1="434" x2="340" y2="450" class="arr" marker-end="url(#arrow)"/>
+<g class="box"><rect x="160" y="452" width="360" height="56" rx="8" stroke-width="0.5"/></g><text class="th" x="340" y="470" text-anchor="middle" dominant-baseline="central">Bindings::setDefaults()</text><text class="ts" x="340" y="490" text-anchor="middle" dominant-baseline="central">Input::bind(action, key or button)</text>
+<line x1="340" y1="508" x2="340" y2="524" class="arr" marker-end="url(#arrow)"/>
+<g class="c-purple"><rect x="160" y="526" width="360" height="56" rx="8" stroke-width="0.5"/><text class="th" x="340" y="544" text-anchor="middle" dominant-baseline="central">App::addScreen(RoomScreen, HillScreen)</text><text class="ts" x="340" y="564" text-anchor="middle" dominant-baseline="central">See 2c</text></g>
+<rect class="c-purple" x="236" y="612" width="14" height="14" rx="3" stroke-width="0.5"/><text class="ts" x="256" y="623">Expanded in its own diagram</text>
 </svg>

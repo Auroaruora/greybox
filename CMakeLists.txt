@@ -85,8 +85,6 @@ add_executable(${PROJECT_NAME}
     src/debug/panels/screenspanel.cpp
     src/debug/panels/screenspanel.h
 
-    src/desktop/desktop.cpp
-    src/desktop/desktop.h
 
     src/event/gameevent.h
 
@@ -148,6 +146,8 @@ add_executable(${PROJECT_NAME}
 
     src/screen/hillscreen.cpp
     src/screen/hillscreen.h
+    src/screen/motions.cpp
+    src/screen/motions.h
     src/screen/roomscreen.cpp
     src/screen/roomscreen.h
     src/screen/scene.cpp
@@ -155,9 +155,6 @@ add_executable(${PROJECT_NAME}
     src/screen/screen.cpp
     src/screen/screen.h
 
-    src/story/roomstory.cpp
-    src/story/roomstory.h
-    src/story/story.h
 
     src/utils/assetreader.cpp
     src/utils/assetreader.h
@@ -165,6 +162,8 @@ add_executable(${PROJECT_NAME}
     src/utils/imageloader.h
     src/utils/lutloader.cpp
     src/utils/lutloader.h
+    src/utils/motionreader.cpp
+    src/utils/motionreader.h
     src/utils/objloader.cpp
     src/utils/objloader.h
     src/utils/paths.cpp

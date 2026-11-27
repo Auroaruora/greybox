@@ -14,12 +14,12 @@ void InteractionSystem::add(std::unique_ptr<Interactable> item) {
     m_items.push_back(std::move(item));
 }
 
-void InteractionSystem::load(Scene &scene, MeshCache &meshCache) {
+void InteractionSystem::load(Scene &scene, MeshCache &meshCache, TextureCache &textureCache) {
     m_hovered = -1;
 
     std::ostringstream summary;
     for (std::unique_ptr<Interactable> &item : m_items) {
-        item->load(scene, meshCache);
+        item->load(scene, meshCache, textureCache);
         summary << " " << item->getName() << "(" << item->getShapes().size() << ")";
     }
     LOG_INFO(scene.getFilepath() << " interactables:" << summary.str());

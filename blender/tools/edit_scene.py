@@ -255,18 +255,13 @@ def build_lights():
     clear("Lights")
     c = collection("Lights")
     for name, data in S["data"]["lighting"]["lights"].items():
-        if data["type"] == "glow":
-            o = bpy.data.objects.new(name, None)
-            o.empty_display_type = 'SPHERE'
-            o.empty_display_size = 0.08
-        else:
-            light = bpy.data.lights.new(name, data["type"].upper())
-            light.use_shadow = data.get("shadow", True)
-            if "angle" in data:
-                light.spot_size, light.spot_blend = space.to_blender_spot(data["angle"], data["penumbra"])
-            if "softSize" in data:
-                light.shadow_soft_size = data["softSize"]
-            o = bpy.data.objects.new(name, light)
+        light = bpy.data.lights.new(name, data["type"].upper())
+        light.use_shadow = data.get("shadow", True)
+        if "angle" in data:
+            light.spot_size, light.spot_blend = space.to_blender_spot(data["angle"], data["penumbra"])
+        if "softSize" in data:
+            light.shadow_soft_size = data["softSize"]
+        o = bpy.data.objects.new(name, light)
         o["room_light"] = name
         c.objects.link(o)
         attach = bpy.data.objects.get(data.get("attach", ""))
@@ -324,11 +319,10 @@ def apply_state():
     state = S["data"]["lighting"]["states"][S["state"]]
     for o in light_objects():
         entry = state["lights"].get(o["room_light"], {})
-        if o.type == 'LIGHT':
-            o.data.energy = entry.get("intensity", 0.0) / space.light_scale(o.data.type.lower())
-            o.data.color = entry.get("color", [1.0, 1.0, 1.0])
-            if "direction" in entry and o.parent is None:
-                o.rotation_euler = space.aim(space.to_blender_direction(entry["direction"]))
+        o.data.energy = entry.get("intensity", 0.0) / space.light_scale(o.data.type.lower())
+        o.data.color = entry.get("color", [1.0, 1.0, 1.0])
+        if "direction" in entry and o.parent is None:
+            o.rotation_euler = space.aim(space.to_blender_direction(entry["direction"]))
         glow = entry.get("glow", {})
         o.room_glow_strength = glow.get("strength", 0.0)
         o.room_glow_color = glow.get("color", [1.0, 1.0, 1.0])
@@ -464,12 +458,11 @@ def capture_state():
         name = o["room_light"]
         prev = state["lights"].get(name, {})
         entry = dict(prev)
-        if o.type == 'LIGHT':
-            intensity = o.data.energy * space.light_scale(o.data.type.lower())
-            entry["intensity"] = prev["intensity"] if "intensity" in prev and abs(prev["intensity"] - intensity) <= EPS else round(intensity, space.INTENSITY_DIGITS)
-            entry["color"] = keep(prev.get("color"), o.data.color, 4)
-            if "direction" in prev:
-                entry["direction"] = keep(prev["direction"], space.to_engine_direction(space.facing(o.rotation_euler)), 6)
+        intensity = o.data.energy * space.light_scale(o.data.type.lower())
+        entry["intensity"] = prev["intensity"] if "intensity" in prev and abs(prev["intensity"] - intensity) <= EPS else round(intensity, space.INTENSITY_DIGITS)
+        entry["color"] = keep(prev.get("color"), o.data.color, 4)
+        if "direction" in prev:
+            entry["direction"] = keep(prev["direction"], space.to_engine_direction(space.facing(o.rotation_euler)), 6)
         if "glow" in prev or o.room_glow_strength > 0:
             glow = dict(prev.get("glow", {}))
             glow["strength"] = glow["strength"] if "strength" in glow and abs(glow["strength"] - o.room_glow_strength) <= EPS else round(o.room_glow_strength, 4)
@@ -504,10 +497,7 @@ def serialize_lighting():
             continue
         prev = old.get(name, {})
         entry = dict(prev)
-        if o.type == 'LIGHT':
-            entry["type"] = {"SUN": "sun", "SPOT": "spot", "POINT": "point", "AREA": "area"}[o.data.type]
-        else:
-            entry["type"] = "glow"
+        entry["type"] = {"SUN": "sun", "SPOT": "spot", "POINT": "point", "AREA": "area"}[o.data.type]
         parent = o.parent.get("room_object") if o.parent else None
         if parent:
             entry["attach"] = parent
@@ -519,13 +509,12 @@ def serialize_lighting():
             entry["position"] = keep(prev.get("position"), space.to_engine_point(location), 5)
         if entry["type"] in ("spot", "sun") and not state_driven(name):
             entry["direction"] = keep(prev.get("direction"), space.to_engine_direction(space.facing(turn)), 6)
-        if o.type == 'LIGHT':
-            d = o.data
-            if d.type == 'SPOT':
-                entry["angle"], entry["penumbra"] = keep([prev.get("angle"), prev.get("penumbra")] if "angle" in prev else None,
-                                                         space.to_engine_spot(d.spot_size, d.spot_blend), 4, 1e-3)
-            if "softSize" in prev:
-                entry["softSize"] = prev["softSize"] if abs(prev["softSize"] - d.shadow_soft_size) <= EPS else round(d.shadow_soft_size, 6)
+        d = o.data
+        if d.type == 'SPOT':
+            entry["angle"], entry["penumbra"] = keep([prev.get("angle"), prev.get("penumbra")] if "angle" in prev else None,
+                                                     space.to_engine_spot(d.spot_size, d.spot_blend), 4, 1e-3)
+        if "softSize" in prev:
+            entry["softSize"] = prev["softSize"] if abs(prev["softSize"] - d.shadow_soft_size) <= EPS else round(d.shadow_soft_size, 6)
             entry["shadow"] = d.use_shadow
         ordered = {k: entry[k] for k in LIGHT_KEYS if k in entry}
         ordered.update({k: v for k, v in entry.items() if k not in ordered})
@@ -588,8 +577,6 @@ def problems(part, data):
                 found.append("%s attaches to missing %s" % (name, attach))
             if attach and light.get("glowPart") and light["glowPart"] not in doc(layout[attach]["asset"])["parts"]:
                 found.append("%s glows missing part %s" % (name, light["glowPart"]))
-            if light["type"] == "glow" and not attach:
-                found.append("%s glows but is attached to nothing" % name)
     return found
 
 
@@ -992,7 +979,7 @@ class ROOM_OT_attach(bpy.types.Operator):
         if o is None:
             return {'CANCELLED'}
         lights = S["data"]["lighting"]["lights"]
-        entry = lights.setdefault(o["room_light"], {"type": "glow" if o.type != 'LIGHT' else o.data.type.lower()})
+        entry = lights.setdefault(o["room_light"], {"type": o.data.type.lower()})
         old = glow_part(o)
         if self.key == "attach":
             context.view_layer.update()

@@ -2,7 +2,6 @@
 
 #include "window.h"
 #include "debug/debugcontext.h"
-#include "desktop/desktop.h"
 #include "gl/meshcache.h"
 #include "gl/texturecache.h"
 #include "input/cursor.h"
@@ -18,6 +17,7 @@ public:
     bool initialize();
     void run();
     void shutdown();
+    void setScreen(const std::string &name);
 
 private:
     void update(float deltaTime);
@@ -29,7 +29,6 @@ private:
     TextureCache m_textureCache;
     SceneRenderer m_sceneRenderer;
     SpriteRenderer m_spriteRenderer;
-    Desktop m_desktop;
     Cursor m_cursor;
     std::vector<std::unique_ptr<Screen>> m_screens;
     int m_current = 0;

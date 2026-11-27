@@ -1,6 +1,6 @@
 {
-  "parts": ["line"],
+  "parts": ["line", "clothes"],
   "shapes": ["a"],
-  "colors": {"main": {"line": "clotheslineLine"}},
+  "colors": {"main": {"line": "clotheslineLine", "clothes": "clotheslineLine"}},
   "materials": {"clotheslineLine": {"color": "textures/clotheslineLine_color.png"}}
 }
