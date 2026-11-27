@@ -1,0 +1,10 @@
+{
+  "parts": ["body", "coffee", "rim"],
+  "shapes": ["a", "b", "c", "d", "e", "f", "g", "h"],
+  "colors": {
+    "greyLight14": {"body": "greyLight14", "coffee": "grey6"},
+    "yellowLight5": {"body": "yellowLight5", "coffee": "brownDark3"},
+    "yellowLight4": {"body": "yellowLight4", "coffee": "brownDark"},
+    "warmGreyLight5": {"body": "warmGreyLight5", "coffee": "brownDark3", "rim": "green2"}
+  }
+}

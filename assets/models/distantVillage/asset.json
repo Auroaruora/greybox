@@ -1,0 +1,6 @@
+{
+  "parts": ["houses"],
+  "shapes": ["a"],
+  "colors": {"main": {"houses": "distantVillageHouses"}},
+  "materials": {"distantVillageHouses": {"color": "textures/distantVillageHouses_color.png"}}
+}

@@ -1,0 +1,10 @@
+{
+  "parts": ["body", "screen", "stand", "badge"],
+  "shapes": ["a", "b", "c", "d", "e"],
+  "colors": {
+    "grey6": {"body": "grey6", "screen": "screen", "stand": "grey6"},
+    "greyDark": {"body": "greyDark", "screen": "screen", "stand": "grey2"},
+    "coolGreyDark": {"body": "coolGreyDark", "screen": "screen", "stand": "coolGrey3"},
+    "warmGreyLight5": {"badge": "olive3", "body": "warmGreyLight5", "screen": "screen", "stand": "warmGreyLight5"}
+  }
+}

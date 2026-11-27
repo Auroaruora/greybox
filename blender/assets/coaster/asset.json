@@ -1,8 +1,0 @@
-{
-  "about": "",
-  "area": "desk",
-  "parts": ["body"],
-  "shapes": ["a"],
-  "colors": {"cork": {"shapes": ["a"], "body": "cork"}},
-  "materials": {"cork": {"color": "textures/cork_color.png"}}
-}

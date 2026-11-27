@@ -1,0 +1,6 @@
+{
+  "parts": ["tree"],
+  "shapes": ["a"],
+  "colors": {"main": {"tree": "knollTreeTree"}},
+  "materials": {"knollTreeTree": {"color": "textures/knollTreeTree_color.png"}}
+}

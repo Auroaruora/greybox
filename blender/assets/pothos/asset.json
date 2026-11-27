@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "shelf",
-  "parts": ["leaves", "pot", "soil", "stems"],
-  "shapes": ["a"],
-  "colors": {"green": {"leaves": "green", "pot": "grey4", "soil": "greyDark3", "stems": "greenDark"}}
-}

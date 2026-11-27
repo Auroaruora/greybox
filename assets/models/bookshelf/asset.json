@@ -1,0 +1,10 @@
+{
+  "parts": ["frame", "back"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey": {"*": "grey"},
+    "greyLight7": {"frame": "greyLight7"},
+    "warmGreyLight": {"frame": "warmGreyLight"},
+    "warmGreyLight4": {"frame": "warmGreyLight4"}
+  }
+}

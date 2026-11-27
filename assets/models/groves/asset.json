@@ -1,0 +1,6 @@
+{
+  "parts": ["canopy"],
+  "shapes": ["a"],
+  "colors": {"main": {"canopy": "grovesCanopy"}},
+  "materials": {"grovesCanopy": {"color": "textures/grovesCanopy_color.png"}}
+}

@@ -1,0 +1,5 @@
+{
+  "parts": ["body", "buttons"],
+  "shapes": ["a"],
+  "colors": {"greyDark3": {"body": "greyDark3", "buttons": "grey5"}}
+}

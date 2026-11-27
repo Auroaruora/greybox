@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "shelf",
-  "parts": ["bin", "tab"],
-  "shapes": ["a"],
-  "colors": {"warmGrey": {"bin": "warmGrey", "tab": "olive7"}, "coolGreyDark": {"bin": "coolGreyDark", "tab": "olive7"}}
-}

@@ -28,7 +28,6 @@ public:
     void add(float time, const CameraPose &pose);
 
     CameraPose getPose(float time) const;
-    const std::vector<CameraKey> &getKeys() const;
     float getDuration() const;
 
 private:

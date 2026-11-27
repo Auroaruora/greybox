@@ -1,0 +1,11 @@
+{
+  "parts": ["base", "top", "sink", "handles"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey": {"base": "grey", "sink": "grey6", "top": "greyLight5"},
+    "coolGrey": {"shapes": ["b"], "base": "coolGrey", "handles": "yellowLight3", "sink": "grey3", "top": "top"},
+    "blue": {"shapes": ["b"], "base": "blue", "handles": "amber", "sink": "coolGrey2", "top": "top"},
+    "green": {"shapes": ["b"], "base": "green", "handles": "brown", "sink": "olive3", "top": "top"}
+  },
+  "materials": {"top": {"color": "textures/top_color.png"}}
+}

@@ -1,0 +1,6 @@
+{
+  "parts": ["frame", "print"],
+  "shapes": ["a", "b", "c"],
+  "colors": {"olive7": {"frame": "olive7"}, "olive7Hills": {"shapes": ["c"], "frame": "olive7", "print": "hills"}, "teapot": {"shapes": ["b"], "print": "teapot"}},
+  "materials": {"hills": {"color": "textures/hills_color.png"}, "teapot": {"color": "textures/teapot_color.png"}}
+}

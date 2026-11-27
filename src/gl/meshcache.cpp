@@ -12,7 +12,7 @@ MeshCache::Entry &MeshCache::load(const std::string &filepath) {
 
     Entry &entry = m_entries[filepath];
     std::vector<float> vertexData;
-    if (ObjLoader::load(filepath, vertexData)) {
+    if (ObjLoader::load(filepath, vertexData, entry.material)) {
         entry.mesh.create(vertexData);
         for (size_t v = 0; v + 2 < vertexData.size(); v += Mesh::FloatsPerVertex) {
             entry.aabb.expand(glm::vec3(vertexData[v], vertexData[v + 1], vertexData[v + 2]));
@@ -27,6 +27,10 @@ const Mesh &MeshCache::getMesh(const std::string &filepath) {
 
 const AABB &MeshCache::getAABB(const std::string &filepath) {
     return load(filepath).aabb;
+}
+
+const std::string &MeshCache::getMaterialName(const std::string &filepath) {
+    return load(filepath).material;
 }
 
 void MeshCache::clear() {

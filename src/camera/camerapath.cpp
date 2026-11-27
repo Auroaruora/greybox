@@ -78,10 +78,6 @@ CameraPose CameraPath::getPose(float time) const {
     return toPose(evaluateBezier(from.point, from.handleOut, to.handleIn, to.point, u));
 }
 
-const std::vector<CameraKey> &CameraPath::getKeys() const {
-    return m_keys;
-}
-
 float CameraPath::getDuration() const {
     return m_keys.empty() ? 0.0f : m_keys.back().time;
 }

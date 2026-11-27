@@ -10,12 +10,14 @@ class MeshCache {
 public:
     const Mesh &getMesh(const std::string &filepath);
     const AABB &getAABB(const std::string &filepath);
+    const std::string &getMaterialName(const std::string &filepath);
     void clear();
 
 private:
     struct Entry {
         Mesh mesh;
         AABB aabb;
+        std::string material;
     };
 
     Entry &load(const std::string &filepath);

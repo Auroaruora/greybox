@@ -144,6 +144,8 @@ add_executable(${PROJECT_NAME}
     src/render/spriterenderer.cpp
     src/render/spriterenderer.h
 
+    src/screen/hillscreen.cpp
+    src/screen/hillscreen.h
     src/screen/roomscreen.cpp
     src/screen/roomscreen.h
     src/screen/scene.cpp
@@ -155,10 +157,10 @@ add_executable(${PROJECT_NAME}
     src/story/roomstory.h
     src/story/story.h
 
+    src/utils/assetreader.cpp
+    src/utils/assetreader.h
     src/utils/imageloader.cpp
     src/utils/imageloader.h
-    src/utils/lightingreader.cpp
-    src/utils/lightingreader.h
     src/utils/lutloader.cpp
     src/utils/lutloader.h
     src/utils/objloader.cpp
@@ -166,14 +168,12 @@ add_executable(${PROJECT_NAME}
     src/utils/paths.cpp
     src/utils/paths.h
     src/utils/scenedata.h
-    src/utils/scenefilereader.cpp
-    src/utils/scenefilereader.h
     src/utils/sceneparser.cpp
     src/utils/sceneparser.h
+    src/utils/scenereader.cpp
+    src/utils/scenereader.h
     src/utils/shaderloader.cpp
     src/utils/shaderloader.h
-    src/utils/viewpointreader.cpp
-    src/utils/viewpointreader.h
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src external/json external/stb)

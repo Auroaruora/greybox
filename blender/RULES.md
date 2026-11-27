@@ -6,16 +6,16 @@ What every asset model must be. The `handle-requests` skill says how to work; th
 
 | What | Where |
 |---|---|
-| Status, level, why, variants, surfaces, requests | `asset_list.json` (changed only by `scripts/agent/requests.py` or the review page) |
-| Model, one collection per variant | `assets/<id>/<id>.blend` |
-| Parts, variants, colour sets, own materials | `assets/<id>/asset.json` (changed only by `requests.py`) |
-| Textures | `assets/<id>/textures/` |
-| Request images | `assets/<id>/refs/` |
-| Palette | `assets/materials/materials.json`, `materials.blend` |
+| Status, level, why, variants, surfaces, requests | `asset_list.json` (changed only by `tools/agent/requests.py` or the review page) |
+| Model, one collection per variant | `models/<id>/model.blend` |
+| Parts, variants, colour sets, own materials | `../assets/models/<id>/asset.json` (changed only by `requests.py`) |
+| Textures | `../assets/models/<id>/textures/` |
+| Request images | `models/<id>/refs/` |
+| Palette | `materials/palette.blend`; `../assets/materials/palette.json` is exported from it |
 
 ## Names
 
-- **id**: the asset's camelCase name (`deskLamp`). Used by folders, layouts, presets and game code. Never change it.
+- **id**: the asset's camelCase name (`deskLamp`). Used by folders, layouts, looks and game code. Never change it.
 - **variant**: one shape of the asset, named by a letter.
 - **surface**: one extra look of a variant (textures on some parts). It is a colour set in `asset.json` named `<variant>Surface<n>`, used only by that variant. A variant's default look is the materials on its mesh.
 - **part**: one piece of the asset, from `parts` in `asset.json`. A variant may leave a part out. Add a part only with `requests.py part`.
@@ -61,7 +61,7 @@ Mesh slots use only palette materials or the asset's existing own materials. Nev
 
 ## Never
 
-- Change other assets, presets, layouts, lighting, cameras or the palette.
+- Change other assets, scene data (layouts, looks, lighting, viewpoints) or the palette.
 - Delete or retire a variant or surface; that is the user's call.
 - Create `.blend1` files.
 - Commit to git.

@@ -12,6 +12,7 @@ public:
     void setPose(const CameraPose &pose);
     void setPose(const glm::vec3 &position, const glm::vec3 &look, const glm::vec3 &up);
     void setAspectRatio(float aspect);
+    void setFar(float far);
 
     const CameraPose &getPose() const;
     const glm::mat4 &getViewMatrix() const;

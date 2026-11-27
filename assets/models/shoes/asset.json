@@ -1,0 +1,10 @@
+{
+  "parts": ["upper", "sole"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "grey6": {"upper": "grey6"},
+    "blue2": {"sole": "greyLight7", "upper": "blue2"},
+    "blue3": {"sole": "warmGreyLight", "upper": "blue3"},
+    "green2": {"sole": "warmGreyLight4", "upper": "green2"}
+  }
+}

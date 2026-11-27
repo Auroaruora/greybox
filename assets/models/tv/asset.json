@@ -1,0 +1,10 @@
+{
+  "parts": ["body", "foot", "screen", "standbyLight"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey6": {"body": "grey6", "foot": "grey6", "standbyLight": "standby"},
+    "greyDark": {"body": "greyDark", "foot": "greyDark", "screen": "greyDark2", "standbyLight": "standby"},
+    "coolGreyDark": {"body": "coolGreyDark", "foot": "coolGreyDark", "screen": "coolGreyDark2", "standbyLight": "standby"},
+    "warmGreyDark": {"body": "warmGreyDark", "foot": "warmGreyDark", "screen": "greyDark3", "standbyLight": "standby"}
+  }
+}

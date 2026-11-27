@@ -1,8 +1,6 @@
 #pragma once
 
-#include "utils/lightingreader.h"
 #include "utils/sceneparser.h"
-#include "utils/viewpointreader.h"
 
 #include <string>
 #include <vector>
@@ -12,7 +10,7 @@ class TextureCache;
 
 class Scene {
 public:
-    bool load(const std::string &filepath);
+    bool load(const std::string &filepath, MeshCache &meshCache);
     void loadMeshes(MeshCache &meshCache);
     void loadTextures(TextureCache &textureCache);
     void setLightEnabled(int index, bool enabled);
@@ -33,9 +31,6 @@ public:
     std::string getSummary() const;
 
 private:
-    void loadLighting();
-    void loadViewpoints();
-
     RenderData m_data;
     std::string m_filepath;
     std::vector<LightingGroup> m_lightingGroups;

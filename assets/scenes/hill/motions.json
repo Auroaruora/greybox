@@ -1,0 +1,29 @@
+{
+  "build": {
+    "type": "assemble",
+    "objects": {
+      "knollTree01": {"start": 1.0, "span": 1.5, "duration": 0.6, "lift": 0},
+      "jetty01.deck": {"start": 2.0, "span": 3.0, "duration": 0.45, "lift": 1.2},
+      "jetty01.markers": {"start": 3.0, "span": 2.0, "duration": 0.5, "lift": 0},
+      "cart01": {"start": 5.5, "span": 0.8, "duration": 0.5, "lift": 0.6},
+      "path01": {"start": 5.0, "span": 9.0, "duration": 0.45, "lift": 1.4},
+      "fence01": {"start": 7.0, "span": 3.5, "duration": 0.45, "lift": 0},
+      "rocks01": {"start": 7.0, "span": 8.0, "duration": 0.5, "lift": 0.8},
+      "bushes01": {"start": 9.0, "span": 6.0, "duration": 0.6, "lift": 0},
+      "clothesline01": {"start": 10.5, "span": 1.6, "duration": 0.5, "lift": 0},
+      "oakTree01.trunk": {"start": 12.0, "span": 1.0, "duration": 0.6, "lift": 0},
+      "oakTree01.canopy": {"start": 12.8, "span": 2.2, "duration": 0.5, "lift": 0},
+      "gatePosts01": {"start": 14.0, "span": 0.4, "duration": 0.5, "lift": 0},
+      "cottage01.walls": {"start": 14.5, "span": 1.2, "duration": 0.6, "lift": 0},
+      "cottage01.roof": {"start": 16.0, "span": 0.0, "duration": 0.6, "lift": 2.5},
+      "cottage01.door": {"start": 16.6, "span": 0.0, "duration": 0.4, "lift": 0},
+      "cottage01.windows": {"start": 16.8, "span": 0.8, "duration": 0.4, "lift": 0},
+      "windmill01.tower": {"start": 17.3, "span": 0.6, "duration": 0.7, "lift": 0},
+      "windmill01.blades": {"start": 18.4, "span": 0.6, "duration": 0.6, "lift": 0},
+      "flowers01": {"start": 15.0, "span": 8.0, "duration": 0.6, "lift": 0},
+      "village01": {"start": 21.0, "span": 4.0, "duration": 0.6, "lift": 3.0},
+      "groves01": {"start": 22.0, "span": 7.0, "duration": 0.6, "lift": 0},
+      "clouds01": {"start": 25.0, "span": 9.0, "duration": 1.2, "lift": 0}
+    }
+  }
+}

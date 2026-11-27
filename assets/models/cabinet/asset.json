@@ -1,0 +1,10 @@
+{
+  "parts": ["body", "handles"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey": {"body": "grey"},
+    "greyLight7": {"body": "greyLight7", "handles": "yellowLight3"},
+    "warmGreyLight": {"body": "warmGreyLight", "handles": "amber"},
+    "warmGreyLight4": {"body": "warmGreyLight4", "handles": "brown"}
+  }
+}

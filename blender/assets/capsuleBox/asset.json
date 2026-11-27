@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "kitchen",
-  "parts": ["body", "back"],
-  "shapes": ["a", "b"],
-  "colors": {"grey": {"*": "grey"}, "yellowLight3": {"body": "yellowLight3"}, "amber": {"body": "amber"}, "brown": {"body": "brown"}}
-}

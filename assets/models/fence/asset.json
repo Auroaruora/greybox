@@ -1,0 +1,6 @@
+{
+  "parts": ["rails"],
+  "shapes": ["a"],
+  "colors": {"main": {"rails": "fenceRails"}},
+  "materials": {"fenceRails": {"color": "textures/fenceRails_color.png"}}
+}

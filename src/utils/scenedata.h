@@ -93,6 +93,7 @@ struct SceneCameraData {
     glm::vec4 up;
 
     float heightAngle; // The height angle of the camera in RADIANS
+    float far;
 
     float aperture;    // Only applicable for depth of field
     float focalLength; // Only applicable for depth of field

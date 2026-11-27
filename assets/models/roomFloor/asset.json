@@ -1,0 +1,15 @@
+{
+  "parts": ["floor"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "grey4": {"floor": "grey4"},
+    "floorOak": {"shapes": ["b"], "floor": "floorOak"},
+    "floorOak2": {"shapes": ["b"], "floor": "floorOak2"},
+    "floorOak3": {"shapes": ["b"], "floor": "floorOak3"}
+  },
+  "materials": {
+    "floorOak": {"color": "textures/floorOak_color.png"},
+    "floorOak2": {"color": "textures/floorOak2_color.png"},
+    "floorOak3": {"color": "textures/floorOak3_color.png"}
+  }
+}

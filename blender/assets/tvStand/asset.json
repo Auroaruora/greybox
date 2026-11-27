@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "living",
-  "parts": ["body"],
-  "shapes": ["a", "b"],
-  "colors": {"grey": {"body": "grey"}, "yellowLight3": {"body": "yellowLight3"}, "amber": {"body": "amber"}, "brown": {"body": "brown"}}
-}

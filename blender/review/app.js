@@ -1,11 +1,11 @@
 import { Viewer } from "/viewer.js";
 
 const app = document.getElementById("app");
-const STATUS_NAMES = { room: "In room", idea: "Ideas", shelved: "Shelved" };
-const STATUS_ONE = { room: "In room", idea: "Idea", shelved: "Shelved" };
+const STATUS_NAMES = { used: "In use", idea: "Ideas", shelved: "Shelved" };
+const STATUS_ONE = { used: "In use", idea: "Idea", shelved: "Shelved" };
 const REVIEW = [["", "Any review"], ["new", "Needs review"], ["redo", "Redo asked"], ["ok", "All ok"], ["none", "No model"]];
 const AREA_ORDER = ["desk", "wall", "shelf", "print", "furniture", "living", "kitchen", "entry", "shell"];
-const ui = { tab: "room", search: "", area: "", level: "", review: "", selected: null, adding: false };
+const ui = { tab: "used", search: "", area: "", level: "", review: "", selected: null, adding: false };
 const page = {};
 let list = null;
 let viewer = null;

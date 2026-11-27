@@ -1,0 +1,6 @@
+{
+  "parts": ["slabs"],
+  "shapes": ["a"],
+  "colors": {"main": {"slabs": "hillPathSlabs"}},
+  "materials": {"hillPathSlabs": {"color": "textures/hillPathSlabs_color.png"}}
+}

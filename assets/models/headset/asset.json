@@ -1,0 +1,10 @@
+{
+  "parts": ["band", "cups", "cushions"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "grey6": {"*": "grey6"},
+    "greyLight7": {"band": "greyLight7", "cups": "greyLight7", "cushions": "warmGreyLight9"},
+    "warmGreyLight": {"band": "warmGreyLight", "cups": "warmGreyLight", "cushions": "orange"},
+    "warmGreyLight4": {"band": "warmGreyLight4", "cups": "warmGreyLight4", "cushions": "amber2"}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parts": ["body"],
+  "shapes": ["a", "b"],
+  "colors": {"sticky1": {"shapes": ["a"], "body": "sticky1"}, "sticky0": {"shapes": ["b"], "body": "sticky0"}},
+  "materials": {"sticky0": {"color": "textures/sticky0_color.png"}, "sticky1": {"color": "textures/sticky1_color.png"}}
+}

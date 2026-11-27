@@ -1,0 +1,6 @@
+{
+  "parts": ["posts"],
+  "shapes": ["a"],
+  "colors": {"main": {"posts": "gatePostsPosts"}},
+  "materials": {"gatePostsPosts": {"color": "textures/gatePostsPosts_color.png"}}
+}

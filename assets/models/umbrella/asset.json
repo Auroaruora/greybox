@@ -1,0 +1,5 @@
+{
+  "parts": ["canopy", "handle"],
+  "shapes": ["a"],
+  "colors": {"olive6": {"canopy": "olive6", "handle": "brownDark2"}}
+}

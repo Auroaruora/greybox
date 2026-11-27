@@ -1,5 +1,5 @@
 {
-  "serves": {"play": "Used by gameplay", "rae": "Says something about Rae", "life": "Makes the room feel lived in", "room": "The room does not stand without it", "none": "Nothing yet"},
+  "serves": {"play": "Used by gameplay", "rae": "Says something about Rae", "life": "Makes the room feel lived in", "room": "The room does not stand without it", "none": "Nothing yet", "hill": "Builds the hill"},
   "levels": {
     "L1": {"name": "hero", "modelling": "Clicked or focused on. Close-up detail, clean silhouette, bevel the edges seen from the seat, smooth curved parts."},
     "L2": {"name": "key", "modelling": "Seen close or tells a strong story. Clear silhouette, bevel only edges that catch light."},
@@ -8,7 +8,7 @@
   },
   "assets": {
     "artBook": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "shelf",
@@ -28,7 +28,7 @@
       "requests": []
     },
     "beanBag": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "living",
@@ -37,7 +37,7 @@
       "requests": []
     },
     "bin": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "furniture",
@@ -46,7 +46,7 @@
       "requests": []
     },
     "blindSlat": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "play",
       "area": "shell",
@@ -55,7 +55,7 @@
       "requests": []
     },
     "boardPaper": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "wall",
@@ -85,7 +85,7 @@
       "requests": []
     },
     "book": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "shelf",
@@ -94,7 +94,7 @@
       "requests": []
     },
     "bookshelf": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "furniture",
@@ -103,7 +103,7 @@
       "requests": []
     },
     "brushCup": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "print",
@@ -112,7 +112,7 @@
       "requests": []
     },
     "bunnyPrint": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "shelf",
@@ -121,7 +121,7 @@
       "requests": []
     },
     "cabinet": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "furniture",
@@ -130,7 +130,7 @@
       "requests": []
     },
     "calendar": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "wall",
@@ -148,7 +148,7 @@
       "requests": []
     },
     "capsule": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "rae",
       "area": "kitchen",
@@ -157,7 +157,7 @@
       "requests": []
     },
     "capsuleBox": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "kitchen",
@@ -166,7 +166,7 @@
       "requests": []
     },
     "capsuleMachine": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "kitchen",
@@ -193,7 +193,7 @@
       "requests": []
     },
     "chair": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "furniture",
@@ -202,7 +202,7 @@
       "requests": []
     },
     "chickenPrint": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "shelf",
@@ -229,7 +229,7 @@
       "requests": []
     },
     "console": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "living",
@@ -238,7 +238,7 @@
       "requests": []
     },
     "controller": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "living",
@@ -247,7 +247,7 @@
       "requests": []
     },
     "corkboard": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "wall",
@@ -256,7 +256,7 @@
       "requests": []
     },
     "counter": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "kitchen",
@@ -283,7 +283,7 @@
       "requests": []
     },
     "desk": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "furniture",
@@ -292,7 +292,7 @@
       "requests": []
     },
     "deskLamp": {
-      "status": "room",
+      "status": "used",
       "level": "L1",
       "serves": "play",
       "area": "desk",
@@ -301,7 +301,7 @@
       "requests": []
     },
     "deskMat": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "desk",
@@ -310,7 +310,7 @@
       "requests": []
     },
     "door": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "shell",
@@ -338,7 +338,7 @@
       "requests": []
     },
     "faucet": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "kitchen",
@@ -347,7 +347,7 @@
       "requests": []
     },
     "filamentSpool": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "print",
@@ -356,7 +356,7 @@
       "requests": []
     },
     "floorCushion": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "living",
@@ -365,7 +365,7 @@
       "requests": []
     },
     "fridge": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "kitchen",
@@ -392,7 +392,7 @@
       "requests": []
     },
     "gameCase": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "living",
@@ -410,7 +410,7 @@
       "requests": []
     },
     "hairClip": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "desk",
@@ -428,7 +428,7 @@
       "requests": []
     },
     "headset": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "desk",
@@ -437,7 +437,7 @@
       "requests": []
     },
     "headsetHook": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "desk",
@@ -446,7 +446,7 @@
       "requests": []
     },
     "housePrint": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "shelf",
@@ -455,7 +455,7 @@
       "requests": []
     },
     "ideaNotebook": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "desk",
@@ -464,7 +464,7 @@
       "requests": []
     },
     "keyboard": {
-      "status": "room",
+      "status": "used",
       "level": "L1",
       "serves": "play",
       "area": "desk",
@@ -473,7 +473,7 @@
       "requests": []
     },
     "lightStrip": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "kitchen",
@@ -491,7 +491,7 @@
       "requests": []
     },
     "microwave": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "play",
       "area": "kitchen",
@@ -500,7 +500,7 @@
       "requests": []
     },
     "monitor": {
-      "status": "room",
+      "status": "used",
       "level": "L1",
       "serves": "play",
       "area": "desk",
@@ -533,7 +533,7 @@
       "requests": []
     },
     "mouse": {
-      "status": "room",
+      "status": "used",
       "level": "L1",
       "serves": "play",
       "area": "desk",
@@ -542,7 +542,7 @@
       "requests": []
     },
     "mug": {
-      "status": "room",
+      "status": "used",
       "level": "L1",
       "serves": "play",
       "area": "desk",
@@ -569,7 +569,7 @@
       "requests": []
     },
     "paintBox": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "print",
@@ -578,7 +578,7 @@
       "requests": []
     },
     "paperBall": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "furniture",
@@ -617,7 +617,7 @@
       "requests": []
     },
     "pen": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "desk",
@@ -642,7 +642,7 @@
       "requests": []
     },
     "penCup": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "desk",
@@ -660,7 +660,7 @@
       "requests": []
     },
     "phone": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "desk",
@@ -714,7 +714,7 @@
       "requests": []
     },
     "printer": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "print",
@@ -763,7 +763,7 @@
       "requests": []
     },
     "roomCeiling": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "shell",
@@ -772,7 +772,7 @@
       "requests": []
     },
     "roomFloor": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "shell",
@@ -781,7 +781,7 @@
       "requests": []
     },
     "roomWalls": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "shell",
@@ -790,7 +790,7 @@
       "requests": []
     },
     "rug": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "living",
@@ -799,7 +799,7 @@
       "requests": []
     },
     "shoes": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "entry",
@@ -808,7 +808,7 @@
       "requests": []
     },
     "skyCard": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "room",
       "area": "shell",
@@ -846,7 +846,7 @@
     },
     "sponge": {"status": "idea", "level": "L4", "serves": "life", "area": "kitchen", "why": "She does wash up.", "variants": {"a": {"review": ""}}, "requests": []},
     "stickyNote": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "wall",
@@ -876,7 +876,7 @@
       "requests": []
     },
     "switch": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "desk",
@@ -903,7 +903,7 @@
       "requests": []
     },
     "teapotPrint": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "shelf",
@@ -912,7 +912,7 @@
       "requests": []
     },
     "teapotPrintHalf": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "print",
@@ -930,7 +930,7 @@
       "requests": []
     },
     "tv": {
-      "status": "room",
+      "status": "used",
       "level": "L2",
       "serves": "rae",
       "area": "living",
@@ -939,7 +939,7 @@
       "requests": []
     },
     "tvStand": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "living",
@@ -957,7 +957,7 @@
       "requests": []
     },
     "upperCabinet": {
-      "status": "room",
+      "status": "used",
       "level": "L4",
       "serves": "room",
       "area": "kitchen",
@@ -975,7 +975,7 @@
       "requests": []
     },
     "vegetablePrint": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "rae",
       "area": "shelf",
@@ -1011,7 +1011,7 @@
       "requests": []
     },
     "windowFrame": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "room",
       "area": "shell",
@@ -1020,12 +1020,174 @@
       "requests": []
     },
     "windowFrameNarrow": {
-      "status": "room",
+      "status": "used",
       "level": "L3",
       "serves": "room",
       "area": "shell",
       "why": "Second window.",
       "variants": {"a": {"review": ""}, "b": {"review": ""}},
+      "requests": []
+    },
+    "hillKnoll": {
+      "status": "used",
+      "level": "L3",
+      "serves": "hill",
+      "area": "hill terrain",
+      "why": "The windmill knoll everything else stands on.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "meadow": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill terrain",
+      "why": "Rolling meadow around the knoll, out to the horizon.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "hillPath": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill terrain",
+      "why": "Stone slab path up the knoll.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "rocks": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill terrain",
+      "why": "Rocks scattered over the slopes.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "groves": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill nature",
+      "why": "Tree groves on the far hills.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "bushes": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill nature",
+      "why": "Bushes around the knoll.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "flowers": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill nature",
+      "why": "Wild flowers in the grass.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "oakTree": {
+      "status": "used",
+      "level": "L3",
+      "serves": "hill",
+      "area": "hill nature",
+      "why": "The big tree beside the windmill.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "knollTree": {
+      "status": "used",
+      "level": "L3",
+      "serves": "hill",
+      "area": "hill nature",
+      "why": "Small tree on the near knoll.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "cottage": {
+      "status": "used",
+      "level": "L3",
+      "serves": "hill",
+      "area": "hill village",
+      "why": "Cottage next to the windmill; its windows light up in the evening.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "windmill": {
+      "status": "used",
+      "level": "L2",
+      "serves": "hill",
+      "area": "hill village",
+      "why": "The windmill on the knoll; its sails turn.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "distantVillage": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill village",
+      "why": "Houses on the far hill.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "fence": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill props",
+      "why": "Fence along the path.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "gatePosts": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill props",
+      "why": "Gate posts at the top of the path.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "jetty": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill props",
+      "why": "Jetty and its markers.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "cart": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill props",
+      "why": "Hay cart beside the path.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "clothesline": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill props",
+      "why": "Clothesline by the cottage.",
+      "variants": {"a": {"review": ""}},
+      "requests": []
+    },
+    "clouds": {
+      "status": "used",
+      "level": "L4",
+      "serves": "hill",
+      "area": "hill sky",
+      "why": "Cumulus clouds around the hill.",
+      "variants": {"a": {"review": ""}},
       "requests": []
     }
   }

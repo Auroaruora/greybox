@@ -53,11 +53,11 @@
    git fetch --prune
    ```
 
-6. Some files are touched by both people, such as `scenerenderer`, `default.frag`, `debuglayout`, `app.cpp`, `CMakeLists.txt`, `scenedata` and the export script. For these:
+6. Some files are touched by both people, such as `scenerenderer`, `phong.frag`, `debuglayout`, `app.cpp`, `CMakeLists.txt`, `scenedata` and the export script. For these:
    - Tell the other person before you change one.
    - Add new code; don't reorder, reformat or rename code someone else wrote.
    - If you need to change an interface (a function's parameters, a struct's fields), put only that change in its own small pull request and merge it first, so the other person can build on it right away.
 
-7. Only one person edits a `.blend` file at a time; say so before you start. `assets/scenes`, `meshes` and `textures` are not in git: run the Blender export after every pull (see `docs/setup.md`).
+7. Only one person edits a `.blend` file at a time; say so before you start. Exported OBJ files and `assets/materials/palette.json` are not in git: run the Blender export after every pull (see `docs/setup.md`).
 
 8. Before pushing, check that the Debug and Release builds both compile and run without errors.

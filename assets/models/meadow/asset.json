@@ -1,0 +1,6 @@
+{
+  "parts": ["near", "far"],
+  "shapes": ["a"],
+  "colors": {"main": {"near": "meadowNear", "far": "meadowFar"}},
+  "materials": {"meadowNear": {"color": "textures/meadowNear_color.png"}, "meadowFar": {"color": "textures/meadowFar_color.png"}}
+}

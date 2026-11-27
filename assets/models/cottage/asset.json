@@ -1,0 +1,11 @@
+{
+  "parts": ["walls", "roof", "door", "windows"],
+  "shapes": ["a"],
+  "colors": {"main": {"walls": "cottageWalls", "roof": "cottageRoof", "door": "cottageDoor", "windows": "cottageWindows"}},
+  "materials": {
+    "cottageWalls": {"color": "textures/cottageWalls_color.png"},
+    "cottageRoof": {"color": "textures/cottageRoof_color.png"},
+    "cottageDoor": {"color": "textures/cottageDoor_color.png"},
+    "cottageWindows": {"color": "textures/cottageWindows_color.png"}
+  }
+}

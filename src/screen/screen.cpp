@@ -8,7 +8,7 @@ Screen::Screen(const std::string &name, const std::string &sceneFile) {
 }
 
 bool Screen::load(MeshCache &meshCache, TextureCache &textureCache) {
-    if (!m_scene.load(m_sceneFile)) {
+    if (!m_scene.load(m_sceneFile, meshCache)) {
         return false;
     }
     m_scene.loadMeshes(meshCache);

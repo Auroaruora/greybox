@@ -1,0 +1,11 @@
+{
+  "parts": ["photo", "tape"],
+  "shapes": ["a", "b", "c", "d"],
+  "colors": {
+    "sea": {"shapes": ["b"], "photo": "sea"},
+    "cat": {"shapes": ["c"], "photo": "cat"},
+    "desk": {"shapes": ["d"], "photo": "desk"},
+    "olive4": {"tape": "olive4"}
+  },
+  "materials": {"cat": {"color": "textures/cat_color.png"}, "desk": {"color": "textures/desk_color.png"}, "sea": {"color": "textures/sea_color.png"}}
+}

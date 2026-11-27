@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "entry",
-  "parts": ["bag", "straps"],
-  "shapes": ["a"],
-  "colors": {"warmGrey": {"*": "warmGrey"}}
-}
