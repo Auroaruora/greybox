@@ -14,9 +14,11 @@ void PhongProgram::loadUniforms() {
     m_uniforms.cSpecular = m_shader.getLocation("cSpecular");
     m_uniforms.cEmissive = m_shader.getLocation("cEmissive");
     m_uniforms.shininess = m_shader.getLocation("shininess");
+    m_uniforms.cameraPos = m_shader.getLocation("cameraPos");
 }
 
-void PhongProgram::setGlobalData(const SceneGlobalData &globalData) {
+void PhongProgram::setSceneData(const RenderData &data) {
+    const SceneGlobalData &globalData = data.globalData;
     m_shader.setFloat(m_uniforms.ka, globalData.ka);
     m_shader.setFloat(m_uniforms.kd, globalData.kd);
     m_shader.setFloat(m_uniforms.ks, globalData.ks);
@@ -29,4 +31,9 @@ void PhongProgram::setMaterial(const RenderShapeData &shape) {
     m_shader.setVec3(m_uniforms.cSpecular, glm::vec3(material.cSpecular));
     m_shader.setVec3(m_uniforms.cEmissive, shape.emissiveEnabled ? glm::vec3(material.cEmissive) : glm::vec3(0.0f));
     m_shader.setFloat(m_uniforms.shininess, material.shininess);
+}
+
+void PhongProgram::setCamera(const Camera &camera) {
+    ShadingProgram::setCamera(camera);
+    m_shader.setVec3(m_uniforms.cameraPos, camera.getPose().position);
 }

@@ -25,7 +25,7 @@ public:
 
 protected:
     virtual void loadUniforms() = 0;
-    virtual void setGlobalData(const SceneGlobalData &globalData) = 0;
+    virtual void setSceneData(const RenderData &data) = 0;
     virtual void setMaterial(const RenderShapeData &shape) = 0;
 
     virtual void setCamera(const Camera &camera);
@@ -53,7 +53,6 @@ private:
     struct Uniforms {
         GLint viewMatrix = -1;
         GLint projMatrix = -1;
-        GLint cameraPos = -1;
         GLint modelMatrix = -1;
         GLint normalMatrix = -1;
         GLint lightCount = -1;

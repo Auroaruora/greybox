@@ -4,6 +4,7 @@
 #include "scenedata.h"
 #include <functional>
 #include <map>
+#include <optional>
 #include <vector>
 #include <string>
 
@@ -27,21 +28,25 @@ struct RenderShapeData {
 struct RenderData {
     SceneGlobalData globalData;
     SceneCameraData cameraData;
+    std::optional<SkyColors> sky;
+    std::optional<glm::vec3> toonShade;
 
     std::vector<SceneLightData> lights;
     std::vector<RenderShapeData> shapes;
 };
 
-struct LightingGroup {
-    std::string name;
-    glm::vec3 ambient;
-    std::vector<SceneLightData> lights;
-    std::map<std::string, SceneColor> emissive;
-};
-
 struct Viewpoint {
     std::string name;
     CameraPose pose;
+};
+
+struct LightingState {
+    std::string name;
+    glm::vec3 ambient;
+    std::optional<SkyColors> sky;
+    std::optional<glm::vec3> toonShade;
+    std::vector<SceneLightData> lights;
+    std::map<std::string, SceneColor> emissive;
 };
 
 class SceneParser {
@@ -52,9 +57,9 @@ public:
     // @param lookFile        The look to load, e.g. scenes/room/looks/greybox.json.
     // @param getMeshMaterial Returns the default material name of a mesh file.
     // @param renderData      On return, this will contain the metadata of the loaded scene.
-    // @param lightingGroups  On return, one group per lighting state, the start state first.
+    // @param lightingStates  On return, one entry per lighting state, the start state first.
     // @param viewpoints      On return, the scene's named camera poses.
     // @return                A boolean value indicating whether the parse was successful.
     static bool parse(const std::string &lookFile, const MaterialLookup &getMeshMaterial, RenderData &renderData,
-                      std::vector<LightingGroup> &lightingGroups, std::vector<Viewpoint> &viewpoints);
+                      std::vector<LightingState> &lightingStates, std::vector<Viewpoint> &viewpoints);
 };

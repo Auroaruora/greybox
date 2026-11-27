@@ -40,19 +40,19 @@ static std::string getLightLabel(const SceneLightData &light, int index) {
 }
 
 static void drawLighting(Screen &screen) {
-    const std::vector<LightingGroup> &groups = screen.getScene().getLightingGroups();
-    if (groups.empty()) {
+    const std::vector<LightingState> &states = screen.getScene().getLightingStates();
+    if (states.empty()) {
         return;
     }
 
-    std::string title = "Lighting (" + std::to_string(groups.size()) + ")###Lighting";
+    std::string title = "Lighting (" + std::to_string(states.size()) + ")###Lighting";
     if (!ImGui::CollapsingHeader(title.c_str(), ImGuiTreeNodeFlags_DefaultOpen)) {
         return;
     }
 
-    for (int i = 0; i < static_cast<int>(groups.size()); i++) {
-        if (ImGui::Selectable(groups[i].name.c_str(), groups[i].name == screen.getScene().getLightingName())) {
-            screen.getScene().setLighting(groups[i].name);
+    for (int i = 0; i < static_cast<int>(states.size()); i++) {
+        if (ImGui::Selectable(states[i].name.c_str(), states[i].name == screen.getScene().getLightingName())) {
+            screen.getScene().setLighting(states[i].name);
         }
     }
 }

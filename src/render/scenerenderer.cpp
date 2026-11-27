@@ -2,7 +2,9 @@
 
 #include "gl/mesh.h"
 #include "render/phongprogram.h"
+#include "render/toonprogram.h"
 #include "render/postprocess/gradepass.h"
+#include "utils/shaderloader.h"
 
 #include <string>
 #include <vector>
@@ -24,10 +26,12 @@ static const std::vector<std::string> LutNames = {
 
 void SceneRenderer::initialize() {
     m_programs[ShadingModel::Phong] = std::make_unique<PhongProgram>();
+    m_programs[ShadingModel::Toon] = std::make_unique<ToonProgram>();
     for (auto &[shading, program] : m_programs) {
         program->initialize();
     }
 
+    loadSky();
     m_postProcessor.initialize();
     for (const std::string &lut : LutNames) {
         m_postProcessor.addPass(std::make_unique<GradePass>(lut, "luts/" + lut + ".cube"));
@@ -45,9 +49,33 @@ void SceneRenderer::render(const Camera &camera, const RenderData &data) {
     m_postProcessor.end(m_viewportSize);
 }
 
+void SceneRenderer::loadSky() {
+    ShaderLoader::load(m_skyShader, "shaders/fullscreen.vert", "shaders/sky.frag");
+    m_skyUniforms.inverseViewProjection = m_skyShader.getLocation("inverseViewProjection");
+    m_skyUniforms.cameraPos = m_skyShader.getLocation("cameraPos");
+    m_skyUniforms.zenith = m_skyShader.getLocation("zenith");
+    m_skyUniforms.horizon = m_skyShader.getLocation("horizon");
+    m_skyQuad.create();
+}
+
+void SceneRenderer::drawSky(const Camera &camera, const RenderData &data) const {
+    if (!data.sky || !m_skyShader.isValid()) {
+        return;
+    }
+    glDisable(GL_DEPTH_TEST);
+    m_skyShader.bind();
+    m_skyShader.setMat4(m_skyUniforms.inverseViewProjection, glm::inverse(camera.getProjectionMatrix() * camera.getViewMatrix()));
+    m_skyShader.setVec3(m_skyUniforms.cameraPos, camera.getPose().position);
+    m_skyShader.setVec3(m_skyUniforms.zenith, data.sky->zenith);
+    m_skyShader.setVec3(m_skyUniforms.horizon, data.sky->horizon);
+    m_skyQuad.draw();
+    m_skyShader.unbind();
+}
+
 void SceneRenderer::drawScene(const Camera &camera, const RenderData &data) {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    drawSky(camera, data);
 
     ShadingProgram *program = getProgram(data.globalData.shading);
     if (program == nullptr || !program->isValid()) {
@@ -77,6 +105,8 @@ ShadingProgram *SceneRenderer::getProgram(ShadingModel shading) {
 
 void SceneRenderer::cleanup() {
     m_postProcessor.cleanup();
+    m_skyQuad.cleanup();
+    m_skyShader.cleanup();
     for (auto &[shading, program] : m_programs) {
         program->cleanup();
     }

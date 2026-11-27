@@ -807,15 +807,6 @@
       "variants": {"a": {"review": ""}, "b": {"review": ""}, "c": {"review": ""}},
       "requests": []
     },
-    "skyCard": {
-      "status": "used",
-      "level": "L2",
-      "serves": "room",
-      "area": "shell",
-      "why": "The sky outside the windows.",
-      "variants": {"a": {"review": ""}},
-      "requests": []
-    },
     "slippers": {
       "status": "idea",
       "level": "L4",

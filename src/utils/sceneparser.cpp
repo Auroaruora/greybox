@@ -113,15 +113,6 @@ glm::dmat4 placement(const LayoutObject &object) {
     return glm::rotate(matrix, glm::radians(object.rotation.z), glm::dvec3(0.0, 0.0, 1.0));
 }
 
-CameraPose camera(const ViewSource &view) {
-    CameraPose pose;
-    pose.position = toFloat(view.position);
-    pose.look = toFloat(view.look);
-    pose.up = toFloat(view.up);
-    pose.heightAngle = toRadians(view.heightAngle);
-    return pose;
-}
-
 const LookChoice &getChoice(const Input &input, const std::string &name) {
     static const LookChoice None;
     auto found = input.source.look.find(name);
@@ -245,7 +236,7 @@ std::vector<Part> collectParts(Input &input, const SceneParser::MaterialLookup &
     return parts;
 }
 
-void applyGlow(const Input &input, const LightingState &state, Glow &glow) {
+void applyGlow(const Input &input, const StateSource &state, Glow &glow) {
     for (const LightSource &light : input.source.lights) {
         auto setting = state.lights.find(light.name);
         if (light.attach.empty() || light.glowPart.empty() || setting == state.lights.end() || !setting->second.glow) {
@@ -312,7 +303,7 @@ Light makeLight(const Input &input, const LightSource &source, const LightSettin
     return light;
 }
 
-std::vector<Light> makeLights(const Input &input, const LightingState &state) {
+std::vector<Light> makeLights(const Input &input, const StateSource &state) {
     std::vector<const LightSource *> sources;
     for (const LightSource &source : input.source.lights) {
         sources.push_back(&source);
@@ -393,13 +384,17 @@ void addPart(SceneTree &tree, SceneNode *root, const Part &part, const Glow &glo
     node->primitives.push_back(primitive);
 }
 
-const LightingState &getState(const Input &input, const std::string &name) {
-    for (const LightingState &state : input.source.states) {
+const StateSource &getState(const Input &input, const std::string &name) {
+    for (const StateSource &state : input.source.states) {
         if (state.name == name) {
             return state;
         }
     }
     throw std::runtime_error("unknown state: " + name);
+}
+
+Viewpoint toViewpoint(const ViewSource &view) {
+    return {view.name, {view.position, view.look, view.up, view.heightAngle}};
 }
 
 const ViewSource &getView(const Input &input, const std::string &name) {
@@ -415,7 +410,7 @@ void traverse(SceneNode *node, glm::mat4 ctm, RenderData &renderData);
 
 void buildScene(const Input &input, const std::vector<Part> &parts, RenderData &renderData) {
     const SceneSettings &settings = input.source.settings;
-    const LightingState &state = getState(input, settings.startState);
+    const StateSource &state = getState(input, settings.startState);
     Glow glow;
     applyGlow(input, state, glow);
 
@@ -434,15 +429,17 @@ void buildScene(const Input &input, const std::vector<Part> &parts, RenderData &
     renderData.globalData.kd = 1.0f;
     renderData.globalData.ks = 1.0f;
     renderData.globalData.kt = 0.0f;
-    renderData.globalData.ambientLight = toFloat(state.world);
+    renderData.globalData.ambientLight = state.ambient;
     renderData.globalData.shading = settings.shading;
+    renderData.sky = state.sky;
+    renderData.toonShade = state.toonShade;
 
-    CameraPose pose = camera(getView(input, settings.startViewpoint));
+    const ViewSource &view = getView(input, settings.startViewpoint);
     renderData.cameraData = {};
-    renderData.cameraData.pos = glm::vec4(pose.position, 1.0f);
-    renderData.cameraData.look = glm::vec4(pose.look, 0.0f);
-    renderData.cameraData.up = glm::vec4(pose.up, 0.0f);
-    renderData.cameraData.heightAngle = pose.heightAngle;
+    renderData.cameraData.pos = glm::vec4(view.position, 1.0f);
+    renderData.cameraData.look = glm::vec4(view.look, 0.0f);
+    renderData.cameraData.up = glm::vec4(view.up, 0.0f);
+    renderData.cameraData.heightAngle = view.heightAngle;
     renderData.cameraData.far = settings.far ? static_cast<float>(*settings.far) : DefaultFar;
 
     renderData.shapes.clear();
@@ -450,30 +447,32 @@ void buildScene(const Input &input, const std::vector<Part> &parts, RenderData &
     traverse(root, glm::mat4(1.0f), renderData);
 }
 
-std::vector<LightingGroup> buildLighting(const Input &input, const std::vector<Part> &parts) {
+std::vector<LightingState> buildLighting(const Input &input, const std::vector<Part> &parts) {
     const std::string &startState = input.source.settings.startState;
     Glow glow;
     applyGlow(input, getState(input, startState), glow);
-    std::vector<LightingGroup> result(1);
-    for (const LightingState &state : input.source.states) {
+    std::vector<LightingState> result(1);
+    for (const StateSource &state : input.source.states) {
         applyGlow(input, state, glow);
-        LightingGroup group;
-        group.name = state.name;
-        group.ambient = toFloat(state.world);
+        LightingState lighting;
+        lighting.name = state.name;
+        lighting.ambient = state.ambient;
+        lighting.sky = state.sky;
+        lighting.toonShade = state.toonShade;
         std::vector<Light> lights = makeLights(input, state);
         for (int i = 0; i < static_cast<int>(lights.size()); i++) {
-            group.lights.push_back(toLightData(lights[i], i));
+            lighting.lights.push_back(toLightData(lights[i], i));
         }
         for (const Part &part : parts) {
             SceneColor colour;
             if (getEmission(glow, part, colour)) {
-                group.emissive[part.key] = colour;
+                lighting.emissive[part.key] = colour;
             }
         }
         if (state.name == startState) {
-            result[0] = group;
+            result[0] = lighting;
         } else {
-            result.push_back(group);
+            result.push_back(lighting);
         }
     }
     return result;
@@ -482,7 +481,7 @@ std::vector<LightingGroup> buildLighting(const Input &input, const std::vector<P
 std::vector<Viewpoint> buildViewpoints(const Input &input) {
     std::vector<Viewpoint> result;
     for (const ViewSource &view : input.source.viewpoints) {
-        result.push_back({view.name, camera(view)});
+        result.push_back(toViewpoint(view));
     }
     std::sort(result.begin(), result.end(), [](const Viewpoint &a, const Viewpoint &b) { return a.name < b.name; });
     return result;
@@ -541,7 +540,7 @@ void traverse(SceneNode* node, glm::mat4 ctm, RenderData& renderData) {
 }
 
 bool SceneParser::parse(const std::string &lookFile, const MaterialLookup &getMeshMaterial, RenderData &renderData,
-                        std::vector<LightingGroup> &lightingGroups, std::vector<Viewpoint> &viewpoints) {
+                        std::vector<LightingState> &lightingStates, std::vector<Viewpoint> &viewpoints) {
     Input input;
     if (!SceneReader::load(lookFile, input.source) || !AssetReader::loadPalette(input.palette)) {
         return false;
@@ -552,7 +551,7 @@ bool SceneParser::parse(const std::string &lookFile, const MaterialLookup &getMe
     try {
         std::vector<Part> parts = collectParts(input, getMeshMaterial);
         buildScene(input, parts, renderData);
-        lightingGroups = buildLighting(input, parts);
+        lightingStates = buildLighting(input, parts);
         viewpoints = buildViewpoints(input);
     } catch (const std::exception &error) {
         LOG_ERROR(lookFile << ": " << error.what());

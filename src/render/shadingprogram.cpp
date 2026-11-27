@@ -38,7 +38,6 @@ bool ShadingProgram::isValid() const {
 void ShadingProgram::loadSharedUniforms() {
     m_uniforms.viewMatrix = m_shader.getLocation("viewMatrix");
     m_uniforms.projMatrix = m_shader.getLocation("projMatrix");
-    m_uniforms.cameraPos = m_shader.getLocation("cameraPos");
     m_uniforms.modelMatrix = m_shader.getLocation("modelMatrix");
     m_uniforms.normalMatrix = m_shader.getLocation("normalMatrix");
     m_uniforms.lightCount = m_shader.getLocation("lightCount");
@@ -66,7 +65,7 @@ void ShadingProgram::loadSharedUniforms() {
 
 void ShadingProgram::setFrame(const Camera &camera, const RenderData &data) {
     setCamera(camera);
-    setGlobalData(data.globalData);
+    setSceneData(data);
     setLights(data.lights);
     m_boundTextures.fill(nullptr);
 }
@@ -81,7 +80,6 @@ void ShadingProgram::setShape(const RenderShapeData &shape) {
 void ShadingProgram::setCamera(const Camera &camera) {
     m_shader.setMat4(m_uniforms.viewMatrix, camera.getViewMatrix());
     m_shader.setMat4(m_uniforms.projMatrix, camera.getProjectionMatrix());
-    m_shader.setVec3(m_uniforms.cameraPos, camera.getPose().position);
 }
 
 void ShadingProgram::setLights(const std::vector<SceneLightData> &lights) {

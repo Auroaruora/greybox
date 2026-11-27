@@ -78,13 +78,13 @@ void update(Screen &screen) {
     }
 
     const std::vector<Viewpoint> &viewpoints = screen.getScene().getViewpoints();
-    const std::vector<LightingGroup> &groups = screen.getScene().getLightingGroups();
+    const std::vector<LightingState> &states = screen.getScene().getLightingStates();
     int viewpointCount = static_cast<int>(viewpoints.size());
-    int group = s_batchStep / viewpointCount;
+    int state = s_batchStep / viewpointCount;
     int index = s_batchStep % viewpointCount;
 
-    if (index == 0 && !groups.empty()) {
-        screen.getScene().setLighting(groups[group].name);
+    if (index == 0 && !states.empty()) {
+        screen.getScene().setLighting(states[state].name);
     }
     screen.getCameraSystem().setCamera(viewpoints[index].pose);
     request(screen, index);
@@ -115,9 +115,9 @@ int getBatchStep() {
 }
 
 int getBatchTotal(const Screen &screen) {
-    int groups = static_cast<int>(screen.getScene().getLightingGroups().size());
+    int states = static_cast<int>(screen.getScene().getLightingStates().size());
     int viewpoints = static_cast<int>(screen.getScene().getViewpoints().size());
-    return (groups > 0 ? groups : 1) * viewpoints;
+    return (states > 0 ? states : 1) * viewpoints;
 }
 
 const std::string &getLastPath() {

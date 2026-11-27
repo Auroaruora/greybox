@@ -57,19 +57,21 @@ struct LightSetting {
     std::optional<GlowSetting> glow;
 };
 
-struct LightingState {
+struct StateSource {
     std::string name;
-    glm::dvec3 world = glm::dvec3(0.0);
+    glm::vec3 ambient = glm::vec3(0.0f);
+    std::optional<SkyColors> sky;
+    std::optional<glm::vec3> toonShade;
     std::map<std::string, LightSetting> lights;
     std::map<std::string, GlowSetting> glow;
 };
 
 struct ViewSource {
     std::string name;
-    glm::dvec3 position = glm::dvec3(0.0);
-    glm::dvec3 look = glm::dvec3(0.0, 0.0, -1.0);
-    glm::dvec3 up = glm::dvec3(0.0, 1.0, 0.0);
-    double heightAngle = 45.0;
+    glm::vec3 position = glm::vec3(0.0f);
+    glm::vec3 look = glm::vec3(0.0f, 0.0f, -1.0f);
+    glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+    float heightAngle = 0.0f;
 };
 
 struct SceneSource {
@@ -77,7 +79,7 @@ struct SceneSource {
     std::vector<LayoutObject> layout;
     std::map<std::string, LookChoice> look;
     std::vector<LightSource> lights;
-    std::vector<LightingState> states;
+    std::vector<StateSource> states;
     std::vector<ViewSource> viewpoints;
 };
 
