@@ -10,20 +10,20 @@
 bool Scene::load(const std::string &filepath, MeshCache &meshCache) {
     auto getMaterial = [&meshCache](const std::string &meshfile) { return meshCache.getMaterialName(meshfile); };
     RenderData parsed;
-    std::vector<LightingGroup> lightingGroups;
+    std::vector<LightingState> lightingStates;
     std::vector<Viewpoint> viewpoints;
-    if (!SceneParser::parse(filepath, getMaterial, parsed, lightingGroups, viewpoints)) {
+    if (!SceneParser::parse(filepath, getMaterial, parsed, lightingStates, viewpoints)) {
         LOG_ERROR("failed to load " << filepath);
         return false;
     }
 
     m_data = std::move(parsed);
     m_filepath = filepath;
-    m_lightingGroups = std::move(lightingGroups);
+    m_lightingStates = std::move(lightingStates);
     m_viewpoints = std::move(viewpoints);
     m_lightingName.clear();
-    if (!m_lightingGroups.empty()) {
-        setLighting(m_lightingGroups[0].name);
+    if (!m_lightingStates.empty()) {
+        setLighting(m_lightingStates[0].name);
     }
     LOG_DEBUG(getSummary());
     return true;
@@ -108,23 +108,25 @@ void Scene::setShapeEmissiveMap(int index, const Texture2D *texture) {
 }
 
 void Scene::setLighting(const std::string &name) {
-    auto found = std::find_if(m_lightingGroups.begin(), m_lightingGroups.end(), [&name](const LightingGroup &group) {
-        return group.name == name;
+    auto found = std::find_if(m_lightingStates.begin(), m_lightingStates.end(), [&name](const LightingState &lighting) {
+        return lighting.name == name;
     });
-    if (found == m_lightingGroups.end()) {
+    if (found == m_lightingStates.end()) {
         return;
     }
-    const LightingGroup &group = *found;
-    m_lightingName = group.name;
-    m_data.lights = group.lights;
-    m_data.globalData.ambientLight = group.ambient;
+    const LightingState &lighting = *found;
+    m_lightingName = lighting.name;
+    m_data.lights = lighting.lights;
+    m_data.globalData.ambientLight = lighting.ambient;
+    m_data.sky = lighting.sky;
+    m_data.toonShade = lighting.toonShade;
 
     for (RenderShapeData &shape : m_data.shapes) {
         shape.emissiveEnabled = true;
         SceneMaterial &material = shape.primitive.material;
 
-        auto emissive = group.emissive.find(shape.primitive.name);
-        if (emissive != group.emissive.end()) {
+        auto emissive = lighting.emissive.find(shape.primitive.name);
+        if (emissive != lighting.emissive.end()) {
             material.cEmissive = emissive->second;
         } else {
             material.cEmissive = SceneColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -152,8 +154,8 @@ const std::vector<RenderShapeData> &Scene::getShapes() const {
     return m_data.shapes;
 }
 
-const std::vector<LightingGroup> &Scene::getLightingGroups() const {
-    return m_lightingGroups;
+const std::vector<LightingState> &Scene::getLightingStates() const {
+    return m_lightingStates;
 }
 
 const std::string &Scene::getLightingName() const {

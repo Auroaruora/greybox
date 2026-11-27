@@ -25,7 +25,7 @@ public:
     const SceneCameraData &getCameraData() const;
     const std::vector<SceneLightData> &getLights() const;
     const std::vector<RenderShapeData> &getShapes() const;
-    const std::vector<LightingGroup> &getLightingGroups() const;
+    const std::vector<LightingState> &getLightingStates() const;
     const std::string &getLightingName() const;
     const std::vector<Viewpoint> &getViewpoints() const;
     std::string getSummary() const;
@@ -33,7 +33,7 @@ public:
 private:
     RenderData m_data;
     std::string m_filepath;
-    std::vector<LightingGroup> m_lightingGroups;
+    std::vector<LightingState> m_lightingStates;
     std::string m_lightingName;
     std::vector<Viewpoint> m_viewpoints;
 };

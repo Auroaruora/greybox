@@ -49,7 +49,7 @@ LIGHT = {
 LIGHT_SETTING = {"intensity?": float, "color?": VEC3, "direction?": VEC3, "reach?": float, "glow?": GLOW}
 
 STATE = {
-    "environment": {"world": VEC3, "sky?": {"zenith": VEC3, "horizon": VEC3, "glow": VEC3}, "shadow?": {"tint": VEC3, "deep": VEC3}},
+    "ambient": VEC3, "sky?": {"zenith": VEC3, "horizon": VEC3}, "toon?": {"shade": VEC3},
     "lights": Map(LIGHT_SETTING),
     "glow?": Map(Map(GLOW)),
 }

@@ -338,7 +338,7 @@ def apply_state():
         scene.world = bpy.data.worlds.new("World")
     scene.world.use_nodes = True
     background = next(n for n in scene.world.node_tree.nodes if n.type == 'BACKGROUND')
-    background.inputs[0].default_value = list(state["environment"]["world"]) + [1.0]
+    background.inputs[0].default_value = list(state["ambient"]) + [1.0]
     apply_state_glow(state)
     S["busy"] = False
 
@@ -479,7 +479,7 @@ def capture_state():
     order = [n for n in state["lights"] if n in lights] + [n for n in lights if n not in state["lights"]]
     world = bpy.context.scene.world
     background = next(n for n in world.node_tree.nodes if n.type == 'BACKGROUND')
-    state["environment"]["world"] = keep(state["environment"]["world"], background.inputs[0].default_value[:3], 4)
+    state["ambient"] = keep(state["ambient"], background.inputs[0].default_value[:3], 4)
     state["lights"] = {n: lights[n] for n in order}
     for other in lighting["states"].values():
         if other is not state:

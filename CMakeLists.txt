@@ -143,6 +143,8 @@ add_executable(${PROJECT_NAME}
     src/render/shadingprogram.h
     src/render/spriterenderer.cpp
     src/render/spriterenderer.h
+    src/render/toonprogram.cpp
+    src/render/toonprogram.h
 
     src/screen/hillscreen.cpp
     src/screen/hillscreen.h

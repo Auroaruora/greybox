@@ -23,6 +23,10 @@ static glm::dvec3 readVec3(const json &value) {
     return glm::dvec3(value.at(0).get<double>(), value.at(1).get<double>(), value.at(2).get<double>());
 }
 
+static glm::vec3 readFloatVec3(const json &value) {
+    return glm::vec3(readVec3(value));
+}
+
 static std::optional<glm::dvec3> readOptionalVec3(const json &object, const char *key) {
     return object.contains(key) ? std::optional<glm::dvec3>(readVec3(object.at(key))) : std::nullopt;
 }
@@ -30,6 +34,9 @@ static std::optional<glm::dvec3> readOptionalVec3(const json &object, const char
 static ShadingModel readShading(const std::string &name) {
     if (name == "phong") {
         return ShadingModel::Phong;
+    }
+    if (name == "toon") {
+        return ShadingModel::Toon;
     }
     throw std::runtime_error("unknown shading: " + name);
 }
@@ -120,11 +127,15 @@ static LightSetting readLightSetting(const json &data) {
     return setting;
 }
 
-static LightingState readState(const std::string &name, const json &data) {
-    LightingState state;
+static StateSource readState(const std::string &name, const json &data) {
+    StateSource state;
     state.name = name;
-    if (data.contains("environment") && data.at("environment").contains("world")) {
-        state.world = readVec3(data.at("environment").at("world"));
+    state.ambient = readFloatVec3(data.at("ambient"));
+    if (data.contains("sky")) {
+        state.sky = SkyColors{readFloatVec3(data.at("sky").at("zenith")), readFloatVec3(data.at("sky").at("horizon"))};
+    }
+    if (data.contains("toon")) {
+        state.toonShade = readFloatVec3(data.at("toon").at("shade"));
     }
     if (data.contains("lights")) {
         for (const auto &[light, setting] : data.at("lights").items()) {
@@ -146,10 +157,10 @@ static std::vector<ViewSource> readViewpoints(const json &data) {
     for (const auto &[name, entry] : data.items()) {
         ViewSource view;
         view.name = name;
-        view.position = readVec3(entry.at("position"));
-        view.look = readVec3(entry.at("look"));
-        view.up = readVec3(entry.at("up"));
-        view.heightAngle = entry.at("heightAngle").get<double>();
+        view.position = readFloatVec3(entry.at("position"));
+        view.look = readFloatVec3(entry.at("look"));
+        view.up = readFloatVec3(entry.at("up"));
+        view.heightAngle = glm::radians(entry.at("heightAngle").get<float>());
         views.push_back(view);
     }
     return views;

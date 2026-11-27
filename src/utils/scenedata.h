@@ -14,6 +14,7 @@ enum class LightType {
 
 enum class ShadingModel {
     Phong,
+    Toon,
 };
 
 // Enum of the types of primitives that might be in the scene
@@ -35,6 +36,11 @@ enum class TransformationType {
 
 // Type which can be used to store an RGBA color in floats [0,1]
 using SceneColor = glm::vec4;
+
+struct SkyColors {
+    glm::vec3 zenith;
+    glm::vec3 horizon;
+};
 
 // Struct which contains the global color coefficients of a scene.
 // These are multiplied with the object-specific materials in the lighting equation.

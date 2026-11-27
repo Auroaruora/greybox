@@ -8,8 +8,9 @@ public:
 
 protected:
     void loadUniforms() override;
-    void setGlobalData(const SceneGlobalData &globalData) override;
+    void setSceneData(const RenderData &data) override;
     void setMaterial(const RenderShapeData &shape) override;
+    void setCamera(const Camera &camera) override;
 
 private:
     struct Uniforms {
@@ -21,6 +22,7 @@ private:
         GLint cSpecular = -1;
         GLint cEmissive = -1;
         GLint shininess = -1;
+        GLint cameraPos = -1;
     };
 
     Uniforms m_uniforms;
