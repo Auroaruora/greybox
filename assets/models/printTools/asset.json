@@ -1,0 +1,5 @@
+{
+  "parts": ["blade", "glue", "glueCap", "handle", "spaghetti"],
+  "shapes": ["a"],
+  "colors": {"grey4": {"blade": "grey4", "glue": "grey4", "glueCap": "olive4", "handle": "brown", "spaghetti": "grey5"}}
+}

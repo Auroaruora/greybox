@@ -1,0 +1,6 @@
+{
+  "parts": ["frame", "photo"],
+  "shapes": ["a"],
+  "colors": {"olive7": {"shapes": ["a"], "frame": "olive7", "photo": "cat"}},
+  "materials": {"cat": {"color": "textures/cat_color.png"}}
+}

@@ -1,0 +1,5 @@
+{
+  "parts": ["foam", "pad"],
+  "shapes": ["a"],
+  "colors": {"olive6": {"foam": "olive6", "pad": "green2"}}
+}

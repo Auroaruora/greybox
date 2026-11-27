@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "shell",
-  "parts": ["holes", "plate"],
-  "shapes": ["a", "b", "c", "d"],
-  "colors": {"grey6": {"*": "grey6"}}
-}

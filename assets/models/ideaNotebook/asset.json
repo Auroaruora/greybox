@@ -1,0 +1,10 @@
+{
+  "parts": ["cover", "pages", "band"],
+  "shapes": ["a", "b", "c"],
+  "colors": {
+    "greyLight14": {"cover": "greyLight14"},
+    "coolGrey": {"band": "yellowLight5", "cover": "coolGrey", "pages": "greyLight3"},
+    "blue": {"band": "yellowLight4", "cover": "blue", "pages": "white"},
+    "green": {"band": "olive2", "cover": "green", "pages": "warmGreyLight3"}
+  }
+}

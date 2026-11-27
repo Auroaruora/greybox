@@ -1,0 +1,5 @@
+{
+  "parts": ["bowl", "lemons", "pear"],
+  "shapes": ["a"],
+  "colors": {"grey4": {"bowl": "grey4", "lemons": "olive4", "pear": "green"}}
+}

@@ -3,27 +3,28 @@
 #include "debug/debug.h"
 #include "gl/meshcache.h"
 #include "gl/texturecache.h"
-#include "utils/paths.h"
 
 #include <algorithm>
-#include <filesystem>
 #include <sstream>
 
-static std::string getSidecarFile(const std::string &sceneFile, const std::string &suffix) {
-    return std::filesystem::path(sceneFile).replace_extension().string() + suffix;
-}
-
-bool Scene::load(const std::string &filepath) {
+bool Scene::load(const std::string &filepath, MeshCache &meshCache) {
+    auto getMaterial = [&meshCache](const std::string &meshfile) { return meshCache.getMaterialName(meshfile); };
     RenderData parsed;
-    if (!SceneParser::parse(filepath, parsed)) {
+    std::vector<LightingGroup> lightingGroups;
+    std::vector<Viewpoint> viewpoints;
+    if (!SceneParser::parse(filepath, getMaterial, parsed, lightingGroups, viewpoints)) {
         LOG_ERROR("failed to load " << filepath);
         return false;
     }
 
     m_data = std::move(parsed);
     m_filepath = filepath;
-    loadLighting();
-    loadViewpoints();
+    m_lightingGroups = std::move(lightingGroups);
+    m_viewpoints = std::move(viewpoints);
+    m_lightingName.clear();
+    if (!m_lightingGroups.empty()) {
+        setLighting(m_lightingGroups[0].name);
+    }
     LOG_DEBUG(getSummary());
     return true;
 }
@@ -104,36 +105,6 @@ void Scene::setShapeVisible(int index, bool visible) {
 
 void Scene::setShapeEmissiveMap(int index, const Texture2D *texture) {
     m_data.shapes[index].emissiveMap = texture;
-}
-
-void Scene::loadLighting() {
-    m_lightingGroups.clear();
-    m_lightingName.clear();
-
-    std::string filename = getSidecarFile(m_filepath, "_lighting.json");
-    if (!std::filesystem::exists(Paths::getAssetPath(filename))) {
-        return;
-    }
-
-    LightingReader reader(filename);
-    if (reader.readJSON() && !reader.getGroups().empty()) {
-        m_lightingGroups = reader.getGroups();
-        setLighting(m_lightingGroups[0].name);
-    }
-}
-
-void Scene::loadViewpoints() {
-    m_viewpoints.clear();
-
-    std::string filename = getSidecarFile(m_filepath, "_viewpoints.json");
-    if (!std::filesystem::exists(Paths::getAssetPath(filename))) {
-        return;
-    }
-
-    ViewpointReader reader(filename);
-    if (reader.readJSON()) {
-        m_viewpoints = reader.getViewpoints();
-    }
 }
 
 void Scene::setLighting(const std::string &name) {

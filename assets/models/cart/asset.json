@@ -1,0 +1,6 @@
+{
+  "parts": ["body"],
+  "shapes": ["a"],
+  "colors": {"main": {"body": "cartBody"}},
+  "materials": {"cartBody": {"color": "textures/cartBody_color.png"}}
+}

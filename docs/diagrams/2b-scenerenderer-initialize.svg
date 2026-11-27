@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="680" height="620" viewBox="0 0 680 620" role="img"><title>SceneRenderer::initialize</title><desc>SceneRenderer::initialize calls ShaderLoader::load with the default shaders, SceneRenderer::loadUniforms and Texture2D::create, then PostProcessor::initialize and PostProcessor::addPass. For each name in LutNames it adds a GradePass, which loads luts/name.cube through LutLoader into a Texture3D; all passes start off. Pass types shown at the side, a plain Pass with one fragment shader, GradePass, or any new Pass subclass, can be given to addPass, which appends them to the m_passes chain.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="720" viewBox="0 0 680 720" role="img"><title>SceneRenderer::initialize</title><desc>SceneRenderer::initialize registers one ShadingProgram per ShadingModel, currently PhongProgram, and initializes each: ShaderLoader::load with mesh.vert and the fragment shader of that program, the uniform locations, and a placeholder Texture2D. ShadingProgram holds the camera, light, transform and texture map uniforms; each subclass adds its own fragment shader, global data and material uniforms. Then PostProcessor::initialize and, for each name in LutNames, addPass with a GradePass, which loads luts/name.cube through LutLoader into a Texture3D; all passes start off. Pass types shown at the side, a plain Pass with one fragment shader, GradePass, or any new Pass subclass, can be given to addPass.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#73726C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <style>
 text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -18,32 +18,40 @@ text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Ar
 <rect width="100%" height="100%" fill="#FFFFFF"/>
 <g class="c-purple"><rect x="90" y="30" width="280" height="44" rx="8" stroke-width="0.5"/><text class="th" x="230" y="52" text-anchor="middle" dominant-baseline="central">SceneRenderer::initialize()</text></g>
 <line x1="230" y1="74" x2="230" y2="92" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="40" y="94" width="380" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="230" y="116" text-anchor="middle" dominant-baseline="central">ShaderLoader::load(default.vert, default.frag)</text>
-<line x1="230" y1="138" x2="230" y2="156" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="40" y="158" width="380" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="230" y="180" text-anchor="middle" dominant-baseline="central">SceneRenderer::loadUniforms()</text>
-<line x1="230" y1="202" x2="230" y2="220" class="arr" marker-end="url(#arrow)"/>
-<g class="box"><rect x="40" y="222" width="380" height="44" rx="8" stroke-width="0.5"/></g><text class="th" x="230" y="244" text-anchor="middle" dominant-baseline="central">Texture2D::create(1, 1, pixel)</text>
-<path d="M230 266 L230 288" fill="none" class="arr" marker-end="url(#arrow)"/>
-<rect x="40" y="290" width="380" height="300" rx="16" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="5 4"/>
-<text class="th" x="230" y="314" text-anchor="middle">PostProcessor</text>
-<g class="c-amber"><rect x="60" y="330" width="340" height="56" rx="8" stroke-width="0.5"/><text class="th" x="230" y="348" text-anchor="middle" dominant-baseline="central">PostProcessor::initialize()</text><text class="ts" x="230" y="368" text-anchor="middle" dominant-baseline="central">Quad::create(), copy.frag shader</text></g>
-<line x1="230" y1="386" x2="230" y2="404" class="arr" marker-end="url(#arrow)"/>
-<g class="c-amber"><rect x="60" y="406" width="340" height="44" rx="8" stroke-width="0.5"/><text class="th" x="230" y="428" text-anchor="middle" dominant-baseline="central">for each LutNames: addPass(GradePass)</text></g>
-<line x1="230" y1="450" x2="230" y2="486" class="arr" marker-end="url(#arrow)"/>
-<text class="ts" x="60" y="474">m_passes, runs left to right</text>
-<g class="c-amber"><rect x="60" y="488" width="100" height="44" rx="8" stroke-width="0.5"/><text class="th" x="110" y="510" text-anchor="middle" dominant-baseline="central">LUT 1</text></g>
-<g class="c-amber"><rect x="180" y="488" width="100" height="44" rx="8" stroke-width="0.5"/><text class="th" x="230" y="510" text-anchor="middle" dominant-baseline="central">LUT 2</text></g>
-<rect x="300" y="488" width="100" height="44" rx="8" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="4 3"/>
-<text class="th" x="350" y="510" text-anchor="middle" dominant-baseline="central">…</text>
-<line x1="160" y1="510" x2="178" y2="510" class="arr" marker-end="url(#arrow)"/>
-<line x1="280" y1="510" x2="298" y2="510" class="arr" marker-end="url(#arrow)"/>
-<text class="ts" x="230" y="566" text-anchor="middle">One GradePass per name in LutNames, off by default</text>
-<text class="th" x="545" y="314" text-anchor="middle">Pass types</text>
-<g class="c-amber"><rect x="450" y="330" width="190" height="56" rx="8" stroke-width="0.5"/><text class="th" x="545" y="348" text-anchor="middle" dominant-baseline="central">Pass(name, frag)</text><text class="ts" x="545" y="368" text-anchor="middle" dominant-baseline="central">one .frag, no extra inputs</text></g>
-<g class="c-amber"><rect x="450" y="406" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="545" y="426" text-anchor="middle" dominant-baseline="central">GradePass(lutName)</text><text class="ts" x="545" y="448" text-anchor="middle" dominant-baseline="central">grade.frag, luts/&lt;name&gt;.cube</text><text class="ts" x="545" y="466" text-anchor="middle" dominant-baseline="central">LutLoader → Texture3D</text></g>
-<rect x="450" y="498" width="190" height="56" rx="8" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="4 3"/>
-<text class="th" x="545" y="516" text-anchor="middle" dominant-baseline="central">New Pass subclass</text><text class="ts" x="545" y="536" text-anchor="middle" dominant-baseline="central">its .frag, its inputs</text>
-<path d="M450 358 L428 358 L428 526 L450 526" fill="none" stroke="#B4B2A9" stroke-width="0.5"/>
-<line x1="428" y1="442" x2="450" y2="442" stroke="#B4B2A9" stroke-width="0.5"/>
-<line x1="428" y1="428" x2="402" y2="428" class="arr" marker-end="url(#arrow)"/>
+<rect x="40" y="94" width="380" height="208" rx="16" fill="none" stroke="#888780" stroke-width="0.5" stroke-dasharray="5 4"/>
+<text class="th" x="230" y="118" text-anchor="middle">Shading programs</text>
+<g class="c-gray"><rect x="60" y="134" width="340" height="56" rx="8" stroke-width="0.5"/><text class="th" x="230" y="152" text-anchor="middle" dominant-baseline="central">m_programs[Phong] = PhongProgram</text><text class="ts" x="230" y="172" text-anchor="middle" dominant-baseline="central">one entry per ShadingModel</text></g>
+<line x1="230" y1="190" x2="230" y2="208" class="arr" marker-end="url(#arrow)"/>
+<g class="c-gray"><rect x="60" y="210" width="340" height="72" rx="8" stroke-width="0.5"/><text class="th" x="230" y="230" text-anchor="middle" dominant-baseline="central">for each: ShadingProgram::initialize()</text><text class="ts" x="230" y="252" text-anchor="middle" dominant-baseline="central">ShaderLoader::load(mesh.vert, its .frag)</text><text class="ts" x="230" y="270" text-anchor="middle" dominant-baseline="central">uniform locations, placeholder Texture2D</text></g>
+<text class="th" x="545" y="118" text-anchor="middle">Shading types</text>
+<g class="c-gray"><rect x="450" y="134" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="545" y="154" text-anchor="middle" dominant-baseline="central">ShadingProgram</text><text class="ts" x="545" y="176" text-anchor="middle" dominant-baseline="central">mesh.vert</text><text class="ts" x="545" y="194" text-anchor="middle" dominant-baseline="central">camera, lights, transform, maps</text></g>
+<g class="c-gray"><rect x="450" y="226" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="545" y="246" text-anchor="middle" dominant-baseline="central">PhongProgram</text><text class="ts" x="545" y="268" text-anchor="middle" dominant-baseline="central">phong.frag</text><text class="ts" x="545" y="286" text-anchor="middle" dominant-baseline="central">ka, kd, ks, ambient, material</text></g>
+<rect x="450" y="318" width="190" height="56" rx="8" fill="none" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="th" x="545" y="336" text-anchor="middle" dominant-baseline="central">New subclass</text><text class="ts" x="545" y="356" text-anchor="middle" dominant-baseline="central">its .frag, global data, material</text>
+<path d="M450 170 L428 170 L428 346 L450 346" fill="none" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="428" y1="262" x2="450" y2="262" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="428" y1="162" x2="402" y2="162" class="arr" marker-end="url(#arrow)"/>
+<path d="M230 302 L230 388" fill="none" class="arr" marker-end="url(#arrow)"/>
+<rect x="40" y="390" width="380" height="300" rx="16" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="5 4"/>
+<text class="th" x="230" y="414" text-anchor="middle">PostProcessor</text>
+<g class="c-amber"><rect x="60" y="430" width="340" height="56" rx="8" stroke-width="0.5"/><text class="th" x="230" y="448" text-anchor="middle" dominant-baseline="central">PostProcessor::initialize()</text><text class="ts" x="230" y="468" text-anchor="middle" dominant-baseline="central">Quad::create(), copy.frag shader</text></g>
+<line x1="230" y1="486" x2="230" y2="504" class="arr" marker-end="url(#arrow)"/>
+<g class="c-amber"><rect x="60" y="506" width="340" height="44" rx="8" stroke-width="0.5"/><text class="th" x="230" y="528" text-anchor="middle" dominant-baseline="central">for each LutNames: addPass(GradePass)</text></g>
+<line x1="230" y1="550" x2="230" y2="586" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="60" y="574">m_passes, runs left to right</text>
+<g class="c-amber"><rect x="60" y="588" width="100" height="44" rx="8" stroke-width="0.5"/><text class="th" x="110" y="610" text-anchor="middle" dominant-baseline="central">LUT 1</text></g>
+<g class="c-amber"><rect x="180" y="588" width="100" height="44" rx="8" stroke-width="0.5"/><text class="th" x="230" y="610" text-anchor="middle" dominant-baseline="central">LUT 2</text></g>
+<rect x="300" y="588" width="100" height="44" rx="8" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="th" x="350" y="610" text-anchor="middle" dominant-baseline="central">…</text>
+<line x1="160" y1="610" x2="178" y2="610" class="arr" marker-end="url(#arrow)"/>
+<line x1="280" y1="610" x2="298" y2="610" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="230" y="666" text-anchor="middle">One GradePass per name in LutNames, off by default</text>
+<text class="th" x="545" y="414" text-anchor="middle">Pass types</text>
+<g class="c-amber"><rect x="450" y="430" width="190" height="56" rx="8" stroke-width="0.5"/><text class="th" x="545" y="448" text-anchor="middle" dominant-baseline="central">Pass(name, frag)</text><text class="ts" x="545" y="468" text-anchor="middle" dominant-baseline="central">one .frag, no extra inputs</text></g>
+<g class="c-amber"><rect x="450" y="506" width="190" height="72" rx="8" stroke-width="0.5"/><text class="th" x="545" y="526" text-anchor="middle" dominant-baseline="central">GradePass(lutName)</text><text class="ts" x="545" y="548" text-anchor="middle" dominant-baseline="central">grade.frag, luts/&lt;name&gt;.cube</text><text class="ts" x="545" y="566" text-anchor="middle" dominant-baseline="central">LutLoader → Texture3D</text></g>
+<rect x="450" y="598" width="190" height="56" rx="8" fill="none" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="th" x="545" y="616" text-anchor="middle" dominant-baseline="central">New Pass subclass</text><text class="ts" x="545" y="636" text-anchor="middle" dominant-baseline="central">its .frag, its inputs</text>
+<path d="M450 458 L428 458 L428 626 L450 626" fill="none" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="428" y1="542" x2="450" y2="542" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="428" y1="528" x2="402" y2="528" class="arr" marker-end="url(#arrow)"/>
 </svg>

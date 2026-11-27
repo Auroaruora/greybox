@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "furniture",
-  "parts": ["body"],
-  "shapes": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
-  "colors": {"greyLight5": {"body": "greyLight5"}, "greyLight3": {"body": "greyLight3"}, "white": {"body": "white"}, "warmGreyLight3": {"body": "warmGreyLight3"}}
-}

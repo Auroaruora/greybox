@@ -1,0 +1,6 @@
+{
+  "parts": ["puffs"],
+  "shapes": ["a"],
+  "colors": {"main": {"puffs": "cloudsPuffs"}},
+  "materials": {"cloudsPuffs": {"color": "textures/cloudsPuffs_color.png"}}
+}

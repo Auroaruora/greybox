@@ -1,0 +1,6 @@
+{
+  "parts": ["petals"],
+  "shapes": ["a"],
+  "colors": {"main": {"petals": "flowersPetals"}},
+  "materials": {"flowersPetals": {"color": "textures/flowersPetals_color.png"}}
+}

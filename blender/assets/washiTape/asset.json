@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "desk",
-  "parts": ["body"],
-  "shapes": ["a"],
-  "colors": {"grey6": {"body": "grey6"}, "olive6": {"body": "olive6"}, "warmGrey": {"body": "warmGrey"}}
-}

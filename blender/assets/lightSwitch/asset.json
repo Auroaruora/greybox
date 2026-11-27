@@ -1,7 +1,0 @@
-{
-  "about": "",
-  "area": "shell",
-  "parts": ["body"],
-  "shapes": ["a", "b"],
-  "colors": {"grey4": {"body": "grey4"}}
-}

@@ -1,0 +1,5 @@
+{
+  "parts": ["jar", "wax"],
+  "shapes": ["a"],
+  "colors": {"greyLight12": {"jar": "greyLight12", "wax": "warmGrey"}}
+}

@@ -1,0 +1,5 @@
+{
+  "parts": ["stripe", "towel"],
+  "shapes": ["a"],
+  "colors": {"warmGrey": {"stripe": "coolGreyDark", "towel": "warmGrey"}}
+}

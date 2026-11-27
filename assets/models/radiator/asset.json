@@ -1,0 +1,5 @@
+{
+  "parts": ["panel", "pipes", "valve"],
+  "shapes": ["a"],
+  "colors": {"greyLight14": {"panel": "greyLight14", "pipes": "grey6", "valve": "grey"}}
+}

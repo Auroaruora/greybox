@@ -1,7 +1,7 @@
 #pragma once
 
 #include "camera/camera.h"
-#include "utils/viewpointreader.h"
+#include "utils/sceneparser.h"
 
 #include <glm/glm.hpp>
 

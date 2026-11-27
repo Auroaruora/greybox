@@ -1,0 +1,6 @@
+{
+  "shading": "phong",
+  "material": {"specular": [0.0, 0.0, 0.0], "shininess": 1.0},
+  "camera": {"far": 1000.0},
+  "start": {"look": "main", "viewpoint": "hillFront", "state": "noon"}
+}

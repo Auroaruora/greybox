@@ -1,0 +1,6 @@
+{
+  "parts": ["leaves"],
+  "shapes": ["a"],
+  "colors": {"main": {"leaves": "bushesLeaves"}},
+  "materials": {"bushesLeaves": {"color": "textures/bushesLeaves_color.png"}}
+}

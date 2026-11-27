@@ -1,0 +1,10 @@
+{
+  "parts": ["ceiling"],
+  "shapes": ["a", "b"],
+  "colors": {
+    "greyLight13": {"ceiling": "greyLight13"},
+    "greyLight2": {"ceiling": "greyLight2"},
+    "warmGreyLight": {"ceiling": "warmGreyLight"},
+    "warmGreyLight2": {"ceiling": "warmGreyLight2"}
+  }
+}

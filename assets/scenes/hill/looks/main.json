@@ -1,0 +1,22 @@
+{
+  "objects": {
+    "hillKnoll01": {"shape": "a", "color": "main"},
+    "meadow01": {"shape": "a", "color": "main"},
+    "hillPath01": {"shape": "a", "color": "main"},
+    "rocks01": {"shape": "a", "color": "main"},
+    "groves01": {"shape": "a", "color": "main"},
+    "bushes01": {"shape": "a", "color": "main"},
+    "flowers01": {"shape": "a", "color": "main"},
+    "oakTree01": {"shape": "a", "color": "main"},
+    "knollTree01": {"shape": "a", "color": "main"},
+    "cottage01": {"shape": "a", "color": "main"},
+    "windmill01": {"shape": "a", "color": "main"},
+    "distantVillage01": {"shape": "a", "color": "main"},
+    "fence01": {"shape": "a", "color": "main"},
+    "gatePosts01": {"shape": "a", "color": "main"},
+    "jetty01": {"shape": "a", "color": "main"},
+    "cart01": {"shape": "a", "color": "main"},
+    "clothesline01": {"shape": "a", "color": "main"},
+    "clouds01": {"shape": "a", "color": "main"}
+  }
+}

@@ -78,7 +78,7 @@ bool appendTriangle(std::vector<float> &vertexData, const ObjData &obj, const Ve
 
 }
 
-bool ObjLoader::load(const std::string &filepath, std::vector<float> &vertexData) {
+bool ObjLoader::load(const std::string &filepath, std::vector<float> &vertexData, std::string &material) {
     std::ifstream file(Paths::getAssetPath(filepath));
     if (!file.is_open()) {
         LOG_ERROR("cannot open " << filepath);
@@ -87,6 +87,7 @@ bool ObjLoader::load(const std::string &filepath, std::vector<float> &vertexData
 
     ObjData obj;
     vertexData.clear();
+    material.clear();
     int skipped = 0;
 
     std::string line;
@@ -95,7 +96,9 @@ bool ObjLoader::load(const std::string &filepath, std::vector<float> &vertexData
         std::string type;
         stream >> type;
 
-        if (type == "v") {
+        if (type == "usemtl" && material.empty()) {
+            stream >> material;
+        } else if (type == "v") {
             glm::vec3 position(0.0f);
             stream >> position.x >> position.y >> position.z;
             obj.positions.push_back(position);

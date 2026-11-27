@@ -1,0 +1,6 @@
+{
+  "parts": ["trunk", "canopy"],
+  "shapes": ["a"],
+  "colors": {"main": {"trunk": "oakTreeTrunk", "canopy": "oakTreeCanopy"}},
+  "materials": {"oakTreeTrunk": {"color": "textures/oakTreeTrunk_color.png"}, "oakTreeCanopy": {"color": "textures/oakTreeCanopy_color.png"}}
+}

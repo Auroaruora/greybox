@@ -1,0 +1,22 @@
+{
+  "objects": {
+    "hillKnoll01": {"asset": "hillKnoll", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "terrain"},
+    "meadow01": {"asset": "meadow", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "terrain"},
+    "hillPath01": {"asset": "hillPath", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "terrain"},
+    "rocks01": {"asset": "rocks", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "terrain"},
+    "groves01": {"asset": "groves", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "nature"},
+    "bushes01": {"asset": "bushes", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "nature"},
+    "flowers01": {"asset": "flowers", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "nature"},
+    "oakTree01": {"asset": "oakTree", "position": [-7.43195, 16.24723, 7.70964], "rotation": [0.0, 0.0, 0.0], "group": "nature"},
+    "knollTree01": {"asset": "knollTree", "position": [-6.76388, 12.38278, 54.66554], "rotation": [0.0, 0.0, 0.0], "group": "nature"},
+    "cottage01": {"asset": "cottage", "position": [-0.4, 16.0, -2.9], "rotation": [0.0, 175.0002, 0.0], "group": "village"},
+    "windmill01": {"asset": "windmill", "position": [-0.4, 16.0, -2.9], "rotation": [0.0, 175.0002, 0.0], "group": "village"},
+    "distantVillage01": {"asset": "distantVillage", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "village"},
+    "fence01": {"asset": "fence", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "props"},
+    "gatePosts01": {"asset": "gatePosts", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "props"},
+    "jetty01": {"asset": "jetty", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "props"},
+    "cart01": {"asset": "cart", "position": [2.27457, 6.79665, 34.25735], "rotation": [0.0, 0.0, 0.0], "group": "props"},
+    "clothesline01": {"asset": "clothesline", "position": [4.17787, 14.40277, 11.62363], "rotation": [0.0, 0.0, 0.0], "group": "props"},
+    "clouds01": {"asset": "clouds", "position": [0.0, 0.0, 0.0], "rotation": [0.0, 0.0, 0.0], "group": "sky"}
+  }
+}

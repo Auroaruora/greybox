@@ -18,6 +18,7 @@ void CameraSystem::load(const Scene &scene) {
     m_startPose.look = glm::vec3(data.look);
     m_startPose.up = glm::vec3(data.up);
     m_startPose.heightAngle = data.heightAngle;
+    m_camera.setFar(data.far);
 
     for (auto &[name, controller] : m_controllers) {
         controller->load(scene.getViewpoints());

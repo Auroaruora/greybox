@@ -1,0 +1,6 @@
+{
+  "parts": ["deck", "markers"],
+  "shapes": ["a"],
+  "colors": {"main": {"deck": "jettyDeck", "markers": "jettyMarkers"}},
+  "materials": {"jettyDeck": {"color": "textures/jettyDeck_color.png"}, "jettyMarkers": {"color": "textures/jettyMarkers_color.png"}}
+}

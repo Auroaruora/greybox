@@ -1,0 +1,6 @@
+{
+  "parts": ["ground"],
+  "shapes": ["a"],
+  "colors": {"main": {"ground": "hillKnollGround"}},
+  "materials": {"hillKnollGround": {"color": "textures/hillKnollGround_color.png"}}
+}

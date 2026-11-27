@@ -23,6 +23,14 @@ void Camera::setPose(const glm::vec3 &position, const glm::vec3 &look, const glm
     updateView();
 }
 
+void Camera::setFar(float far) {
+    if (far <= m_near) {
+        return;
+    }
+    m_far = far;
+    updateProjection();
+}
+
 void Camera::setAspectRatio(float aspect) {
     if (aspect <= 0.0f) {
         return;

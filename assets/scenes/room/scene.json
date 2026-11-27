@@ -1,0 +1,5 @@
+{
+  "shading": "phong",
+  "material": {"specular": [0.1, 0.1, 0.1], "shininess": 8.0},
+  "start": {"look": "greybox", "viewpoint": "Cam_Seated", "state": "night"}
+}

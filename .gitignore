@@ -10,7 +10,6 @@ compile_commands.json
 .idea/
 imgui.ini
 
-assets/scenes/
-assets/meshes/
-assets/textures/
+assets/models/*/*.obj
+assets/materials
 captures/

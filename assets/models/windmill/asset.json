@@ -1,0 +1,6 @@
+{
+  "parts": ["tower", "blades"],
+  "shapes": ["a"],
+  "colors": {"main": {"tower": "windmillTower", "blades": "windmillBlades"}},
+  "materials": {"windmillTower": {"color": "textures/windmillTower_color.png"}, "windmillBlades": {"color": "textures/windmillBlades_color.png"}}
+}

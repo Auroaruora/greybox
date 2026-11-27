@@ -1,0 +1,6 @@
+{
+  "parts": ["stones"],
+  "shapes": ["a"],
+  "colors": {"main": {"stones": "rocksStones"}},
+  "materials": {"rocksStones": {"color": "textures/rocksStones_color.png"}}
+}

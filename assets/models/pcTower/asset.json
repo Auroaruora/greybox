@@ -1,0 +1,5 @@
+{
+  "parts": ["button", "case", "mesh"],
+  "shapes": ["a"],
+  "colors": {"grey4": {"button": "coolGrey", "case": "grey4", "mesh": "greyDark"}}
+}

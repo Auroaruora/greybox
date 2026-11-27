@@ -1,8 +1,0 @@
-{
-  "about": "",
-  "area": "shelf",
-  "parts": ["body"],
-  "shapes": ["a"],
-  "colors": {"color": {"shapes": ["a"], "body": "color"}},
-  "materials": {"color": {"color": "textures/color_color.png"}}
-}

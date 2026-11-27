@@ -1,0 +1,21 @@
+{
+  "parts": ["body"],
+  "shapes": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"],
+  "colors": {
+    "greyLight14": {"body": "greyLight14"},
+    "sticky0": {"shapes": ["b"], "body": "sticky0"},
+    "sticky1": {"shapes": ["c", "j", "k"], "body": "sticky1"},
+    "sticky2": {"shapes": ["c", "j", "k"], "body": "sticky2"},
+    "sticky3": {"shapes": ["c", "j", "k"], "body": "sticky3"},
+    "sticky4": {"shapes": ["d"], "body": "sticky4"},
+    "sticky5": {"shapes": ["e"], "body": "sticky5"}
+  },
+  "materials": {
+    "sticky0": {"color": "textures/sticky0_color.png"},
+    "sticky1": {"color": "textures/sticky1_color.png"},
+    "sticky2": {"color": "textures/sticky2_color.png"},
+    "sticky3": {"color": "textures/sticky3_color.png"},
+    "sticky4": {"color": "textures/sticky4_color.png"},
+    "sticky5": {"color": "textures/sticky5_color.png"}
+  }
+}

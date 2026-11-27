@@ -1,8 +1,0 @@
-{
-  "about": "",
-  "area": "shelf",
-  "parts": ["box", "label", "tape"],
-  "shapes": ["a"],
-  "colors": {"olive5": {"shapes": ["a"], "box": "olive5", "label": "label", "tape": "warmGreyLight8"}},
-  "materials": {"label": {"color": "textures/label_color.png"}}
-}

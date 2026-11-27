@@ -4,6 +4,7 @@
 #include "debug/debugui.h"
 #include "input/bindings.h"
 #include "input/input.h"
+#include "screen/hillscreen.h"
 #include "screen/roomscreen.h"
 
 static const int WindowWidth = 1280;
@@ -25,11 +26,12 @@ bool App::initialize() {
         DebugUI::initialize(m_window.getHandle());
     }
 
-    addScreen(std::make_unique<RoomScreen>("room_greybox", "scenes/room/room_greybox.json", m_desktop));
+    addScreen(std::make_unique<RoomScreen>("room_greybox", "scenes/room/looks/greybox.json", m_desktop));
+    addScreen(std::make_unique<HillScreen>("hill", "scenes/hill/looks/main.json"));
     if (debug::ToolsEnabled) {
-        addScreen(std::make_unique<RoomScreen>("room_draft", "scenes/room/room_draft.json", m_desktop));
-        addScreen(std::make_unique<RoomScreen>("room_toon", "scenes/room/room_toon.json", m_desktop));
-        addScreen(std::make_unique<RoomScreen>("room_retro", "scenes/room/room_retro.json", m_desktop));
+        addScreen(std::make_unique<RoomScreen>("room_draft", "scenes/room/looks/draft.json", m_desktop));
+        addScreen(std::make_unique<RoomScreen>("room_toon", "scenes/room/looks/toon.json", m_desktop));
+        addScreen(std::make_unique<RoomScreen>("room_retro", "scenes/room/looks/retro.json", m_desktop));
     }
 
     return true;
